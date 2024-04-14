@@ -4,24 +4,24 @@ import styles from './Tab.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TabItem = {
-  id: string | number;
+type TabItem<T> = {
+  id: T;
   text: string;
   count?: number;
 };
 
-type TabProps = {
-  items: TabItem[];
+type TabProps<T> = {
+  items: TabItem<T>[];
   size: 'small' | 'medium';
-  selectedTabId: string | number;
-  onClick: (selectedTabId: string | number) => void;
+  selectedTabId: T;
+  onClick: (selectedTabId: T) => void;
 };
 
-const Tab = ({ items, size, selectedTabId, onClick }: TabProps) => {
-  const isActivated = (id: string | number) => id === selectedTabId;
-  const hasCount = (item: TabItem) => item.count !== undefined;
+const Tab = <T extends unknown>({ items, size, selectedTabId, onClick }: TabProps<T>) => {
+  const isActivated = (id: T) => id === selectedTabId;
+  const hasCount = (item: TabItem<T>) => item.count !== undefined;
 
-  const handleClickTabItem = (clickedItemId: string | number) => {
+  const handleClickTabItem = (clickedItemId: T) => {
     if (!isActivated(clickedItemId)) {
       onClick(clickedItemId);
     }
@@ -29,8 +29,8 @@ const Tab = ({ items, size, selectedTabId, onClick }: TabProps) => {
 
   return (
     <ul className={cx('tab')}>
-      {items.map((item) => (
-        <li key={item.id}>
+      {items.map((item, index) => (
+        <li key={`tab-id-${item.id}-${index}`}>
           <button
             className={cx(`tab-item-${size}`, { activated: isActivated(item.id) })}
             onClick={() => handleClickTabItem(item.id)}
