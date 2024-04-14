@@ -7,22 +7,22 @@ import styles from './BaseButton.module.scss';
 const cx = classNames.bind(styles);
 
 type BaseButtonProps = {
-  theme?: 'fill' | 'ghost' | 'outline';
-  size?: 'small' | 'medium' | 'large';
-  children: string | number;
+  children?: string | number;
   isDisabled?: boolean;
   onClick?: () => void;
+  theme?: 'fill' | 'ghost' | 'outline';
+  size?: 'small' | 'medium' | 'large';
   color?: 'yellow' | 'purple' | 'red';
   type?: 'button' | 'submit';
   isQuantico?: boolean;
 };
 
 export const BaseButton = ({
-  theme = 'fill',
-  size = 'medium',
   children,
   isDisabled,
   onClick,
+  theme = 'fill',
+  size = 'medium',
   color = 'yellow',
   type = 'button',
   isQuantico = false,
