@@ -4,21 +4,21 @@ import styles from './Filter.module.scss';
 
 const cx = classNames.bind(styles);
 
-type FilterItem = {
-  id: string;
-  text: string;
+type FilterItem<T> = {
+  id: T;
+  text: string | number;
 };
 
-type FilterProps = {
-  items: FilterItem[];
-  selectedFilterId: string;
-  onChange: (selectedId: string) => void;
+type FilterProps<T> = {
+  items: FilterItem<T>[];
+  selectedFilterId: T;
+  onChange: (selectedId: T) => void;
 };
 
-const Filter = ({ items, selectedFilterId, onChange }: FilterProps) => {
-  const isActivated = (id: string) => id === selectedFilterId;
+const Filter = <T extends unknown>({ items, selectedFilterId, onChange }: FilterProps<T>) => {
+  const isActivated = (id: T) => id === selectedFilterId;
 
-  const handleClickFilterItem = (clickedItemId: string) => {
+  const handleClickFilterItem = (clickedItemId: T) => {
     if (isActivated(clickedItemId)) return;
 
     onChange(clickedItemId);
@@ -26,8 +26,8 @@ const Filter = ({ items, selectedFilterId, onChange }: FilterProps) => {
 
   return (
     <ul className={cx('filter')}>
-      {items.map((item) => (
-        <li key={item.id}>
+      {items.map((item, index) => (
+        <li key={`filter-id-${item.id}-${index}`}>
           <button
             className={cx('filter-item', { activated: isActivated(item.id) })}
             onClick={() => handleClickFilterItem(item.id)}
