@@ -12,8 +12,8 @@ const { full, empty } = SVGS.alarm;
 type AlarmProps = {
   isAlarmExisted: boolean;
   isActivated: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-  alarmRef: RefObject<HTMLButtonElement>;
+  onClick: () => void;
+  alarmRef?: RefObject<HTMLButtonElement>;
 };
 
 const Alarm = ({ isAlarmExisted, isActivated, onClick, alarmRef }: AlarmProps) => {
