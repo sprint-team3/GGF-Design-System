@@ -1,8 +1,7 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
-import { DEFAULT_PAGE_SIZE, SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
+import { DEFAULT_PAGE_SIZE } from '@/constants/paging';
 
 import usePagination from '@/hooks/usePagination';
 
@@ -40,7 +39,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
         <ul className={cx('pagination')}>
           <li>
             <button onClick={handleFirstPageClick}>
-              <Image
+              <img
                 className={cx({ 'pagination-arrow-activated': currentPageGroupIndex })}
                 src={left.double.url}
                 alt={left.double.alt}
@@ -51,7 +50,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           </li>
           <li>
             <button onClick={handlePrevButtonClick}>
-              <Image
+              <img
                 className={cx({ 'pagination-arrow-activated': currentPageGroupIndex })}
                 src={left.single.url}
                 alt={left.single.alt}
@@ -72,7 +71,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           ))}
           <li>
             <button onClick={handleNextButtonClick}>
-              <Image
+              <img
                 className={cx({
                   'pagination-arrow-activated': isArrowActivated,
                 })}
@@ -85,7 +84,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           </li>
           <li>
             <button onClick={handleLastPageClick}>
-              <Image
+              <img
                 className={cx({
                   'pagination-arrow-activated': isArrowActivated,
                 })}
