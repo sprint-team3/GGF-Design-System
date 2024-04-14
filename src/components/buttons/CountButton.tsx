@@ -1,8 +1,6 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
 import useToggleButton from '@/hooks/useToggleButton';
 
@@ -56,7 +54,7 @@ export const CountButton = ({ label, count, setCount, maxPlayMember, isDisabled 
           onMouseLeave={handleRemoveButtonState}
           disabled={isDisabled}
         >
-          <Image src={removeUrl} alt={removeAlt} width={24} height={24} />
+          <img src={removeUrl} alt={removeAlt} width={24} height={24} />
         </button>
         <div className={cx('btn-area-count')}>{count}</div>
         <button
@@ -67,7 +65,7 @@ export const CountButton = ({ label, count, setCount, maxPlayMember, isDisabled 
           onMouseLeave={handleAddButtonState}
           disabled={isDisabled}
         >
-          <Image src={addUrl} alt={addAlt} width={24} height={24} />
+          <img src={addUrl} alt={addAlt} width={24} height={24} />
         </button>
       </div>
     </div>
