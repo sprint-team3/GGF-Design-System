@@ -11,17 +11,17 @@ type FilterItem<T> = {
 
 type FilterProps<T> = {
   items: FilterItem<T>[];
-  selectedFilterId: T;
-  onChange: (selectedId: T) => void;
+  onChange?: (selectedId: T) => void;
+  selectedFilterId?: T;
 };
 
-const Filter = <T extends unknown>({ items, selectedFilterId, onChange }: FilterProps<T>) => {
+const Filter = <T extends unknown>({ items, onChange, selectedFilterId = items[0]?.id }: FilterProps<T>) => {
   const isActivated = (id: T) => id === selectedFilterId;
 
   const handleClickFilterItem = (clickedItemId: T) => {
     if (isActivated(clickedItemId)) return;
 
-    onChange(clickedItemId);
+    onChange && onChange(clickedItemId);
   };
 
   return (
