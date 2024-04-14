@@ -1,20 +1,18 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
 import styles from './Avatar.module.scss';
 
 const cx = classNames.bind(styles);
 
 type AvatarProps = {
-  size: 'small' | 'medium' | 'large';
-  profileImageUrl: string | null;
+  profileImageUrl?: string | null;
+  size?: 'small' | 'medium' | 'large';
   isActivated?: boolean;
 };
 
-const Avatar = ({ size, profileImageUrl, isActivated }: AvatarProps) => {
+const Avatar = ({ profileImageUrl = null, size = 'medium', isActivated }: AvatarProps) => {
   const { url, alt } = SVGS.profile;
   const imageSize = size === 'large' ? 32 : 20;
 
@@ -26,9 +24,9 @@ const Avatar = ({ size, profileImageUrl, isActivated }: AvatarProps) => {
       <div className={cx('dot', 'dot-left', { 'dot-activated': isActivated })}></div>
       <div className={cx('frame-inner', `frame-inner-${size}`, { 'frame-inner-activated': isActivated })}>
         {profileImageUrl ? (
-          <Image className={cx('profile-image')} src={profileImageUrl} alt='profileImage' fill sizes='100%' />
+          <img className={cx('profile-image')} src={profileImageUrl} alt='profileImage' />
         ) : (
-          <Image src={url} alt={alt} width={imageSize} height={imageSize} />
+          <img src={url} alt={alt} width={imageSize} height={imageSize} />
         )}
       </div>
     </div>
