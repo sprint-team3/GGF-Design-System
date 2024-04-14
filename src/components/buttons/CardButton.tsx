@@ -7,8 +7,8 @@ import styles from './CardButton.module.scss';
 const cx = classNames.bind(styles);
 
 type CardButton = {
-  children: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  children: string | number;
+  onClick?: () => void;
   color?: 'yellow' | 'red' | 'gray';
 };
 
