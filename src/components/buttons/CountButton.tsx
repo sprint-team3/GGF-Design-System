@@ -5,45 +5,49 @@ import { SVGS } from '@/constants/images';
 import useToggleButton from '@/hooks/useToggleButton';
 
 import styles from './CountButton.module.scss';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const { add, remove } = SVGS.button;
 
-const MIN_PLAY_MEMBER = 1;
-
 type CountButtonProps = {
-  label: string;
-  count: number;
-  setCount: (count: number) => void;
-  maxPlayMember: number;
+  label?: string;
+  info?: string;
+  onClick?: (count: number) => void;
+  minCount?: number;
+  maxCount?: number;
   isDisabled?: boolean;
 };
 
-export const CountButton = ({ label, count, setCount, maxPlayMember, isDisabled = false }: CountButtonProps) => {
+export const CountButton = ({ label, info, onClick, minCount, maxCount, isDisabled = false }: CountButtonProps) => {
+  const [count, setCount] = useState(0);
+
   const { isVisible: isHoverAddButton, handleToggleClick: handleAddButtonState } = useToggleButton();
   const { isVisible: isHoverRemoveButton, handleToggleClick: handleRemoveButtonState } = useToggleButton();
 
   const { url: addUrl, alt: addAlt } = !isDisabled && isHoverAddButton ? add.active : add.default;
   const { url: removeUrl, alt: removeAlt } = !isDisabled && isHoverRemoveButton ? remove.active : remove.default;
 
-  const handleAddClick = () => {
-    if (count < maxPlayMember) {
-      setCount(count + 1);
-    }
+  const handleRemoveClick = () => {
+    const newCount = minCount !== undefined ? Math.max(minCount, count - 1) : count - 1;
+    setCount(newCount);
+    onClick && onClick(newCount);
   };
 
-  const handleRemoveClick = () => {
-    if (count > MIN_PLAY_MEMBER) {
-      setCount(count - 1);
-    }
+  const handleAddClick = () => {
+    const newCount = maxCount !== undefined ? Math.min(maxCount, count + 1) : count + 1;
+    setCount(newCount);
+    onClick && onClick(newCount);
   };
 
   return (
     <div className={cx('count-btn-field')}>
-      <div className={cx('label-area')}>
-        <span className={cx('label-area-text')}>{label}</span>
-        <span className={cx('label-area-info')}>(참여할 수 있는 최대 인원은 {maxPlayMember}명입니다)</span>
-      </div>
+      {(label || info) && (
+        <div className={cx('label-area')}>
+          {label && <span className={cx('label-area-text')}>{label}</span>}
+          {info && <span className={cx('label-area-info')}>{info}</span>}
+        </div>
+      )}
 
       <div className={cx('btn-area')}>
         <button
