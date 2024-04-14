@@ -6,9 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9009 -s public",
-    "lint": "next lint",
-    "prepare": "husky"
+    "storybook": "start-storybook -p 9009 -s public"
   },
   "author": "",
   "license": "ISC",
@@ -41,7 +39,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
-    "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "sass": "^1.71.0",
@@ -61,17 +58,5 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{tsx,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.css": "stylelint --fix"
   }
 }
