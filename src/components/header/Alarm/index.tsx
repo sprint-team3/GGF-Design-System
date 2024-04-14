@@ -1,10 +1,8 @@
-import Image from 'next/image';
-
 import { MouseEventHandler, RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
 import styles from './Alarm.module.scss';
 
@@ -27,9 +25,9 @@ const Alarm = ({ isAlarmExisted, isActivated, onClick, alarmRef }: AlarmProps) =
       <div className={cx('dot', 'dot-left', { 'dot-activated': isActivated })}></div>
       <div className={cx('frame-inner', { 'frame-inner-activated': isActivated })}>
         {isAlarmExisted ? (
-          <Image src={full.url} alt={full.alt} width={20} height={20} />
+          <img src={full.url} alt={full.alt} width={20} height={20} />
         ) : (
-          <Image src={empty.url} alt={empty.alt} width={20} height={20} />
+          <img src={empty.url} alt={empty.alt} width={20} height={20} />
         )}
       </div>
     </button>
