@@ -12,18 +12,18 @@ type TabItem<T> = {
 
 type TabProps<T> = {
   items: TabItem<T>[];
-  size: 'small' | 'medium';
-  selectedTabId: T;
-  onClick: (selectedTabId: T) => void;
+  onClick?: (selectedTabId: T) => void;
+  selectedTabId?: T;
+  size?: 'small' | 'medium';
 };
 
-const Tab = <T extends unknown>({ items, size, selectedTabId, onClick }: TabProps<T>) => {
+const Tab = <T extends unknown>({ items, onClick, selectedTabId = items[0]?.id, size = 'medium' }: TabProps<T>) => {
   const isActivated = (id: T) => id === selectedTabId;
   const hasCount = (item: TabItem<T>) => item.count !== undefined;
 
   const handleClickTabItem = (clickedItemId: T) => {
     if (!isActivated(clickedItemId)) {
-      onClick(clickedItemId);
+      onClick && onClick(clickedItemId);
     }
   };
 
