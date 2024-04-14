@@ -1,5 +1,3 @@
-import { MouseEventHandler } from 'react';
-
 import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants/images';
@@ -11,12 +9,12 @@ import styles from './OperationButton.module.scss';
 const cx = classNames.bind(styles);
 
 type OperationButtonProps = {
-  type: 'add' | 'remove';
   isDisabled?: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
+  type?: 'add' | 'remove';
 };
 
-export const OperationButton = ({ type, isDisabled, onClick }: OperationButtonProps) => {
+export const OperationButton = ({ isDisabled, onClick, type = 'add' }: OperationButtonProps) => {
   const { isVisible: isHovering, handleToggleClick: toggleHovering } = useToggleButton();
 
   const isButtonActive = (type === 'add' && !isDisabled) || isHovering;
