@@ -1,10 +1,8 @@
-import Image from 'next/image';
-
 import { MouseEvent } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
 import styles from './MoreButton.module.scss';
 
@@ -26,7 +24,7 @@ export const MoreButton = ({ onClick, isActive }: MoreButtonProps) => {
 
   return (
     <button className={cx('btn-more')} aria-label='메뉴 더보기 버튼' aria-pressed={isActive} onClick={handleClick}>
-      <Image src={url} alt={alt} width={24} height={24} />
+      <img src={url} alt={alt} width={24} height={24} />
     </button>
   );
 };

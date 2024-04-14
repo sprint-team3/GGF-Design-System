@@ -1,8 +1,6 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
 import styles from './SliderButton.module.scss';
 
@@ -19,7 +17,7 @@ const SliderButton = ({ type, onClick }: SliderButtonProps) => {
   return (
     <div className={cx('lg-only')}>
       <button className={cx('clan-slider-btn', `btn-${type}`)} onClick={onClick}>
-        <Image src={active.url} alt={active.alt} width={20} height={20} />
+        <img src={active.url} alt={active.alt} width={20} height={20} />
       </button>
     </div>
   );
