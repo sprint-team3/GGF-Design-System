@@ -7,19 +7,19 @@ import styles from './BaseButton.module.scss';
 const cx = classNames.bind(styles);
 
 type BaseButtonProps = {
-  theme: 'fill' | 'ghost' | 'outline';
-  size: 'small' | 'medium' | 'large';
+  theme?: 'fill' | 'ghost' | 'outline';
+  size?: 'small' | 'medium' | 'large';
   children: string;
   isDisabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
   color?: 'yellow' | 'purple' | 'red';
   type?: 'button' | 'submit';
   isQuantico?: boolean;
 };
 
 export const BaseButton = ({
-  theme,
-  size,
+  theme = 'fill',
+  size = 'medium',
   children,
   isDisabled,
   onClick,
