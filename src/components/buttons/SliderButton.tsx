@@ -7,11 +7,11 @@ import styles from './SliderButton.module.scss';
 const cx = classNames.bind(styles);
 
 type SliderButtonProps = {
-  type: 'left' | 'right';
-  onClick: () => void;
+  onClick?: () => void;
+  type?: 'left' | 'right';
 };
 
-const SliderButton = ({ type, onClick }: SliderButtonProps) => {
+const SliderButton = ({ onClick, type = 'left' }: SliderButtonProps) => {
   const { active } = type === 'left' ? SVGS.arrow.left : SVGS.arrow.right;
 
   return (
