@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 type BaseButtonProps = {
   theme?: 'fill' | 'ghost' | 'outline';
   size?: 'small' | 'medium' | 'large';
-  children: string;
+  children: string | number;
   isDisabled?: boolean;
   onClick?: () => void;
   color?: 'yellow' | 'purple' | 'red';
