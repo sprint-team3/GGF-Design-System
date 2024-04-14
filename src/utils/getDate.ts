@@ -83,11 +83,11 @@ export const getYesterday = () => {
   return yesterday;
 };
 
-export const getAfter31Days = () => {
-  const after31Days = new Date();
-  const day = after31Days.getDate();
-  after31Days.setDate(day + 31);
-  return after31Days;
+export const getAfterDays = (days: number) => {
+  const afterDays = new Date();
+  const day = afterDays.getDate();
+  afterDays.setDate(day + days);
+  return afterDays;
 };
 
 /**
