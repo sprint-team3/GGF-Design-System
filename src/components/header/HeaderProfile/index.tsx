@@ -2,9 +2,8 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
-
 import Avatar from '@/components/Avatar';
+import { SVGS } from '@/constants/index';
 
 import styles from './HeaderProfile.module.scss';
 
