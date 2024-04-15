@@ -27,5 +27,11 @@
     @include pos-center-y;
 
     left: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    .img {
+      @include image-fit;
+    }
   }
 }
