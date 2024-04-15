@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants/index';
-
 import Menu from '@/components/header/Menu';
+import { PAGE_PATHS, SVGS } from '@/constants/index';
 
 import styles from './Header.module.scss';
 
