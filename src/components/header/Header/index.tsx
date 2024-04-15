@@ -1,23 +1,22 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 import { useEffect, useState } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
+import { PAGE_PATHS } from '@/constants/pagePaths';
 
-import Alarm from '@/components/layout/header/Alarm';
-import AlarmList from '@/components/layout/header/AlarmList';
-import { HeaderSigninButton, HeaderSignupButton } from '@/components/layout/header/buttons';
-import DrawerMenu from '@/components/layout/header/DrawerMenu';
-import HeaderProfile from '@/components/layout/header/HeaderProfile';
-import Menu from '@/components/layout/header/Menu';
-import UserMenu from '@/components/layout/header/UserMenu';
+import Alarm from '@/components/header/Alarm';
+import AlarmList from '@/components/header/AlarmList';
+import { HeaderSigninButton, HeaderSignupButton } from '@/components/header/buttons';
+import DrawerMenu from '@/components//header/DrawerMenu';
+import HeaderProfile from '@/components/header/HeaderProfile';
+import Menu from '@/components/header/Menu';
+import UserMenu from '@/components/header/UserMenu';
 import { useDeviceType } from '@/hooks/useDeviceType';
 import useTogglePopup from '@/hooks/useTogglePopup';
 
-import { MyNotifications, UsersResponse } from '@/types';
+import { MyNotifications } from '@/types/myNotifications';
+import { UsersResponse } from '@/types/users';
 
 import styles from './Header.module.scss';
 
@@ -77,11 +76,11 @@ const Header = ({ userData, alarmData, isLoggedIn }: HeaderProps) => {
       <div className={cx('container')}>
         <header className={cx('header')}>
           <button className={cx('header-menu-button', 'sm-only')} onClick={handleToggleDrawerMenu}>
-            <Image src={url} alt={alt} width={24} height={24}></Image>
+            <img src={url} alt={alt} width={24} height={24}></img>
           </button>
-          <Link className={cx('header-logo')} href={PAGE_PATHS.landing}>
+          <a className={cx('header-logo')} href={PAGE_PATHS.landing}>
             GGF
-          </Link>
+          </a>
           <div className={cx('header-container-outer')}>
             <div className={cx('sm-hidden')}>
               <Menu />
