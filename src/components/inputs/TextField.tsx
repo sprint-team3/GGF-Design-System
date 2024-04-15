@@ -1,25 +1,23 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
 
-import { REGEX } from '@/constants';
+import { REGEX } from '@/constants/index';
 
 import styles from './TextField.module.scss';
 
 const cx = classNames.bind(styles);
 
-const MIN_LENGTH_TEXTAREA = 5;
-
 type TextFieldProps = {
   name: string;
   label?: string;
+  minLength?: number;
   maxLength?: number;
   placeholder?: string;
 };
 
-export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldProps) => {
+export const TextField = ({ name, label, minLength = 5, maxLength = 700, ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -28,8 +26,8 @@ export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldP
 
   const contentValue = watch(name);
   const textLength = contentValue ? contentValue.replace(REGEX.textarea, '').length : 0;
-  const isBelowMinLength = textLength < MIN_LENGTH_TEXTAREA;
-  const isValidLength = textLength >= MIN_LENGTH_TEXTAREA;
+  const isBelowMinLength = textLength < minLength;
+  const isValidLength = textLength >= minLength;
   const isError = !!errors[name]?.message;
 
   const [isFocused, setIsFocused] = useState(false);
