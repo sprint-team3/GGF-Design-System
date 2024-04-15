@@ -1,11 +1,9 @@
-import Image from 'next/image';
-
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/index';
 
 import useTogglePopup from '@/hooks/useTogglePopup';
 
@@ -81,11 +79,7 @@ export const PostFormDropdown = ({
             disabled={isDisabled}
             onClick={togglePopup}
           >
-            {isOpen ? (
-              <Image src={activeUrl} alt={activeAlt} width={24} height={24} />
-            ) : (
-              <Image src={defaultUrl} alt={defaultAlt} width={24} height={24} />
-            )}
+            <img className={cx('img')} src={isOpen ? activeUrl : defaultUrl} alt={isOpen ? activeAlt : defaultAlt} />
           </button>
         </div>
 
