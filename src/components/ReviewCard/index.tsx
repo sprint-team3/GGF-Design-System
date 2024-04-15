@@ -10,14 +10,14 @@ import styles from './ReviewCard.module.scss';
 const cx = classNames.bind(styles);
 
 type ReviewCardProps = {
-  profileImageUrl: string | null;
   nickname: string;
   rating: number;
   content: string;
   createdAt: string | number;
+  profileImageUrl?: string;
 };
 
-const ReviewCard = ({ profileImageUrl, nickname, rating, createdAt, content }: ReviewCardProps) => {
+const ReviewCard = ({ nickname, rating, createdAt, content, profileImageUrl }: ReviewCardProps) => {
   return (
     <article className={cx('review-card')}>
       <div className={cx('review-card-profile')}>
