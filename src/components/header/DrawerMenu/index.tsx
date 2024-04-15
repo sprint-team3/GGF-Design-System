@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 import { MouseEventHandler } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { GAME_NAME_LIST_EN, SVGS } from '@/constants';
-import { formatGameToLink } from '@/utils';
+import { SVGS } from '@/constants/images';
+import { GAME_NAME_LIST_EN } from '@/constants/games';
+import { formatGameToLink } from '@/utils/gameFormatter';
 
 import styles from './DrawerMenu.module.scss';
 
@@ -21,15 +19,15 @@ const DrawerMenu = ({ onClick }: DrawerMenuProps) => {
   return (
     <aside className={cx('drawer-menu')}>
       <button className={cx('drawer-menu-close-button')} onClick={onClick}>
-        <Image src={url} alt={alt} width={24} height={24} />
+        <img src={url} alt={alt} width={24} height={24} />
       </button>
       <nav>
         <ul className={cx('drawer-menu-game')}>
           {GAME_NAME_LIST_EN.map((game, index) => (
             <li className={cx('drawer-menu-game-item')} key={`game-${index}`}>
-              <Link className={cx('drawer-menu-game-link')} onClick={onClick} href={`/${formatGameToLink(game)}`}>
+              <a className={cx('drawer-menu-game-link')} onClick={onClick} href={`/${formatGameToLink(game)}`}>
                 {game}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
