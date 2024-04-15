@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { DEFAULT_PAGE_SIZE, SVGS } from '@/constants/index';
+import { SVGS } from '@/constants/index';
 
 import usePagination from '@/hooks/usePagination';
 
@@ -13,10 +13,11 @@ type PaginationProps = {
   totalCount: number;
   pageState: number;
   postPerPage: number;
+  defaultPageSize: number;
   onClick: (pageNumber: number) => void;
 };
 
-const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationProps) => {
+const Pagination = ({ totalCount, pageState, postPerPage, defaultPageSize, onClick }: PaginationProps) => {
   const {
     activePage,
     currentPageGroupIndex,
@@ -30,7 +31,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
   } = usePagination(totalCount, pageState, postPerPage, onClick);
 
   const isArrowActivated = currentPageGroupIndex !== pagesArray.length - 1;
-  const showPagination = !!totalCount && postPerPage !== DEFAULT_PAGE_SIZE;
+  const showPagination = !!totalCount && postPerPage !== defaultPageSize;
 
   return (
     showPagination && (
