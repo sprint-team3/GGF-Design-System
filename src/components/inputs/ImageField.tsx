@@ -36,7 +36,7 @@ export const ImageField = ({
   onFilesUpdate,
   maxMB = 50,
   maxFiles = 5,
-  recommendMsg = '권장 규격은 930 X 720 픽셀입니다',
+  recommendMsg,
   dropzoneMsg = 'Drag files to upload',
   onFileDelete,
 }: ImageFiledProps) => {
