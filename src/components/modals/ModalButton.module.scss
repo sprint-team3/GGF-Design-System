@@ -35,7 +35,7 @@
 
   border-bottom-color: $gray30;
 
-  &.btn-state-success {
+  &-state-success {
     @extend %btn-action;
 
     @include responsive(PC) {
@@ -51,7 +51,7 @@
     }
   }
 
-  &.btn-state-warning {
+  &-state-warning {
     @extend %btn-action;
 
     @include responsive(PC) {
