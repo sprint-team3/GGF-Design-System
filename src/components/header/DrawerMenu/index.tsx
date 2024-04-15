@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
-import { GAME_NAME_LIST_EN } from '@/constants/games';
-import { formatGameToLink } from '@/utils/gameFormatter';
+import { GAME_NAME_LIST_EN, SVGS } from '@/constants/index';
+
+import { formatGameToLink } from '@/utils/index';
 
 import styles from './DrawerMenu.module.scss';
 

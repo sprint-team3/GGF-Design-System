@@ -2,8 +2,7 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
-import { PAGE_PATHS } from '@/constants/pagePaths';
+import { PAGE_PATHS, SVGS } from '@/constants/index';
 
 import Avatar from '@/components/Avatar';
 import useSignout from '@/hooks/useSignout';
