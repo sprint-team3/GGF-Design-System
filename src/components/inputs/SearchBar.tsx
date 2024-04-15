@@ -1,12 +1,10 @@
-import Image from 'next/image';
-
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/index';
 
-import { SearchFilter } from '@/types';
+import { SearchFilter } from '@/types/index';
 
 import styles from './SearchBar.module.scss';
 
@@ -16,13 +14,13 @@ const { url, alt } = SVGS.search;
 
 type SearchBarType = {
   placeholder: string;
-  setState: Dispatch<SetStateAction<SearchFilter | undefined>>;
+  onChange: (value: string) => void;
   maxLength?: number;
 };
 
-export const SearchBar = ({ placeholder, setState, maxLength = 20 }: SearchBarType) => {
+export const SearchBar = ({ placeholder, onChange, maxLength = 20 }: SearchBarType) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setState({ title: event.target.value });
+    onChange(event.target.value);
   };
 
   return (
@@ -35,7 +33,7 @@ export const SearchBar = ({ placeholder, setState, maxLength = 20 }: SearchBarTy
         onChange={(event) => handleChange(event)}
       />
       <div className={cx('searchbar-search-icon')}>
-        <Image src={url} alt={alt} width={16} height={16} />
+        <img className={cx('img')} src={url} alt={alt} />
       </div>
     </div>
   );
