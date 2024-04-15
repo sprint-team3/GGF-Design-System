@@ -4,7 +4,7 @@ import { SVGS } from '@/constants/images';
 
 import StarRating from '@/components/StarRating';
 import Tag from '@/components/Tag';
-import { toFixedOneDecimal } from '@/utils/toFixedOneDecimal';
+import { toFixedOneDecimal } from '@/utils/index';
 
 import styles from './Card.module.scss';
 
