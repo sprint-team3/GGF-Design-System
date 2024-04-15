@@ -2,9 +2,8 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants/index';
-
 import Avatar from '@/components/Avatar';
+import { PAGE_PATHS, SVGS } from '@/constants/index';
 import useSignout from '@/hooks/useSignout';
 
 import styles from './UserMenu.module.scss';

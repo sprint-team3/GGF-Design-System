@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants/index';
-
 import usePagination from '@/hooks/usePagination';
 
 import styles from './Pagination.module.scss';
