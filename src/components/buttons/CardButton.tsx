@@ -1,5 +1,3 @@
-import { MouseEventHandler } from 'react';
-
 import classNames from 'classnames/bind';
 
 import styles from './CardButton.module.scss';
