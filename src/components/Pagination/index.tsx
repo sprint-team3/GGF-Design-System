@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
-import { DEFAULT_PAGE_SIZE } from '@/constants/paging';
+import { DEFAULT_PAGE_SIZE, SVGS } from '@/constants/index';
 
 import usePagination from '@/hooks/usePagination';
 
