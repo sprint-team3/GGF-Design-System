@@ -21,3 +21,7 @@
     height: 3.6rem;
   }
 }
+
+.star-icon {
+  @include image-fit;
+}
