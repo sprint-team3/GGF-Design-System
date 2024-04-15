@@ -1,5 +1,3 @@
-import { MouseEventHandler } from 'react';
-
 import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants/images';
