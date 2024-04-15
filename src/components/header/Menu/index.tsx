@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { GAME_NAME_LIST_EN } from '@/constants/games';
-import { formatGameToLink } from '@/utils/gameFormatter';
+import { GAME_NAME_LIST_EN } from '@/constants/index';
+import { formatGameToLink } from '@/utils/index';
 
 import styles from './Menu.module.scss';
 import { useState } from 'react';

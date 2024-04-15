@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
-import { PAGE_PATHS } from '@/constants/pagePaths';
+import { PAGE_PATHS, SVGS } from '@/constants/index';
 
 import Alarm from '@/components/header/Alarm';
 import AlarmList from '@/components/header/AlarmList';
@@ -15,8 +14,7 @@ import UserMenu from '@/components/header/UserMenu';
 import { useDeviceType } from '@/hooks/useDeviceType';
 import useTogglePopup from '@/hooks/useTogglePopup';
 
-import { MyNotifications } from '@/types/myNotifications';
-import { UsersResponse } from '@/types/users';
+import { UsersResponse, MyNotifications } from '@/types/index';
 
 import styles from './Header.module.scss';
 
