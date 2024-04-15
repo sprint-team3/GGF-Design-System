@@ -15,10 +15,11 @@ type AlarmListProps = {
   notifications: NotificationResponse[];
   totalCount: number;
   alarmListRef: RefObject<HTMLDivElement>;
-  onClick?: () => void;
+  handleDelete: (id: number) => void;
+  handleDeleteAll: () => void;
 };
 
-const AlarmList = ({ notifications, totalCount, alarmListRef, onClick }: AlarmListProps) => {
+const AlarmList = ({ notifications, totalCount, alarmListRef, handleDelete, handleDeleteAll }: AlarmListProps) => {
   return (
     <div className={cx('alarm-list')} ref={alarmListRef}>
       <div className={cx('alarm-list-top')}>
@@ -26,7 +27,7 @@ const AlarmList = ({ notifications, totalCount, alarmListRef, onClick }: AlarmLi
           <span className={cx('alarm')}>알림</span>
           <span className={cx('total-count')}>{totalCount}</span>
         </div>
-        <button className={cx('delete-all')} onClick={onClick}>
+        <button className={cx('delete-all')} onClick={handleDeleteAll}>
           전체 삭제
         </button>
       </div>
@@ -35,7 +36,7 @@ const AlarmList = ({ notifications, totalCount, alarmListRef, onClick }: AlarmLi
           <ul className={cx('alarm-list-contents')}>
             {notifications.map(({ id, content, createdAt }) => (
               <li key={id}>
-                <AlarmCard id={id} content={content} createdAt={createdAt} />
+                <AlarmCard id={id} content={content} createdAt={createdAt} onClick={handleDelete} />
               </li>
             ))}
           </ul>
