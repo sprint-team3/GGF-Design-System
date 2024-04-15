@@ -1,8 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { GAME_NAME_LIST_EN, SVGS } from '@/constants/index';
-
-import { formatGameToLink } from '@/utils/index';
+import { SVGS } from '@/constants/index';
 
 import styles from './DrawerMenu.module.scss';
 
@@ -10,10 +8,11 @@ const cx = classNames.bind(styles);
 const { url, alt } = SVGS.close.active;
 
 type DrawerMenuProps = {
+  menuList: string[];
   onClick: () => void;
 };
 
-const DrawerMenu = ({ onClick }: DrawerMenuProps) => {
+const DrawerMenu = ({ menuList, onClick }: DrawerMenuProps) => {
   return (
     <aside className={cx('drawer-menu')}>
       <button className={cx('drawer-menu-close-button')} onClick={onClick}>
@@ -21,9 +20,9 @@ const DrawerMenu = ({ onClick }: DrawerMenuProps) => {
       </button>
       <nav>
         <ul className={cx('drawer-menu-game')}>
-          {GAME_NAME_LIST_EN.map((game, index) => (
+          {menuList.map((game, index) => (
             <li className={cx('drawer-menu-game-item')} key={`game-${index}`}>
-              <a className={cx('drawer-menu-game-link')} onClick={onClick} href={`/${formatGameToLink(game)}`}>
+              <a className={cx('drawer-menu-game-link')} onClick={onClick} href={`/${game}`}>
                 {game}
               </a>
             </li>
