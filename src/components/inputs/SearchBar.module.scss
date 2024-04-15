@@ -30,7 +30,7 @@
     width: 1.6rem;
     height: 1.6rem;
 
-    .img {
+    &-img {
       @include image-fit;
     }
   }
