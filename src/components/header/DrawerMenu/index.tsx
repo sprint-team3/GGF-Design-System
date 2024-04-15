@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 const { url, alt } = SVGS.close.active;
 
 type DrawerMenuProps = {
-  onClick: MouseEventHandler<HTMLElement>;
+  onClick: () => void;
 };
 
 const DrawerMenu = ({ onClick }: DrawerMenuProps) => {
