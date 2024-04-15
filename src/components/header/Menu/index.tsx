@@ -1,25 +1,18 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
 import classNames from 'classnames/bind';
 
-import { GAME_NAME_LIST_EN, GAME_PATH_NAME_TO_GAME_NAME_EN } from '@/constants';
-import { formatGameToLink } from '@/utils';
+import { GAME_NAME_LIST_EN } from '@/constants/games';
+import { formatGameToLink } from '@/utils/gameFormatter';
 
 import styles from './Menu.module.scss';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 const Menu = () => {
-  const router = useRouter();
-  const { game: gameName, postType } = router.query;
-  const hasCreateInPath = router.pathname.includes('create');
+  const [activatedGame, setActivatedGame] = useState(0);
 
-  const isGameActivated = (index: number) => {
-    return (
-      GAME_PATH_NAME_TO_GAME_NAME_EN[gameName as keyof typeof GAME_PATH_NAME_TO_GAME_NAME_EN] ===
-      GAME_NAME_LIST_EN[index]
-    );
+  const handleActivateGame = (number: number) => {
+    setActivatedGame(number);
   };
 
   return (
@@ -27,18 +20,16 @@ const Menu = () => {
       <ul className={cx('menu')}>
         {GAME_NAME_LIST_EN.map((game, index) => (
           <li key={`menu-${index}`}>
-            <Link
-              href={{
-                pathname: `/${formatGameToLink(game)}`,
-                query: { postType: hasCreateInPath ? 'all' : postType || 'all' },
-              }}
+            <a
+              href={`/${formatGameToLink(game)}`}
               className={cx('menu-game', {
-                'menu-game-activated': isGameActivated(index),
+                'menu-game-activated': activatedGame === index,
               })}
+              onClick={() => handleActivateGame(index)}
             >
               {game}
-              {isGameActivated(index) && <p className={cx('menu-under-line')}></p>}
-            </Link>
+              {activatedGame === index && <p className={cx('menu-under-line')}></p>}
+            </a>
           </li>
         ))}
       </ul>
