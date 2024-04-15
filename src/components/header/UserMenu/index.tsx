@@ -19,14 +19,14 @@ type UserMenuProps = {
   nickname: string;
   email: string;
   userMenuRef: RefObject<HTMLDivElement>;
-  onClick: MouseEventHandler<HTMLElement>;
+  onClick: () => void;
 };
 
 const UserMenu = ({ profileImageUrl, nickname, email, userMenuRef, onClick }: UserMenuProps) => {
   const signout = useSignout();
 
-  const handleClickSignout = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    onClick(event);
+  const handleClickSignout = () => {
+    onClick();
     signout();
   };
 
