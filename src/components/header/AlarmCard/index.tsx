@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
+import { SVGS } from '@/constants/index';
 
-import { getElapsedTimeToKST } from '@/utils/getDate';
+import { getElapsedTimeToKST } from '@/utils/index';
 
 import useToggleButton from '@/hooks/useToggleButton';
 
