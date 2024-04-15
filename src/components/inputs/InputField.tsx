@@ -20,6 +20,7 @@ type InputFieldProps = {
   minLength?: number;
   placeholder?: string;
   readOnly?: boolean;
+  autoComplete?: 'on' | 'off';
 };
 
 export const InputField = ({
@@ -32,6 +33,7 @@ export const InputField = ({
   maxLength = 10,
   minLength = 1,
   readOnly = false,
+  autoComplete = 'on',
   ...props
 }: InputFieldProps) => {
   const {
@@ -67,7 +69,7 @@ export const InputField = ({
               { 'is-limited': isLimited && !isPassword },
             )}
             type={type === 'password' ? inputType : type}
-            autoComplete='on'
+            autoComplete={autoComplete}
             readOnly={readOnly}
             {...register(name)}
             maxLength={maxLength}
