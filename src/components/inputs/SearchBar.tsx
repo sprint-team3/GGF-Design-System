@@ -1,10 +1,8 @@
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { ChangeEvent } from 'react';
 
 import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants/index';
-
-import { SearchFilter } from '@/types/index';
 
 import styles from './SearchBar.module.scss';
 
@@ -33,7 +31,7 @@ export const SearchBar = ({ placeholder, onChange, maxLength = 20 }: SearchBarTy
         onChange={(event) => handleChange(event)}
       />
       <div className={cx('searchbar-search-icon')}>
-        <img className={cx('img')} src={url} alt={alt} />
+        <img className={cx('searchbar-search-icon-img')} src={url} alt={alt} />
       </div>
     </div>
   );
