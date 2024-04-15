@@ -1,13 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 import { MouseEventHandler, RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
+import { PAGE_PATHS } from '@/constants/pagePaths';
 
-import Avatar from '@/components/commons/Avatar';
+import Avatar from '@/components/Avatar';
 import useSignout from '@/hooks/useSignout';
 
 import styles from './UserMenu.module.scss';
@@ -39,17 +37,17 @@ const UserMenu = ({ profileImageUrl, nickname, email, userMenuRef, onClick }: Us
         <div className={cx('container-user-info')}>
           <div className={cx('container-nickname')}>
             <p className={cx('nickname')}>{nickname}</p>
-            <Link onClick={onClick} href={account}>
-              <Image src={url} alt={alt} width={18} height={18} />
-            </Link>
+            <a onClick={onClick} href={account}>
+              <img src={url} alt={alt} width={18} height={18} />
+            </a>
           </div>
           <div className={cx('email')}>{email}</div>
         </div>
       </div>
       <div className={cx('container-button')}>
-        <Link className={cx('container-button-mypage')} onClick={onClick} href={mypage}>
+        <a className={cx('container-button-mypage')} onClick={onClick} href={mypage}>
           My Page
-        </Link>
+        </a>
         <button className={cx('container-button-logout')} onClick={handleClickSignout}>
           Logout
         </button>
