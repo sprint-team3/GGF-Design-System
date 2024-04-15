@@ -15,7 +15,7 @@ type AlarmCardProps = {
   id: number;
   content: string;
   createdAt: string;
-  onClick: (id: number) => void;
+  onClick?: () => void;
 };
 
 const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
@@ -29,7 +29,7 @@ const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
           className={cx('alarm-card-delete')}
           onMouseEnter={handleToggleState}
           onMouseLeave={handleToggleState}
-          onClick={() => onClick(id)}
+          onClick={onClick}
         >
           <img
             src={hoverState ? hover.url : normal.url}
