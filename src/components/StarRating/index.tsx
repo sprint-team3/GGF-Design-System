@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/images';
+import { SVGS } from '@/constants/index';
 
 import styles from './StarRating.module.scss';
 
