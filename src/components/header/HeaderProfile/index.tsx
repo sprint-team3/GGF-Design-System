@@ -21,19 +21,15 @@ type HeaderProfileProps = {
 };
 
 const HeaderProfile = ({ nickname, profileImageUrl, isActivated, onClick, headerProfileRef }: HeaderProfileProps) => {
+  const { url, alt } = isActivated ? top : bottom;
+
   return (
     <div>
       <button className={cx('header-profile')} onClick={onClick} ref={headerProfileRef}>
         <Avatar size='small' isActivated={isActivated} profileImageUrl={profileImageUrl} />
         <div className={cx('header-profile-container-inner')}>
           <span className={cx('lg-only')}>{nickname}</span>
-          <img
-            className={cx('sm-hidden')}
-            src={isActivated ? top.url : bottom.url}
-            alt={isActivated ? top.alt : bottom.alt}
-            width={16}
-            height={16}
-          />
+          <img className={cx('sm-hidden')} src={url} alt={alt} width={16} height={16} />
         </div>
       </button>
     </div>
