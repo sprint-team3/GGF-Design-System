@@ -1,19 +1,17 @@
 import classNames from 'classnames/bind';
 
-import { formatPostTypeToKR } from '@/utils';
-
-import { PostTypesEN } from '@/types';
-
 import styles from './Tag.module.scss';
+import { ReactNode } from 'react';
 
 const cx = classNames.bind(styles);
 
 type TagProps = {
-  postType: PostTypesEN | string;
+  children: ReactNode;
+  variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
 };
 
-const Tag = ({ postType }: TagProps) => {
-  return <div className={cx(`tag-${postType}`)}>{formatPostTypeToKR(postType)}</div>;
+const Tag = ({ children, variant = 'default' }: TagProps) => {
+  return <div className={cx(`tag-${variant}`)}>{children}</div>;
 };
 
 export default Tag;
