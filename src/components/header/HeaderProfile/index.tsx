@@ -1,12 +1,10 @@
-import Image from 'next/image';
-
 import { MouseEventHandler, RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants';
+import { SVGS } from '@/constants/images';
 
-import Avatar from '@/components/commons/Avatar';
+import Avatar from '@/components/Avatar';
 
 import styles from './HeaderProfile.module.scss';
 
@@ -18,7 +16,7 @@ type HeaderProfileProps = {
   nickname: string;
   profileImageUrl: string;
   isActivated: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick: () => void;
   headerProfileRef: RefObject<HTMLButtonElement>;
 };
 
@@ -29,7 +27,7 @@ const HeaderProfile = ({ nickname, profileImageUrl, isActivated, onClick, header
         <Avatar size='small' isActivated={isActivated} profileImageUrl={profileImageUrl} />
         <div className={cx('header-profile-container-inner')}>
           <span className={cx('lg-only')}>{nickname}</span>
-          <Image
+          <img
             className={cx('sm-hidden')}
             src={isActivated ? top.url : bottom.url}
             alt={isActivated ? top.alt : bottom.alt}
