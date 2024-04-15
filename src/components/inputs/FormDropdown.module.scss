@@ -60,7 +60,13 @@
         @include pos-center-y;
 
         right: 1.2rem;
+        width: 2.4rem;
+        height: 2.4rem;
         transition: $transition-6s;
+
+        .img {
+          @include image-fit;
+        }
 
         &:disabled {
           cursor: not-allowed;
