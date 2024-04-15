@@ -1,4 +1,4 @@
-import { MouseEventHandler, RefObject } from 'react';
+import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
