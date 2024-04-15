@@ -8,7 +8,7 @@ type BaseButtonProps = {
   children?: string;
   isDisabled?: boolean;
   onClick?: () => void;
-  varient?: 'fill' | 'ghost' | 'outline';
+  variant?: 'fill' | 'ghost' | 'outline';
   size?: 'small' | 'medium' | 'large';
   color?: 'yellow' | 'purple' | 'red';
   type?: 'button' | 'submit';
@@ -19,13 +19,13 @@ export const BaseButton = ({
   children,
   isDisabled,
   onClick,
-  varient = 'fill',
+  variant = 'fill',
   size = 'medium',
   color = 'yellow',
   type = 'button',
   isQuantico = false,
 }: BaseButtonProps) => {
-  const buttonTheme = varient === 'outline' ? 'btn-theme-outline' : `btn-theme-${varient}-${color}`;
+  const buttonTheme = variant === 'outline' ? 'btn-theme-outline' : `btn-theme-${variant}-${color}`;
 
   return (
     <button
