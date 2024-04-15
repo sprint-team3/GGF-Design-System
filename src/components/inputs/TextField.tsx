@@ -17,7 +17,7 @@ type TextFieldProps = {
   placeholder?: string;
 };
 
-export const TextField = ({ name, label, minLength = 5, maxLength = 700, ...props }: TextFieldProps) => {
+export const TextField = ({ name, label, minLength, maxLength, ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -26,8 +26,8 @@ export const TextField = ({ name, label, minLength = 5, maxLength = 700, ...prop
 
   const contentValue = watch(name);
   const textLength = contentValue ? contentValue.replace(REGEX.textarea, '').length : 0;
-  const isBelowMinLength = textLength < minLength;
-  const isValidLength = textLength >= minLength;
+  const isBelowMinLength = minLength && textLength < minLength;
+  const isValidLength = minLength && textLength >= minLength;
   const isError = !!errors[name]?.message;
 
   const [isFocused, setIsFocused] = useState(false);
