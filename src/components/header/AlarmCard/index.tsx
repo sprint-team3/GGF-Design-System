@@ -2,8 +2,6 @@ import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants/index';
 
-import { getElapsedTimeToKST } from '@/utils/index';
-
 import useToggleButton from '@/hooks/useToggleButton';
 
 import styles from './AlarmCard.module.scss';
@@ -15,7 +13,7 @@ type AlarmCardProps = {
   id: number;
   content: string;
   createdAt: string;
-  onClick?: () => void;
+  onClick: (id: number) => void;
 };
 
 const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
@@ -29,7 +27,7 @@ const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
           className={cx('alarm-card-delete')}
           onMouseEnter={handleToggleState}
           onMouseLeave={handleToggleState}
-          onClick={onClick}
+          onClick={() => onClick(id)}
         >
           <img
             src={hoverState ? hover.url : normal.url}
@@ -39,7 +37,7 @@ const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
           />
         </button>
       </div>
-      <span className={cx('alarm-card-created-at')}>{getElapsedTimeToKST(createdAt)}</span>
+      <span className={cx('alarm-card-created-at')}>{createdAt}</span>
     </div>
   );
 };
