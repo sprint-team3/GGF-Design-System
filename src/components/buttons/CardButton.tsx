@@ -5,7 +5,7 @@ import styles from './CardButton.module.scss';
 const cx = classNames.bind(styles);
 
 type CardButton = {
-  children?: string | number;
+  children?: string;
   onClick?: () => void;
   color?: 'yellow' | 'red' | 'gray';
 };

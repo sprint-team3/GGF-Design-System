@@ -5,7 +5,7 @@ import styles from './BaseButton.module.scss';
 const cx = classNames.bind(styles);
 
 type BaseButtonProps = {
-  children?: string | number;
+  children?: string;
   isDisabled?: boolean;
   onClick?: () => void;
   theme?: 'fill' | 'ghost' | 'outline';
