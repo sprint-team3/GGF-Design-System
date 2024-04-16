@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FileRejection, useDropzone } from 'react-dropzone';
 
-import { SVGS } from '@/constants/index';
-import { bytesToKilobytes } from '@/utils/index';
+import { SVGS } from '@/constants';
+import { bytesToKilobytes } from '@/utils';
 
 import { ConfirmModal, ModalButton } from '@/components/modals';
 import useMultiState from '@/hooks/useMultiState';
