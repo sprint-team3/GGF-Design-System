@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import classNames from 'classnames/bind';
 
 import styles from './Tab.module.scss';
@@ -18,13 +20,16 @@ type TabProps<T> = {
 };
 
 const Tab = <T,>({ items, onClick, selectedTabId = items[0]?.id, size = 'medium' }: TabProps<T>) => {
-  const isActivated = (id: T) => id === selectedTabId;
+  const [activeItemId, setActiveItemId] = useState(selectedTabId);
+
+  const isActivated = (id: T) => id === activeItemId;
   const hasCount = (item: TabItem<T>) => item.count !== undefined;
 
   const handleClickTabItem = (clickedItemId: T) => {
-    if (!isActivated(clickedItemId)) {
-      onClick && onClick(clickedItemId);
-    }
+    if (isActivated(clickedItemId)) return;
+
+    setActiveItemId(clickedItemId);
+    onClick && onClick(clickedItemId);
   };
 
   return (
