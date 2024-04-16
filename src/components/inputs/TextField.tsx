@@ -12,12 +12,13 @@ const cx = classNames.bind(styles);
 type TextFieldProps = {
   name: string;
   label?: string;
+  color?: 'yellow' | 'purple';
   minLength?: number;
   maxLength?: number;
   placeholder?: string;
 };
 
-export const TextField = ({ name, label, minLength, maxLength, ...props }: TextFieldProps) => {
+export const TextField = ({ name, label, color = 'purple', minLength, maxLength, ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -45,8 +46,8 @@ export const TextField = ({ name, label, minLength, maxLength, ...props }: TextF
       <label id={`text-field-${name}`} className={cx('text-field-label', { 'non-label': !label })}>
         {label}
       </label>
-      <div
-        className={cx('text-field-text-group', { error: isError }, { focused: isFocused }, { 'non-label': !label })}
+      <button
+        className={cx('text-field-text-group', color, { error: isError }, { focused: isFocused })}
         aria-label={name}
         aria-labelledby={name}
         role='textbox'
@@ -60,19 +61,21 @@ export const TextField = ({ name, label, minLength, maxLength, ...props }: TextF
           maxLength={maxLength}
           {...props}
         />
-        <div className={cx('text-field-text-group-footer')}>
-          <span
-            className={cx(
-              'text-field-text-group-footer-current-num',
-              { active: isValidLength },
-              { error: isBelowMinLength },
-            )}
-          >
-            {textLength}
-          </span>
-          <span className={cx('text-field-text-group-footer-total-num')}>/{maxLength}</span>
-        </div>
-      </div>
+        {minLength && maxLength && (
+          <div className={cx('text-field-text-group-footer')}>
+            <span
+              className={cx(
+                'text-field-text-group-footer-current-num',
+                { active: isValidLength },
+                { error: isBelowMinLength },
+              )}
+            >
+              {textLength}
+            </span>
+            <span className={cx('text-field-text-group-footer-total-num')}>/{maxLength}</span>
+          </div>
+        )}
+      </button>
     </div>
   );
 };
