@@ -27,7 +27,7 @@
   @extend %btn-base;
 
   @include responsive(PC) {
-    &:hover {
+    &:hover:not(.btn-state-warning, .btn-state-success) {
       color: $white;
       border-bottom-color: $white;
     }
