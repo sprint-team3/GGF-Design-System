@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import classNames from 'classnames/bind';
 
 import styles from './Filter.module.scss';
@@ -16,11 +18,14 @@ type FilterProps<T> = {
 };
 
 const Filter = <T,>({ items, onChange, selectedFilterId = items[0]?.id }: FilterProps<T>) => {
-  const isActivated = (id: T) => id === selectedFilterId;
+  const [activeItemId, setActiveItemId] = useState(selectedFilterId);
+
+  const isActivated = (id: T) => id === activeItemId;
 
   const handleClickFilterItem = (clickedItemId: T) => {
     if (isActivated(clickedItemId)) return;
 
+    setActiveItemId(clickedItemId);
     onChange && onChange(clickedItemId);
   };
 
