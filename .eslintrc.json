@@ -1,6 +1,10 @@
 {
   "root": true,
-  "env": { "browser": true, "es2020": true, "node": true },
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -10,7 +14,8 @@
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:testing-library/react",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["react-refresh", "react", "react-hooks", "jsx-a11y", "eslint-plugin-import", "@typescript-eslint"],
@@ -25,7 +30,12 @@
     }
   },
   "rules": {
-    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
     "linebreak-style": 2,
     "require-await": "error",
     "no-console": "warn",
@@ -37,22 +47,51 @@
       {
         "groups": ["builtin", "external", "internal", ["parent", "sibling"], "object", "unknown", "type", "index"],
         "pathGroups": [
-          { "pattern": "react", "group": "external", "position": "before" },
-          { "pattern": "react/**", "group": "external", "position": "before" },
-          { "pattern": "dayjs/**", "group": "external" },
-          { "pattern": "@/components/**", "group": "unknown" },
-          { "pattern": "@/hooks/**", "group": "unknown" },
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "react/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "dayjs/**",
+            "group": "external"
+          },
+          {
+            "pattern": "@/components/**",
+            "group": "unknown"
+          },
+          {
+            "pattern": "@/hooks/**",
+            "group": "unknown"
+          },
           {
             "pattern": "@/constants/**",
             "group": "unknown"
           },
-          { "pattern": "@/types", "group": "type" },
-          { "pattern": "@/types/**", "group": "type" },
-          { "pattern": "./**", "group": "index" }
+          {
+            "pattern": "@/types",
+            "group": "type"
+          },
+          {
+            "pattern": "@/types/**",
+            "group": "type"
+          },
+          {
+            "pattern": "./**",
+            "group": "index"
+          }
         ],
         "pathGroupsExcludedImportTypes": ["builtin"],
         "newlines-between": "always",
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   }
