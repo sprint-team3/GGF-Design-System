@@ -5,8 +5,8 @@ import { format } from 'date-fns';
 import { DayPicker, DateFormatter } from 'react-day-picker';
 import { useFormContext } from 'react-hook-form';
 
-import { SVGS } from '@/constants/index';
-import { getAfterDays, getDayPickerFormatDate, getYesterday } from '@/utils/index';
+import { SVGS } from '@/constants';
+import { getAfterDays, getDayPickerFormatDate, getYesterday } from '@/utils';
 
 import useTogglePopup from '@/hooks/useTogglePopup';
 
@@ -21,9 +21,10 @@ type DateFieldProps = {
   label: string;
   name: string;
   days: number;
+  color?: string;
 };
 
-export const DateField = ({ label, name, days }: DateFieldProps) => {
+export const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -62,7 +63,7 @@ export const DateField = ({ label, name, days }: DateFieldProps) => {
       <span className={cx('datefield-label')}>{label}</span>
       <button type='button' className={cx('datefield-group')} ref={buttonRef} onClick={togglePopup}>
         <input
-          className={cx('datefield-group-input', { error: isError })}
+          className={cx('datefield-group-input', color, { error: isError })}
           placeholder='YYYY-MM-DD'
           {...(register(name),
           {
