@@ -17,9 +17,17 @@ type AlarmListProps = {
   alarmListRef: RefObject<HTMLDivElement>;
   handleDelete: (id: number) => void;
   handleDeleteAll: () => void;
+  emptyAlarmText: string;
 };
 
-const AlarmList = ({ notifications, totalCount, alarmListRef, handleDelete, handleDeleteAll }: AlarmListProps) => {
+const AlarmList = ({
+  notifications,
+  totalCount,
+  alarmListRef,
+  handleDelete,
+  handleDeleteAll,
+  emptyAlarmText,
+}: AlarmListProps) => {
   return (
     <div className={cx('alarm-list')} ref={alarmListRef}>
       <div className={cx('alarm-list-top')}>
@@ -41,7 +49,7 @@ const AlarmList = ({ notifications, totalCount, alarmListRef, handleDelete, hand
             ))}
           </ul>
         ) : (
-          <EmptyAlarm />
+          <EmptyAlarm emptyAlarmText={emptyAlarmText} />
         )}
       </div>
     </div>
