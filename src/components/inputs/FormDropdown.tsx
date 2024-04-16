@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
 
 import useTogglePopup from '@/hooks/useTogglePopup';
 
@@ -68,7 +68,7 @@ export const FormDropdown = ({
         <div className={cx('select-group-input-group')}>
           <input
             id={`dropdown-${name}`}
-            className={cx('input', { sm: isSmall }, { opened: isOpen }, { yellow: color === 'yellow' })}
+            className={cx('input', color, { sm: isSmall }, { opened: isOpen })}
             type='text'
             value={currentOptionTitle}
             disabled={isDisabled}
@@ -95,7 +95,7 @@ export const FormDropdown = ({
                     className={cx('btn', { sm: isSmall })}
                     onClick={() => handleOptionChange(option.title, option.value)}
                   >
-                    <label>{option.title}</label>
+                    <label className={cx('btn-label')}>{option.title}</label>
                   </button>
                 </li>
               ))}
