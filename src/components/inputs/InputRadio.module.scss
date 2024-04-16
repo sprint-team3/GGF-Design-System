@@ -30,9 +30,17 @@
       input[type='radio']:checked {
         background-color: $white;
         border: 0.4rem solid $purple;
+
+        &.yellow {
+          border: 0.4rem solid $primary;
+        }
+
+        &.purple {
+          border: 0.4rem solid $purple;
+        }
       }
 
-      &-label {
+      .label {
         @include text-style(14, $gray10);
 
         cursor: pointer;
