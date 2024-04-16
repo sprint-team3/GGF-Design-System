@@ -13,6 +13,7 @@ type InputFieldProps = {
   name: string;
   label?: string;
   type?: 'text' | 'email' | 'password';
+  color?: 'yellow' | 'purple';
   isErrorVisible?: boolean;
   isLimited?: boolean;
   isDisabled?: boolean;
@@ -27,6 +28,7 @@ export const InputField = ({
   name,
   label,
   type = 'text',
+  color = 'purple',
   isErrorVisible = false,
   isLimited = false,
   isDisabled = false,
@@ -58,7 +60,12 @@ export const InputField = ({
       </label>
       <div className={cx('input-field-input-group')}>
         {isDisabled ? (
-          <input id={`input-field-${name}`} className={cx('input-field-input-group-input')} disabled {...props} />
+          <input
+            id={`input-field-${name}`}
+            className={cx('input-field-input-group-input', color)}
+            disabled
+            {...props}
+          />
         ) : (
           <input
             id={`input-field-${name}`}
