@@ -5,14 +5,18 @@ import classNames from 'classnames/bind';
 import AlarmCard from '@/components/header/AlarmCard';
 import EmptyAlarm from '@/components/header/EmptyAlarm';
 
-import { NotificationResponse } from '@/types';
-
 import styles from './AlarmList.module.scss';
 
 const cx = classNames.bind(styles);
 
+type Notification = {
+  id: number;
+  content: string;
+  createdAt: string;
+};
+
 type AlarmListProps = {
-  notifications: NotificationResponse[];
+  notifications: Notification[];
   totalCount: number;
   alarmListRef: RefObject<HTMLDivElement>;
   handleDelete: (id: number) => void;
