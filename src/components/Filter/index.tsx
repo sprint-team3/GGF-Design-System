@@ -15,7 +15,7 @@ type FilterProps<T> = {
   selectedFilterId?: T;
 };
 
-const Filter = <T extends unknown>({ items, onChange, selectedFilterId = items[0]?.id }: FilterProps<T>) => {
+const Filter = <T,>({ items, onChange, selectedFilterId = items[0]?.id }: FilterProps<T>) => {
   const isActivated = (id: T) => id === selectedFilterId;
 
   const handleClickFilterItem = (clickedItemId: T) => {
