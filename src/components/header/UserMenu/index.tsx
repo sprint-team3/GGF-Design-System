@@ -17,9 +17,9 @@ type UserMenuProps = {
   email: string;
   accountPath: string;
   mypagePath: string;
-  userMenuRef: RefObject<HTMLDivElement>;
   handleCloseUserMenu: () => void;
   handleClickSignout: () => void;
+  userMenuRef?: RefObject<HTMLDivElement>;
 };
 
 const UserMenu = ({
@@ -28,9 +28,9 @@ const UserMenu = ({
   email,
   accountPath,
   mypagePath,
-  userMenuRef,
   handleCloseUserMenu,
   handleClickSignout,
+  userMenuRef,
 }: UserMenuProps) => {
   return (
     <div className={cx('container')} ref={userMenuRef}>
