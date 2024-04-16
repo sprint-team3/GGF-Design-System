@@ -1,11 +1,7 @@
+import '@/styles/base/common.scss';
 
 function App() {
-
-  return (
-    <>
-    hello
-    </>
-  )
+  return <>hello</>;
 }
 
-export default App
+export default App;
