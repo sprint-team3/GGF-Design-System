@@ -14,10 +14,11 @@ type PaginationProps = {
   pageState: number;
   postPerPage: number;
   defaultPageSize: number;
+  pageLimit: number;
   onClick: (pageNumber: number) => void;
 };
 
-const Pagination = ({ totalCount, pageState, postPerPage, defaultPageSize, onClick }: PaginationProps) => {
+const Pagination = ({ totalCount, pageState, postPerPage, defaultPageSize, pageLimit, onClick }: PaginationProps) => {
   const {
     activePage,
     currentPageGroupIndex,
@@ -28,7 +29,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, defaultPageSize, onCli
     handleNextButtonClick,
     handleFirstPageClick,
     handleLastPageClick,
-  } = usePagination(totalCount, pageState, postPerPage, onClick);
+  } = usePagination(totalCount, pageState, postPerPage, pageLimit, onClick);
 
   const isArrowActivated = currentPageGroupIndex !== pagesArray.length - 1;
   const showPagination = !!totalCount && postPerPage !== defaultPageSize;
