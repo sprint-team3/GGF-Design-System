@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import classNames from 'classnames/bind';
 
 import styles from './Menu.module.scss';
@@ -8,15 +6,11 @@ const cx = classNames.bind(styles);
 
 type MenuProps = {
   menuList: string[];
+  activatedGame: number;
+  handleActivatedGame: (index: number) => void;
 };
 
-const Menu = ({ menuList }: MenuProps) => {
-  const [activatedGame, setActivatedGame] = useState(0);
-
-  const handleActivateGame = (number: number) => {
-    setActivatedGame(number);
-  };
-
+const Menu = ({ menuList, activatedGame, handleActivatedGame }: MenuProps) => {
   return (
     <nav>
       <ul className={cx('menu')}>
@@ -27,7 +21,7 @@ const Menu = ({ menuList }: MenuProps) => {
               className={cx('menu-game', {
                 'menu-game-activated': activatedGame === index,
               })}
-              onClick={() => handleActivateGame(index)}
+              onClick={() => handleActivatedGame(index)}
             >
               {game}
               {activatedGame === index && <p className={cx('menu-under-line')}></p>}
