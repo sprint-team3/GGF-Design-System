@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { PAGINATION_LIMIT } from '@/constants';
-
 const usePagination = (
   totalCount: number,
   pageState: number,
   postPerPage: number,
+  pageLimit: number,
   onClick: (pageNumber: number) => void,
 ) => {
   const totalPageCount = Math.ceil(totalCount / postPerPage);
@@ -13,9 +12,9 @@ const usePagination = (
   const [currentPageGroupIndex, setCurrentPageGroupIndex] = useState(0);
 
   const pagesArray: number[][] = [];
-  for (let i = 0; i < totalPageCount; i += PAGINATION_LIMIT) {
+  for (let i = 0; i < totalPageCount; i += pageLimit) {
     const pageGroup = [];
-    for (let j = i; j < i + PAGINATION_LIMIT && j < totalPageCount; j++) {
+    for (let j = i; j < i + pageLimit && j < totalPageCount; j++) {
       pageGroup.push(j + 1);
     }
     pagesArray.push(pageGroup);
