@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS } from '@/constants/index';
+import { PAGE_PATHS } from '@/constants';
 
 import styles from './HeaderSignButton.module.scss';
 

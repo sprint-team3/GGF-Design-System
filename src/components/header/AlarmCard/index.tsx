@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
+
 import useToggleButton from '@/hooks/useToggleButton';
 
 import styles from './AlarmCard.module.scss';
