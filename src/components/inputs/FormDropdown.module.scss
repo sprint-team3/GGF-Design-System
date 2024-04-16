@@ -46,8 +46,12 @@
           border-color: $purple;
         }
 
-        &.opened.yellow {
+        &.yellow {
           border-color: $primary;
+        }
+
+        &.purple {
+          border-color: $purple;
         }
 
         &:disabled {
@@ -139,6 +143,10 @@
             }
 
             &.sm {
+              @include text-style(14);
+            }
+
+            &-label {
               @include text-style(14);
             }
           }
