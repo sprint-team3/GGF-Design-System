@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import AlarmCard from '@/components/header/AlarmCard';
 import EmptyAlarm from '@/components/header/EmptyAlarm';
 
-import { NotificationResponse } from '@/types/index';
+import { NotificationResponse } from '@/types';
 
 import styles from './AlarmList.module.scss';
 
