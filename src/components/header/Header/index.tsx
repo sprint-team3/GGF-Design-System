@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants';
+import { SVGS } from '@/constants';
 
 import Menu from '@/components/header/Menu';
 
@@ -11,19 +11,20 @@ const { url, alt } = SVGS.drawerMenu;
 
 type HeaderProps = {
   children: React.ReactNode;
+  path: string;
   logoName: string;
   menuList: string[];
   onClick: () => void;
 };
 
-const Header = ({ children, logoName, menuList, onClick }: HeaderProps) => {
+const Header = ({ children, path, logoName, menuList, onClick }: HeaderProps) => {
   return (
     <div className={cx('container')}>
       <header className={cx('header')}>
         <button className={cx('header-menu-button', 'sm-only')} onClick={onClick}>
           <img src={url} alt={alt} width={24} height={24}></img>
         </button>
-        <a className={cx('header-logo')} href={PAGE_PATHS.landing}>
+        <a className={cx('header-logo')} href={path}>
           {logoName}
         </a>
         <div className={cx('header-container-outer')}>
