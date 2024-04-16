@@ -5,7 +5,6 @@ import classNames from 'classnames/bind';
 import { SVGS } from '@/constants';
 
 import Avatar from '@/components/Avatar';
-import useSignout from '@/hooks/useSignout';
 
 import styles from './UserMenu.module.scss';
 
@@ -19,7 +18,8 @@ type UserMenuProps = {
   accountPath: string;
   mypagePath: string;
   userMenuRef: RefObject<HTMLDivElement>;
-  onClick: () => void;
+  handleCloseUserMenu: () => void;
+  handleClickSignout: () => void;
 };
 
 const UserMenu = ({
@@ -29,15 +29,9 @@ const UserMenu = ({
   accountPath,
   mypagePath,
   userMenuRef,
-  onClick,
+  handleCloseUserMenu,
+  handleClickSignout,
 }: UserMenuProps) => {
-  const signout = useSignout();
-
-  const handleClickSignout = () => {
-    onClick();
-    signout();
-  };
-
   return (
     <div className={cx('container')} ref={userMenuRef}>
       <div className={cx('container-user')}>
@@ -45,7 +39,7 @@ const UserMenu = ({
         <div className={cx('container-user-info')}>
           <div className={cx('container-nickname')}>
             <p className={cx('nickname')}>{nickname}</p>
-            <a onClick={onClick} href={accountPath}>
+            <a onClick={handleCloseUserMenu} href={accountPath}>
               <img src={url} alt={alt} width={18} height={18} />
             </a>
           </div>
@@ -53,7 +47,7 @@ const UserMenu = ({
         </div>
       </div>
       <div className={cx('container-button')}>
-        <a className={cx('container-button-mypage')} onClick={onClick} href={mypagePath}>
+        <a className={cx('container-button-mypage')} onClick={handleCloseUserMenu} href={mypagePath}>
           My Page
         </a>
         <button className={cx('container-button-logout')} onClick={handleClickSignout}>
