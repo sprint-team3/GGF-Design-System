@@ -19,7 +19,13 @@
     }
 
     &:focus {
-      border-color: $primary;
+      &.yellow {
+        border-color: $primary;
+      }
+
+      &.purple {
+        border-color: $purple;
+      }
     }
   }
 
