@@ -17,7 +17,7 @@ type TabProps<T> = {
   size?: 'small' | 'medium';
 };
 
-const Tab = <T extends unknown>({ items, onClick, selectedTabId = items[0]?.id, size = 'medium' }: TabProps<T>) => {
+const Tab = <T,>({ items, onClick, selectedTabId = items[0]?.id, size = 'medium' }: TabProps<T>) => {
   const isActivated = (id: T) => id === selectedTabId;
   const hasCount = (item: TabItem<T>) => item.count !== undefined;
 
