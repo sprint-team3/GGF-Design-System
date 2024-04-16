@@ -2,7 +2,7 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
 
 import styles from './Alarm.module.scss';
 
