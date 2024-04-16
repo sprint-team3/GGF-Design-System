@@ -18,19 +18,19 @@ type Notification = {
 type AlarmListProps = {
   notifications: Notification[];
   totalCount: number;
-  alarmListRef: RefObject<HTMLDivElement>;
   handleDelete: (id: number) => void;
   handleDeleteAll: () => void;
   emptyAlarmText: string;
+  alarmListRef?: RefObject<HTMLDivElement>;
 };
 
 const AlarmList = ({
   notifications,
   totalCount,
-  alarmListRef,
   handleDelete,
   handleDeleteAll,
   emptyAlarmText,
+  alarmListRef,
 }: AlarmListProps) => {
   return (
     <div className={cx('alarm-list')} ref={alarmListRef}>
