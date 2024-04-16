@@ -10,18 +10,28 @@ const cx = classNames.bind(styles);
 const { url, alt } = SVGS.drawerMenu;
 
 type HeaderProps = {
-  children: React.ReactNode;
   path: string;
   logoName: string;
   menuList: string[];
-  onClick: () => void;
+  activatedGame: number;
+  handleActivatedGame: () => void;
+  handleOpenDrawerMenu: () => void;
+  children?: React.ReactNode;
 };
 
-const Header = ({ children, path, logoName, menuList, onClick }: HeaderProps) => {
+const Header = ({
+  path,
+  logoName,
+  menuList,
+  activatedGame,
+  handleActivatedGame,
+  handleOpenDrawerMenu,
+  children,
+}: HeaderProps) => {
   return (
     <div className={cx('container')}>
       <header className={cx('header')}>
-        <button className={cx('header-menu-button', 'sm-only')} onClick={onClick}>
+        <button className={cx('header-menu-button', 'sm-only')} onClick={handleOpenDrawerMenu}>
           <img src={url} alt={alt} width={24} height={24}></img>
         </button>
         <a className={cx('header-logo')} href={path}>
@@ -29,7 +39,7 @@ const Header = ({ children, path, logoName, menuList, onClick }: HeaderProps) =>
         </a>
         <div className={cx('header-container-outer')}>
           <div className={cx('sm-hidden')}>
-            <Menu menuList={menuList} />
+            <Menu menuList={menuList} activatedGame={activatedGame} handleActivatedGame={handleActivatedGame} />
           </div>
           <div className={cx('header-container-inner')}>{children}</div>
         </div>
