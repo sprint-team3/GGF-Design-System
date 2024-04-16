@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
+import { toFixedOneDecimal } from '@/utils';
 
 import StarRating from '@/components/StarRating';
 import Tag from '@/components/Tag';
-import { toFixedOneDecimal } from '@/utils/index';
 
 import styles from './Card.module.scss';
 
