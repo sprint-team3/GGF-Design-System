@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
@@ -34,11 +34,6 @@ export const FormDropdown = ({
   const { register, setValue } = useFormContext();
   const { isOpen, popupRef, buttonRef, togglePopup } = useTogglePopup();
   const [currentOptionTitle, setCurrentOptionTitle] = useState(options[0]?.title);
-
-  useEffect(() => {
-    setCurrentOptionTitle(options[0]?.title);
-    setValue(name, options[0]?.value, { shouldValidate: true });
-  }, [name, options]);
 
   const handleOptionChange = (title: string, value: number | string) => {
     setValue(name, value);
