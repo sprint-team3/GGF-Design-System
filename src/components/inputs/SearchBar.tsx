@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
 
 import styles from './SearchBar.module.scss';
 
@@ -13,10 +13,11 @@ const { url, alt } = SVGS.search;
 type SearchBarType = {
   placeholder: string;
   onChange: (value: string) => void;
+  color?: 'yellow' | 'purple';
   maxLength?: number;
 };
 
-export const SearchBar = ({ placeholder, onChange, maxLength = 20 }: SearchBarType) => {
+export const SearchBar = ({ placeholder, onChange, color = 'purple', maxLength = 20 }: SearchBarType) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -24,7 +25,7 @@ export const SearchBar = ({ placeholder, onChange, maxLength = 20 }: SearchBarTy
   return (
     <div className={cx('searchbar')}>
       <input
-        className={cx('searchbar-input')}
+        className={cx('searchbar-input', color)}
         type='text'
         placeholder={placeholder}
         maxLength={maxLength}
