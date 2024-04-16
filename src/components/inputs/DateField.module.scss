@@ -32,7 +32,13 @@
       }
 
       &:focus {
-        border-color: $purple;
+        &.purple {
+          border-color: $purple;
+        }
+
+        &.yellow {
+          border-color: $primary;
+        }
       }
 
       &.error {
