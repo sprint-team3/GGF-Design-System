@@ -10,7 +10,7 @@ type InputRadioProps = {
   name: string;
   radioList: { id: string; value: number; label: string }[];
   defaultCheckIndex?: number;
-  color: 'yellow' | 'purple';
+  color?: 'yellow' | 'purple';
   onClick?: (value: number) => void;
 };
 
