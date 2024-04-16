@@ -15,12 +15,12 @@ type CountButtonProps = {
   label?: string;
   info?: string;
   onClick?: (count: number) => void;
-  minCount?: number;
   maxCount?: number;
+  minCount?: number;
   isDisabled?: boolean;
 };
 
-export const CountButton = ({ label, info, onClick, minCount, maxCount, isDisabled = false }: CountButtonProps) => {
+export const CountButton = ({ label, info, onClick, maxCount, minCount = 0, isDisabled = false }: CountButtonProps) => {
   const [count, setCount] = useState(0);
 
   const { isVisible: isHoverAddButton, handleToggleClick: handleAddButtonState } = useToggleButton();
@@ -30,7 +30,7 @@ export const CountButton = ({ label, info, onClick, minCount, maxCount, isDisabl
   const { url: removeUrl, alt: removeAlt } = !isDisabled && isHoverRemoveButton ? remove.active : remove.default;
 
   const handleRemoveClick = () => {
-    const newCount = minCount !== undefined ? Math.max(minCount, count - 1) : count - 1;
+    const newCount = Math.max(minCount, count - 1);
     setCount(newCount);
     onClick && onClick(newCount);
   };
