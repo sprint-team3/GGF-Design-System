@@ -17,7 +17,7 @@ type HeaderProfileProps = {
   profileImageUrl: string;
   isActivated: boolean;
   onClick: () => void;
-  headerProfileRef: RefObject<HTMLButtonElement>;
+  headerProfileRef?: RefObject<HTMLButtonElement>;
 };
 
 const HeaderProfile = ({ nickname, profileImageUrl, isActivated, onClick, headerProfileRef }: HeaderProfileProps) => {
