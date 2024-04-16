@@ -10,10 +10,18 @@ type InputRadioProps = {
   name: string;
   radioList: { id: string; value: number; label: string }[];
   defaultCheckIndex?: number;
+  color: 'yellow' | 'purple';
   onClick?: (value: number) => void;
 };
 
-export const InputRadio = ({ label, name, radioList, defaultCheckIndex = 0, onClick }: InputRadioProps) => {
+export const InputRadio = ({
+  label,
+  name,
+  radioList,
+  defaultCheckIndex = 0,
+  color = 'purple',
+  onClick,
+}: InputRadioProps) => {
   const { register } = useFormContext();
 
   return (
@@ -28,7 +36,7 @@ export const InputRadio = ({ label, name, radioList, defaultCheckIndex = 0, onCl
             onClick={() => onClick?.(option.value)}
           >
             <input
-              className={cx('radio')}
+              className={cx('radio', color)}
               type='radio'
               id={option.id}
               value={option.value}
