@@ -1,11 +1,12 @@
+import { useState } from 'react';
+
 import classNames from 'classnames/bind';
 
-import { SVGS } from '@/constants/index';
+import { SVGS } from '@/constants';
 
 import useToggleButton from '@/hooks/useToggleButton';
 
 import styles from './CountButton.module.scss';
-import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const { add, remove } = SVGS.button;
