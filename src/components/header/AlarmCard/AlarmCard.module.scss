@@ -7,10 +7,15 @@
 
   &-container {
     @include flexbox($gap: 0.8rem);
+
+    width: 100%;
   }
 
   &-content {
     @include text-style(14);
+
+    width: 100%;
+    overflow-wrap: break-word;
   }
 
   &-delete {
