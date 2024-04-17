@@ -17,8 +17,8 @@ export const Example: Story = {
     notifications: [
       {
         id: 0,
-        content: 'messag ',
-        createdAt: '1 hour age',
+        content: 'message ',
+        createdAt: '1 hour ago',
       },
     ],
     totalCount: 1,
