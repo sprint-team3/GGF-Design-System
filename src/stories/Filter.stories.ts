@@ -13,11 +13,11 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     items: [
-      { id: '0', text: '전체' },
-      { id: '1', text: '신청' },
-      { id: '2', text: '취소' },
-      { id: '3', text: '승인' },
-      { id: '4', text: '거절' },
+      { id: '0', text: 'filter1' },
+      { id: '1', text: 'filter2' },
+      { id: '2', text: 'filter3' },
+      { id: '3', text: 'filter4' },
+      { id: '4', text: 'filter5' },
     ],
     selectedFilterId: '0',
   },
