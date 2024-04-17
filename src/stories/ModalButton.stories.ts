@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    children: 'close',
+    children: 'Close',
     onClick: () => {},
   },
 };
