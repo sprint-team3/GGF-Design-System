@@ -1,9 +1,9 @@
-import Header from '@/components/header/Header';
+import Header from '@/components/Header';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'header/Header',
+  title: 'Header/Header',
   component: Header,
 } satisfies Meta<typeof Header>;
 
@@ -13,10 +13,15 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     path: '',
-    logoName: 'GGF',
-    menuList: ['LEAGUE OF LEGENDS', 'BATTLEGROUNDS', 'OVERWATCH 2', 'MINECRAFT'],
-    activatedGame: 0,
-    handleActivatedGame: () => {},
+    logoName: 'LOGO',
+    menuList: [
+      { menu: 'MENU 1', path: 'menu1' },
+      { menu: 'MENU 2', path: 'menu2' },
+      { menu: 'MENU 3', path: 'menu3' },
+      { menu: 'MENU 4', path: 'menu4' },
+    ],
+    activatedMenu: 0,
+    handleActivatedMenu: () => {},
     handleOpenDrawerMenu: () => {},
   },
 };

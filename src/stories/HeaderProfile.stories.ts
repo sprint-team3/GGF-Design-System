@@ -1,9 +1,9 @@
-import HeaderProfile from '@/components/header/HeaderProfile';
+import HeaderProfile from '@/components/HeaderProfile';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'header/HeaderProfile',
+  title: 'HeaderProfile/HeaderProfile',
   component: HeaderProfile,
 } satisfies Meta<typeof HeaderProfile>;
 
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    nickname: 'BattleMan',
+    nickname: 'UserName',
     profileImageUrl: '',
     isActivated: false,
     onClick: () => {},
