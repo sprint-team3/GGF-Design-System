@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants';
 
-import Menu from '@/components/header/Menu';
+import Menu from '@/components/Menu';
 
 import styles from './Header.module.scss';
 

@@ -16,7 +16,7 @@ type AlarmCardProps = {
   onClick: (id: number) => void;
 };
 
-const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
+export const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
   const { isVisible: hoverState, handleToggleClick: handleToggleState } = useToggleButton();
 
   return (
@@ -41,5 +41,3 @@ const AlarmCard = ({ id, content, createdAt, onClick }: AlarmCardProps) => {
     </div>
   );
 };
-
-export default AlarmCard;
