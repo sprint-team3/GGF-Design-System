@@ -3,7 +3,7 @@ import { RefObject } from 'react';
 import classNames from 'classnames/bind';
 
 import AlarmCard from '@/components/header/AlarmCard';
-import EmptyAlarm from '@/components/header/EmptyAlarm';
+import EmptyAlarm from '@/components/header/EmptyAlarmCard';
 
 import styles from './AlarmList.module.scss';
 
@@ -16,6 +16,8 @@ type Notification = {
 };
 
 type AlarmListProps = {
+  alarmText: string;
+  deleteAllText: string;
   notifications: Notification[];
   totalCount: number;
   handleDelete: (id: number) => void;
@@ -25,6 +27,8 @@ type AlarmListProps = {
 };
 
 const AlarmList = ({
+  alarmText,
+  deleteAllText,
   notifications,
   totalCount,
   handleDelete,
@@ -36,18 +40,18 @@ const AlarmList = ({
     <div className={cx('alarm-list')} ref={alarmListRef}>
       <div className={cx('alarm-list-top')}>
         <div className={cx('alarm-list-count')}>
-          <span className={cx('alarm')}>알림</span>
+          <span className={cx('alarm')}>{alarmText}</span>
           <span className={cx('total-count')}>{totalCount}</span>
         </div>
         <button className={cx('delete-all')} onClick={handleDeleteAll}>
-          전체 삭제
+          {deleteAllText}
         </button>
       </div>
       <div className={cx('alarm-list-bottom')}>
         {notifications[0] ? (
           <ul className={cx('alarm-list-contents')}>
             {notifications.map(({ id, content, createdAt }) => (
-              <li key={id}>
+              <li className={cx('alarm-list-content')} key={id}>
                 <AlarmCard id={id} content={content} createdAt={createdAt} onClick={handleDelete} />
               </li>
             ))}
