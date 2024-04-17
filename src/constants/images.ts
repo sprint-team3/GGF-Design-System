@@ -1,210 +1,210 @@
 export const SVGS = {
   profile: {
     url: 'src/assets/ic-profile.svg',
-    alt: '기본 프로필',
+    alt: 'default profile image',
   },
 
   star: {
     empty: {
       url: 'src/assets/ic-star-empty.svg',
-      alt: '빈 별 아이콘',
+      alt: 'empty star icon',
     },
     filled: {
       url: 'src/assets/ic-star-filled.svg',
-      alt: '채워진 별 아이콘',
+      alt: 'filled star icon',
     },
     error: {
       url: 'src/assets/ic-star-error.svg',
-      alt: '에러 별 아이콘',
+      alt: 'error star icon',
     },
   },
 
   arrow: {
     bottom: {
       url: 'src/assets/ic-arrow-bottom.svg',
-      alt: '아래쪽 화살표',
+      alt: 'down arrow',
     },
     top: {
       url: 'src/assets/ic-arrow-top.svg',
-      alt: '위쪽 화살표',
+      alt: 'up arrow',
     },
     left: {
       default: {
         url: 'src/assets/ic-arrow-left-default.svg',
-        alt: '왼쪽 화살표',
+        alt: 'left arrow',
       },
       active: {
         url: 'src/assets/ic-arrow-left-active.svg',
-        alt: '왼쪽 화살표',
+        alt: 'left arrow',
       },
     },
     right: {
       default: {
         url: 'src/assets/ic-arrow-right-default.svg',
-        alt: '오른쪽 화살표',
+        alt: 'right arrow',
       },
       active: {
         url: 'src/assets/ic-arrow-right-active.svg',
-        alt: '오른쪽 화살표',
+        alt: 'right arrow',
       },
     },
     down: {
       default: {
         url: 'src/assets/ic-arrow-down-default.svg',
-        alt: '드롭다운 아래쪽 화살표 기본',
+        alt: 'dropdown arrow default',
       },
       active: {
         url: 'src/assets/ic-arrow-down-active.svg',
-        alt: '드롭다운 아래쪽 화살표 활성화',
+        alt: 'dropdown arrow active',
       },
     },
     chevron: {
       url: 'src/assets/ic-chevron.svg',
-      alt: '뒤로가기 버튼',
+      alt: 'back button',
     },
   },
   alarm: {
     empty: {
       url: 'src/assets/ic-alarm-empty.svg',
-      alt: '빈 알림',
+      alt: 'empty alarm',
     },
     full: {
       url: 'src/assets/ic-alarm-full.svg',
-      alt: '가득 찬 알림',
+      alt: 'filled alarm',
     },
     off: {
       url: 'src/assets/ic-alarm-off.svg',
-      alt: '끈 알림',
+      alt: 'off alarm',
     },
   },
 
   eye: {
     on: {
       url: 'src/assets/ic-eye-on.svg',
-      alt: '비밀번호 표시',
+      alt: 'show password',
     },
     off: {
       url: 'src/assets/ic-eye-off.svg',
-      alt: '비밀번호 숨김',
+      alt: 'hide password',
     },
   },
 
   drawerMenu: {
     url: 'src/assets/ic-menu.svg',
-    alt: '모바일 메뉴',
+    alt: 'mobile menu',
   },
 
   button: {
     add: {
       default: {
         url: 'src/assets/ic-add.svg',
-        alt: '더하기 버튼',
+        alt: 'add button',
       },
       active: {
         url: 'src/assets/ic-add-active.svg',
-        alt: '더하기 버튼',
+        alt: 'add button',
       },
     },
     remove: {
       default: {
         url: 'src/assets/ic-remove.svg',
-        alt: '빼기 버튼',
+        alt: 'remove button',
       },
       active: {
         url: 'src/assets/ic-remove-active.svg',
-        alt: '빼기 버튼',
+        alt: 'remove button',
       },
     },
 
     more: {
       url: 'src/assets/ic-more.svg',
-      alt: '메뉴 버튼',
+      alt: 'menu button',
     },
     setting: {
       url: 'src/assets/ic-setting.svg',
-      alt: '설정 버튼',
+      alt: 'setting button',
     },
   },
 
   calendar: {
     default: {
       url: 'src/assets/ic-calendar-default.svg',
-      alt: '캘린더 아이콘',
+      alt: 'calendar icon',
     },
     active: {
       url: 'src/assets/ic-calendar-active.svg',
-      alt: '캘린더 아이콘',
+      alt: 'calendar icon',
     },
   },
 
   location: {
     default: {
       url: 'src/assets/ic-location-default.svg',
-      alt: '위치 아이콘',
+      alt: 'location icon',
     },
     active: {
       url: 'src/assets/ic-location-active.svg',
-      alt: '위치 아이콘',
+      alt: 'location icon',
     },
   },
 
   search: {
     url: 'src/assets/ic-search.svg',
-    alt: '돋보기 아이콘',
+    alt: '돋보기 icon',
   },
 
   chatbot: {
     default: {
       url: 'src/assets/ic-chatbot.svg',
-      alt: '챗봇 아이콘',
+      alt: 'chatbot icon',
     },
     sad: {
       url: 'src/assets/ic-chatbot-sad.svg',
-      alt: '챗봇 아이콘',
+      alt: 'chatbot icon',
     },
   },
 
   chat: {
     url: 'src/assets/ic-chat.svg',
-    alt: '말풍선 아이콘',
+    alt: 'speech bubble icon',
   },
 
   send: {
     url: 'src/assets/ic-send.svg',
-    alt: '메시지 보내기 아이콘',
+    alt: 'send message icon',
   },
 
   trashcan: {
     normal: {
       url: 'src/assets/ic-trashcan-normal.svg',
-      alt: '기본 휴지통 아이콘',
+      alt: 'default trashcan icon',
     },
     hover: {
       url: 'src/assets/ic-trashcan-hover.svg',
-      alt: '색이 있는 휴지통 아이콘',
+      alt: 'color trashcan icon',
     },
   },
 
   upload: {
     default: {
       url: 'src/assets/ic-upload-default.svg',
-      alt: '이미지 업로드 아이콘',
+      alt: 'image upload icon',
     },
     active: {
       url: 'src/assets/ic-upload-active.svg',
-      alt: '활성화된 이미지 업로드 아이콘',
+      alt: 'activated image upload icon',
     },
     file: {
       url: 'src/assets/ic-upload-file.svg',
-      alt: '파일 업로드 아이콘',
+      alt: 'file upload icon',
     },
   },
 
   close: {
-    active: { url: 'src/assets/ic-close-active.svg', alt: '닫기 아이콘' },
+    active: { url: 'src/assets/ic-close-active.svg', alt: '닫기 icon' },
     default: {
       url: 'src/assets/ic-close-default.svg',
-      alt: '닫기 아이콘',
+      alt: 'close icon',
     },
   },
 
@@ -212,39 +212,39 @@ export const SVGS = {
     left: {
       single: {
         url: 'src/assets/ic-singleArrow-left.svg',
-        alt: '기본 왼쪽 화살표',
+        alt: 'default left arrow',
       },
       double: {
         url: 'src/assets/ic-doubleArrow-left.svg',
-        alt: '기본 왼쪽 2단 화살표 ',
+        alt: 'default left double arrow ',
       },
     },
     right: {
       single: {
         url: 'src/assets/ic-singleArrow-right.svg',
-        alt: '기본 오른쪽 화살표',
+        alt: 'default right arrow',
       },
       double: {
         url: 'src/assets/ic-doubleArrow-right.svg',
-        alt: '기본 오른쪽 2단 화살표 ',
+        alt: 'default right double arrow ',
       },
     },
   },
 
   empty: {
     url: 'src/assets/ic-empty-paper.svg',
-    alt: '데이터 없음 아이콘',
+    alt: 'no data icon',
   },
 
   map: {
     active: {
       url: 'src/assets/ic-map-active.svg',
-      alt: '활성화된 지도 아이콘',
+      alt: 'activated map icon',
     },
   },
 
   discord: {
     url: 'src/assets/ic-discord.svg',
-    alt: '디스코드 아이콘',
+    alt: 'discord icon',
   },
 };
