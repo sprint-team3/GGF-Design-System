@@ -15,6 +15,8 @@ type UserMenuProps = {
   profileImageUrl: string;
   nickname: string;
   email: string;
+  mypageText: string;
+  logoutText: string;
   accountPath: string;
   mypagePath: string;
   handleCloseUserMenu: () => void;
@@ -26,6 +28,8 @@ const UserMenu = ({
   profileImageUrl,
   nickname,
   email,
+  mypageText,
+  logoutText,
   accountPath,
   mypagePath,
   handleCloseUserMenu,
@@ -48,10 +52,10 @@ const UserMenu = ({
       </div>
       <div className={cx('container-button')}>
         <a className={cx('container-button-mypage')} onClick={handleCloseUserMenu} href={mypagePath}>
-          My Page
+          {mypageText}
         </a>
         <button className={cx('container-button-logout')} onClick={handleClickSignout}>
-          Logout
+          {logoutText}
         </button>
       </div>
     </div>
