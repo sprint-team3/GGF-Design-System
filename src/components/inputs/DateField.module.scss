@@ -32,7 +32,13 @@
       }
 
       &:focus {
-        border-color: $purple;
+        &.purple {
+          border-color: $purple;
+        }
+
+        &.yellow {
+          border-color: $primary;
+        }
       }
 
       &.error {
@@ -44,6 +50,12 @@
       @include pos-center-y;
 
       left: 1.6rem;
+      width: 2.4rem;
+      height: 2.4rem;
+
+      .img {
+        @include image-fit;
+      }
     }
   }
 

@@ -1,38 +1,38 @@
 %tag-base {
-  @include flexbox;
+  @include inline-flexbox;
   @include text-style(12, $black50, bold);
 
-  width: 6.2rem;
+  min-width: 6.2rem;
   height: 2.2rem;
-  text-transform: uppercase;
+  padding: 0 0.8rem;
   border-radius: 0.4rem;
 }
 
 .tag {
-  &-offline {
+  &-default {
+    @extend %tag-base;
+
+    color: $white;
+    background-color: $tag-background;
+  }
+
+  &-primary {
     @extend %tag-base;
 
     background-color: $primary;
   }
 
-  &-online {
+  &-secondary {
     @extend %tag-base;
 
     color: $primary;
     background-color: $tag-background;
   }
 
-  &-clan-recruitment {
+  &-tertiary {
     @extend %tag-base;
 
     color: $purple20;
-    background-color: $tag-background;
-  }
-
-  &-game-strategy {
-    @extend %tag-base;
-
-    color: $white;
     background-color: $tag-background;
   }
 }

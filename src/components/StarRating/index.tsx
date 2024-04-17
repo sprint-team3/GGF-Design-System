@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants';
@@ -11,26 +9,24 @@ const { star } = SVGS;
 
 type StarRatingProps = {
   size: 'small' | 'medium' | 'large';
-  rating: number;
-  currentRating?: number;
+  rating?: number;
   readonly?: boolean;
-  onChange?: (arg: number) => void | undefined;
+  onChange?: (rating: number) => void;
 };
 
-const StarRating = ({ size, currentRating, onChange, rating = 0, readonly = false }: StarRatingProps) => {
-  const TOTAL_RATING = 5;
+const StarRating = ({ size, onChange, rating = 0, readonly = false }: StarRatingProps) => {
+  const MAX_RATING = 5;
   const OFFSET = 1;
-  const isEmptyPickStar = currentRating === undefined;
 
   const handleStarClick = (starId: number) => {
-    if (!onChange) return;
+    if (!onChange || readonly) return;
     const newRating = starId + OFFSET;
     onChange(newRating);
   };
 
   return (
     <ul className={cx('star-rating')} aria-label={`${rating} out of 5`}>
-      {Array(TOTAL_RATING)
+      {Array(MAX_RATING)
         .fill(0)
         .map((_, index) => {
           const filled = index < rating;
@@ -40,16 +36,11 @@ const StarRating = ({ size, currentRating, onChange, rating = 0, readonly = fals
             <li key={`key-star-${index}`}>
               {readonly ? (
                 <div className={cx(`star-size-${size}`)}>
-                  <Image src={url} alt={alt} className={cx('star-icon')} fill></Image>
+                  <img className={cx('star-icon')} src={url} alt={alt} />
                 </div>
               ) : (
                 <button type='button' onClick={() => handleStarClick(index)} className={cx(`star-size-${size}`)}>
-                  <Image
-                    src={isEmptyPickStar ? star.error.url : url}
-                    alt={isEmptyPickStar ? star.error.alt : alt}
-                    className={cx('star-icon')}
-                    fill
-                  ></Image>
+                  <img className={cx('star-icon')} src={url} alt={alt} />
                 </button>
               )}
             </li>

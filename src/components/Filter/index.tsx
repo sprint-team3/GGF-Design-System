@@ -1,33 +1,38 @@
+import { useState } from 'react';
+
 import classNames from 'classnames/bind';
 
 import styles from './Filter.module.scss';
 
 const cx = classNames.bind(styles);
 
-type FilterItem = {
-  id: string;
-  text: string;
+type FilterItem<T> = {
+  id: T;
+  text: string | number;
 };
 
-type FilterProps = {
-  items: FilterItem[];
-  selectedFilterId: string;
-  onChange: (selectedId: string) => void;
+type FilterProps<T> = {
+  items: FilterItem<T>[];
+  onChange?: (selectedId: T) => void;
+  selectedFilterId?: T;
 };
 
-const Filter = ({ items, selectedFilterId, onChange }: FilterProps) => {
-  const isActivated = (id: string) => id === selectedFilterId;
+const Filter = <T,>({ items, onChange, selectedFilterId = items[0]?.id }: FilterProps<T>) => {
+  const [activeItemId, setActiveItemId] = useState(selectedFilterId);
 
-  const handleClickFilterItem = (clickedItemId: string) => {
+  const isActivated = (id: T) => id === activeItemId;
+
+  const handleClickFilterItem = (clickedItemId: T) => {
     if (isActivated(clickedItemId)) return;
 
-    onChange(clickedItemId);
+    setActiveItemId(clickedItemId);
+    onChange && onChange(clickedItemId);
   };
 
   return (
     <ul className={cx('filter')}>
-      {items.map((item) => (
-        <li key={item.id}>
+      {items.map((item, index) => (
+        <li key={`filter-id-${item.id}-${index}`}>
           <button
             className={cx('filter-item', { activated: isActivated(item.id) })}
             onClick={() => handleClickFilterItem(item.id)}

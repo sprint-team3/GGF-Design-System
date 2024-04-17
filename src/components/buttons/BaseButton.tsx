@@ -1,5 +1,3 @@
-import { MouseEventHandler } from 'react';
-
 import classNames from 'classnames/bind';
 
 import styles from './BaseButton.module.scss';
@@ -7,27 +5,27 @@ import styles from './BaseButton.module.scss';
 const cx = classNames.bind(styles);
 
 type BaseButtonProps = {
-  theme: 'fill' | 'ghost' | 'outline';
-  size: 'small' | 'medium' | 'large';
-  children: string;
+  children?: string;
   isDisabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
+  variant?: 'fill' | 'ghost' | 'outline';
+  size?: 'small' | 'medium' | 'large';
   color?: 'yellow' | 'purple' | 'red';
   type?: 'button' | 'submit';
   isQuantico?: boolean;
 };
 
 export const BaseButton = ({
-  theme,
-  size,
   children,
   isDisabled,
   onClick,
+  variant = 'fill',
+  size = 'medium',
   color = 'yellow',
   type = 'button',
   isQuantico = false,
 }: BaseButtonProps) => {
-  const buttonTheme = theme === 'outline' ? 'btn-theme-outline' : `btn-theme-${theme}-${color}`;
+  const buttonTheme = variant === 'outline' ? 'btn-theme-outline' : `btn-theme-${variant}-${color}`;
 
   return (
     <button

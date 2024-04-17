@@ -1,19 +1,18 @@
+import { ReactNode } from 'react';
+
 import classNames from 'classnames/bind';
-
-import { formatStatusToKR } from '@/utils';
-
-import { MyReservationsStatus } from '@/types';
 
 import styles from './Badge.module.scss';
 
 const cx = classNames.bind(styles);
 
 type BadgeProps = {
-  status: MyReservationsStatus | string;
+  children: ReactNode;
+  variant?: 'default' | 'secondary' | 'tertiary' | 'destructive' | 'outline';
 };
 
-const Badge = ({ status }: BadgeProps) => {
-  return <div className={cx(`badge-${status}`)}>{formatStatusToKR(status)}</div>;
+const Badge = ({ children, variant = 'default' }: BadgeProps) => {
+  return <div className={cx(`badge-${variant}`)}>{children}</div>;
 };
 
 export default Badge;
