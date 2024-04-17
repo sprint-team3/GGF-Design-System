@@ -11,7 +11,7 @@ type ConfirmModalProps = {
   openModal: boolean;
   state: string;
   title: string;
-  desc?: string;
+  description?: string;
   renderButton: ReactNode;
   warning?: boolean;
   onClose: () => void;
@@ -22,7 +22,7 @@ export const ConfirmModal = ({
   onClose,
   state,
   title,
-  desc,
+  description,
   renderButton,
   warning = false,
 }: ConfirmModalProps) => {
@@ -52,7 +52,7 @@ export const ConfirmModal = ({
           </header>
           <div className={cx('modal-info')}>
             <h3 className={cx('modal-info-title')}>{title}</h3>
-            <span className={cx('modal-info-desc')}>{desc}</span>
+            {description && <span className={cx('modal-info-description')}>{description}</span>}
           </div>
           <footer className={cx('modal-btn-area')}>{renderButton}</footer>
         </div>
