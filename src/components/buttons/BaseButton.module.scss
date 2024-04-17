@@ -20,7 +20,10 @@
   }
 
   span {
+    overflow: hidden;
     display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -56,6 +59,8 @@
 
     span {
       @include text-style($size: 16, $weight: bold);
+
+      width: 100%;
 
       &.quantico {
         @include text-style-quantico(16, $black80);
