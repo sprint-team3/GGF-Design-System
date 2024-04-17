@@ -23,10 +23,14 @@ const ONE_MB = 1024 * 1024;
 
 type ImageFiledProps = {
   label: string;
+  modalTitle: string;
+  modalState: string;
+  modalDescription: string;
+  modalButtonMessage: string;
   onFilesUpdate: (updatedFiles: File[]) => void;
   maxMB?: number;
   maxFiles?: number;
-  recommendMsg?: string;
+  recommendMessage?: string;
   dropzoneMsg?: string;
   onFileDelete?: (deletedFile: File) => void;
 };
@@ -34,9 +38,13 @@ type ImageFiledProps = {
 export const ImageField = ({
   label,
   onFilesUpdate,
+  modalTitle,
+  modalState,
+  modalDescription,
+  modalButtonMessage,
   maxMB = 50,
   maxFiles = 5,
-  recommendMsg,
+  recommendMessage,
   dropzoneMsg = 'Drag files to upload',
   onFileDelete,
 }: ImageFiledProps) => {
@@ -99,7 +107,7 @@ export const ImageField = ({
     <div className={cx('image-field')}>
       <div className={cx('image-field-label-container')}>
         <span className={cx('image-field-label')}>{label}</span>
-        <span className={cx('image-field-label-description')}>({recommendMsg})</span>
+        <span className={cx('image-field-label-description')}>{`(${recommendMessage})`}</span>
       </div>
       <div className={cx('image-field-container')}>
         <button
@@ -112,7 +120,7 @@ export const ImageField = ({
           <input className={cx('image-field-container-group')} {...getInputProps()} />
           <div className={cx('image-field-container-group-icon')}>
             <img
-              className={cx('img')}
+              className={cx('image-field-container-group-icon-img')}
               src={multiState.isUploadActive ? activeUrl : deafultUrl}
               alt={multiState.isUploadActive ? activeAlt : defaultAlt}
             />
@@ -128,7 +136,7 @@ export const ImageField = ({
               <div className={cx('item-group')}>
                 <div className={cx('image-group')}>
                   <div className={cx('file-upload-image')}>
-                    <img className={cx('img')} src={fileUrl} alt={fileAlt} />
+                    <img className={cx('file-upload-image-img')} src={fileUrl} alt={fileAlt} />
                   </div>
                   <span>{item?.file?.name}</span>
                 </div>
@@ -143,7 +151,7 @@ export const ImageField = ({
                 onMouseLeave={() => handleMouseLeave(index)}
               >
                 <img
-                  className={cx('img')}
+                  className={cx('button-group-img')}
                   src={item.isCloseActive ? closeActiveUrl : closeDefaultUrl}
                   alt={item.isCloseActive ? closeActiveAlt : closeDefaultAlt}
                 />
@@ -156,13 +164,13 @@ export const ImageField = ({
       <ConfirmModal
         openModal={multiState.fileExceededModal}
         onClose={handleClickModal}
-        title='파일 초과'
-        state='ALERT'
-        desc={`이미지는 ${maxFiles}개까지 업로드할 수 있습니다`}
+        title={modalTitle}
+        state={modalState}
+        desc={modalDescription}
         warning
         renderButton={
           <ModalButton variant='warning' onClick={handleClickModal}>
-            확인
+            {modalButtonMessage}
           </ModalButton>
         }
       />
