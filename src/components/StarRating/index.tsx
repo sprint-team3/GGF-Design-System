@@ -16,7 +16,7 @@ type StarRatingProps = {
   onChange?: (rating: number) => void;
 };
 
-const StarRating = ({ onChange, rating = 0, size = 'medium', readonly = false }: StarRatingProps) => {
+const StarRating = ({ size = 'medium', rating = 0, readonly = false, onChange }: StarRatingProps) => {
   const MAX_RATING = 5;
   const OFFSET = 1;
 
