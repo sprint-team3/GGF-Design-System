@@ -27,7 +27,7 @@ const StarRating = ({ size = 'medium', rating = 0, readonly = false, onChange }:
     const newRating = starId + OFFSET;
 
     setFilledStarId(newRating);
-    onChange && onChange(newRating);
+    onChange(newRating);
   };
 
   return (
