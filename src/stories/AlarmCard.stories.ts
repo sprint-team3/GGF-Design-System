@@ -14,7 +14,7 @@ export const Example: Story = {
   args: {
     id: 0,
     content: 'message',
-    createdAt: '1 hour age',
+    createdAt: '1 hour ago',
     onClick: () => {},
   },
 };
