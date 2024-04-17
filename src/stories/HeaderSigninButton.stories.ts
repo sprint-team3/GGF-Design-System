@@ -1,9 +1,9 @@
-import { HeaderSigninButton } from '@/components/header/buttons';
+import { HeaderSigninButton } from '@/components/buttons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'header/buttons/HeaderSigninButton',
+  title: 'buttons/HeaderSigninButton',
   component: HeaderSigninButton,
 } satisfies Meta<typeof HeaderSigninButton>;
 
@@ -12,6 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
+    text: 'SIGNIN',
     path: '',
   },
 };

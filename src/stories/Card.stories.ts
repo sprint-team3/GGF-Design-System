@@ -13,10 +13,10 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     path: '/',
-    title: 'Card title',
+    title: 'Title',
     rating: 4,
-    reviewCount: 67,
-    createdAt: '2024-04-16',
+    reviewCount: 100,
+    createdAt: 'YYYY-MM-DD',
     tagContent: 'content',
     tagVariant: 'primary',
   },

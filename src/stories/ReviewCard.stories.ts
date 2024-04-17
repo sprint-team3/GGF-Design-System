@@ -12,9 +12,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    nickname: 'CheeseB',
-    rating: 3,
+    nickname: 'Nickname',
+    rating: 4,
     content: 'ReviewCard Content',
-    createdAt: '2024-04-16',
+    createdAt: 'YYYY-MM-DD',
   },
 };

@@ -7,7 +7,7 @@ import styles from './Badge.module.scss';
 const cx = classNames.bind(styles);
 
 type BadgeProps = {
-  children: ReactNode;
+  children?: ReactNode;
   variant?: 'default' | 'secondary' | 'tertiary' | 'destructive' | 'outline';
 };
 

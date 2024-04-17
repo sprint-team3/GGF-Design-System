@@ -166,7 +166,7 @@ export const ImageField = ({
         onClose={handleClickModal}
         title={modalTitle}
         state={modalState}
-        desc={modalDescription}
+        description={modalDescription}
         warning
         renderButton={
           <ModalButton variant='warning' onClick={handleClickModal}>

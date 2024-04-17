@@ -1,9 +1,9 @@
-import UserMenu from '@/components/header/UserMenu';
+import UserMenu from '@/components/UserMenu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'header/UserMenu',
+  title: 'UserMenu/UserMenu',
   component: UserMenu,
 } satisfies Meta<typeof UserMenu>;
 
@@ -13,8 +13,10 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     profileImageUrl: '',
-    nickname: 'BattleMan',
-    email: 'BattleMan@gmail.com',
+    nickname: 'username',
+    email: 'user@email.com',
+    mypageText: 'My Page',
+    logoutText: 'Logout',
     accountPath: '',
     mypagePath: '',
     handleCloseUserMenu: () => {},

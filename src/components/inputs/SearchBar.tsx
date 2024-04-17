@@ -4,11 +4,13 @@ import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants';
 
+import searchIcon from '../../assets/ic-search.svg';
+
 import styles from './SearchBar.module.scss';
 
 const cx = classNames.bind(styles);
 
-const { url, alt } = SVGS.search;
+const { alt } = SVGS.search;
 
 type SearchBarType = {
   placeholder: string;
@@ -32,7 +34,7 @@ export const SearchBar = ({ placeholder, onChange, color = 'purple', maxLength =
         onChange={(event) => handleChange(event)}
       />
       <div className={cx('searchbar-search-icon')}>
-        <img className={cx('searchbar-search-icon-img')} src={url} alt={alt} />
+        <img className={cx('searchbar-search-icon-img')} src={searchIcon} alt={alt} />
       </div>
     </div>
   );
