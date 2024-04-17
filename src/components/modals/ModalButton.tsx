@@ -5,7 +5,7 @@ import styles from './ModalButton.module.scss';
 const cx = classNames.bind(styles);
 
 type ModalButtonProps = {
-  children: string;
+  children?: string;
   variant?: 'success' | 'warning';
   onClick: () => void;
 };
