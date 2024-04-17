@@ -48,7 +48,7 @@ export const FormDropdown = ({
       </label>
       <div className={cx('select-group')}>
         <select
-          className={cx('select-group-select')}
+          className={cx('select-group-selection')}
           {...register(name, {
             value: options[0]?.value,
           })}
@@ -63,7 +63,7 @@ export const FormDropdown = ({
         <div className={cx('select-group-input-group')}>
           <input
             id={`dropdown-${name}`}
-            className={cx('input', color, { sm: isSmall }, { opened: isOpen })}
+            className={cx('select-group-input-group-input', color, { sm: isSmall }, { opened: isOpen })}
             type='text'
             value={currentOptionTitle}
             disabled={isDisabled}
@@ -71,13 +71,17 @@ export const FormDropdown = ({
             readOnly
           />
           <button
-            className={cx('arrow-btn', { rotate: isOpen })}
+            className={cx('select-group-input-group-arrow-btn', { rotate: isOpen })}
             ref={buttonRef}
             type='button'
             disabled={isDisabled}
             onClick={togglePopup}
           >
-            <img className={cx('img')} src={isOpen ? activeUrl : defaultUrl} alt={isOpen ? activeAlt : defaultAlt} />
+            <img
+              className={cx('select-group-input-group-arrow-btn-img')}
+              src={isOpen ? activeUrl : defaultUrl}
+              alt={isOpen ? activeAlt : defaultAlt}
+            />
           </button>
         </div>
 
@@ -85,12 +89,12 @@ export const FormDropdown = ({
           {isOpen && (
             <ul className={cx('select-group-container-list')}>
               {options.map((option, index) => (
-                <li className={cx('item')} key={`dropdown-item-${index}`}>
+                <li className={cx('select-group-container-list-item')} key={`dropdown-item-${index}`}>
                   <button
-                    className={cx('btn', { sm: isSmall })}
+                    className={cx('select-group-container-list-item-btn', { sm: isSmall })}
                     onClick={() => handleOptionChange(option.title, option.value)}
                   >
-                    <label className={cx('btn-label')}>{option.title}</label>
+                    <label className={cx('select-group-container-list-item-btn-label')}>{option.title}</label>
                   </button>
                 </li>
               ))}
