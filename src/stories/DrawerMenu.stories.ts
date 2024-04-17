@@ -13,10 +13,10 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     menuList: [
-      { menu: 'LEAGUE OF LEGENDS', path: 'lol' },
-      { menu: 'BATTLEGROUNDS', path: 'bg' },
-      { menu: 'OVERWATCH 2', path: 'ow' },
-      { menu: 'MINECRAFT', path: 'mc' },
+      { menu: 'MENU 1', path: 'menu1' },
+      { menu: 'MENU 2', path: 'menu2' },
+      { menu: 'MENU 3', path: 'menu3' },
+      { menu: 'MENU 4', path: 'menu4' },
     ],
     onClick: () => {},
   },
