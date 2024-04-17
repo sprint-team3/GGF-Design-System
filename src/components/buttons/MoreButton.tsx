@@ -15,7 +15,7 @@ export const MoreButton = ({ onClick, isActive = false }: MoreButtonProps) => {
   const { url, alt } = SVGS.button.more;
 
   return (
-    <button className={cx('btn-more')} aria-label='메뉴 더보기 버튼' aria-pressed={isActive} onClick={onClick}>
+    <button className={cx('btn-more')} aria-label='more menu button' aria-pressed={isActive} onClick={onClick}>
       <img src={url} alt={alt} width={24} height={24} />
     </button>
   );
