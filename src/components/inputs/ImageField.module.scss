@@ -44,7 +44,7 @@
         width: 3.2rem;
         height: 3.2rem;
 
-        .img {
+        &-img {
           @include image-fit;
         }
       }
@@ -83,7 +83,7 @@
               width: 1.6rem;
               height: 1.6rem;
 
-              .img {
+              &-img {
                 @include image-fit;
               }
             }
@@ -100,7 +100,7 @@
           width: 1.6rem;
           height: 1.6rem;
 
-          .img {
+          &-img {
             @include image-fit;
           }
         }
