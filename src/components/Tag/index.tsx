@@ -7,7 +7,7 @@ import styles from './Tag.module.scss';
 const cx = classNames.bind(styles);
 
 type TagProps = {
-  children: ReactNode;
+  children?: ReactNode;
   variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
 };
 
