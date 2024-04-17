@@ -4,27 +4,32 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MenuProps = {
-  menuList: string[];
-  activatedGame: number;
-  handleActivatedGame: (index: number) => void;
+type Menu = {
+  menu: string;
+  path: string;
 };
 
-const Menu = ({ menuList, activatedGame, handleActivatedGame }: MenuProps) => {
+type MenuProps = {
+  menuList: Menu[];
+  activatedMenu: number;
+  handleActivatedMenu: (index: number) => void;
+};
+
+const Menu = ({ menuList, activatedMenu, handleActivatedMenu }: MenuProps) => {
   return (
     <nav>
       <ul className={cx('menu')}>
-        {menuList.map((game, index) => (
-          <li key={`menu-${index}`}>
+        {menuList.map((value, index) => (
+          <li key={index}>
             <a
-              href={`/${game}`}
-              className={cx('menu-game', {
-                'menu-game-activated': activatedGame === index,
+              href={value.path}
+              className={cx('menu-item', {
+                'menu-item-activated': activatedMenu === index,
               })}
-              onClick={() => handleActivatedGame(index)}
+              onClick={() => handleActivatedMenu(index)}
             >
-              {game}
-              {activatedGame === index && <p className={cx('menu-under-line')}></p>}
+              {value.menu}
+              {activatedMenu === index && <p className={cx('menu-under-line')}></p>}
             </a>
           </li>
         ))}
