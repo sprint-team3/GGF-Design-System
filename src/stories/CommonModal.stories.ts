@@ -13,8 +13,8 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     openModal: true,
-    title: 'CommonModal',
-    renderContent: 'Content',
+    title: 'Modal',
+    renderContent: 'Modal Content',
     onClose: () => {},
   },
 };

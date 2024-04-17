@@ -10,29 +10,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Alert_Example: Story = {
+export const Warning_Modal: Story = {
   args: {
     openModal: true,
     warning: true,
     state: 'WARNING',
-    title: 'title',
-    desc: 'description',
+    title: 'Title',
+    description: 'Description',
     onClose: () => {},
     renderButton: (() => {
-      const cancelBtn = ModalButton({ variant: 'warning', children: 'cancel', onClick: () => {} });
-      const closeBtn = ModalButton({ children: 'close', onClick: () => {} });
+      const cancelBtn = ModalButton({ variant: 'warning', children: 'Cancel', onClick: () => {} });
+      const closeBtn = ModalButton({ children: 'Close', onClick: () => {} });
       return [cancelBtn, closeBtn];
     })(),
   },
 };
 
-export const Success_Example: Story = {
+export const Success_Modal: Story = {
   args: {
     openModal: true,
     state: 'SUCCESS',
-    title: 'title',
-    desc: 'description',
+    title: 'Title',
+    description: 'Description',
     onClose: () => {},
-    renderButton: ModalButton({ variant: 'success', children: 'complete', onClick: () => {} }),
+    renderButton: ModalButton({ variant: 'success', children: 'Complete', onClick: () => {} }),
   },
 };
