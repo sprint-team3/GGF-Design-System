@@ -10,9 +10,25 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const Star_Large: Story = {
   args: {
     size: 'large',
+    rating: 4,
+    readonly: true,
+  },
+};
+
+export const Star_Medium: Story = {
+  args: {
+    size: 'medium',
+    rating: 4,
+    readonly: true,
+  },
+};
+
+export const Star_Small: Story = {
+  args: {
+    size: 'small',
     rating: 4,
     readonly: true,
   },
