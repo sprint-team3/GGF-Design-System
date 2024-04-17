@@ -1,9 +1,9 @@
-import DrawerMenu from '@/components/header/DrawerMenu';
+import DrawerMenu from '@/components/DrawerMenu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'header/DrawerMenu',
+  title: 'DrawerMenu/DrawerMenu',
   component: DrawerMenu,
 } satisfies Meta<typeof DrawerMenu>;
 
@@ -12,7 +12,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    menuList: ['LEAGUE OF LEGENDS', 'BATTLEGROUNDS', 'OVERWATCH 2', 'MINECRAFT'],
+    menuList: [
+      { menu: 'LEAGUE OF LEGENDS', path: 'lol' },
+      { menu: 'BATTLEGROUNDS', path: 'bg' },
+      { menu: 'OVERWATCH 2', path: 'ow' },
+      { menu: 'MINECRAFT', path: 'mc' },
+    ],
     onClick: () => {},
   },
 };

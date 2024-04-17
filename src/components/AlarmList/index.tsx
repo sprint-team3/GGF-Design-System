@@ -2,8 +2,7 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import AlarmCard from '@/components/cards/AlarmCard';
-import EmptyAlarm from '@/components/cards/EmptyAlarmCard';
+import { AlarmCard, EmptyAlarmCard } from '../cards';
 
 import styles from './AlarmList.module.scss';
 
@@ -57,7 +56,7 @@ const AlarmList = ({
             ))}
           </ul>
         ) : (
-          <EmptyAlarm emptyAlarmText={emptyAlarmText} />
+          <EmptyAlarmCard emptyAlarmText={emptyAlarmText} />
         )}
       </div>
     </div>
