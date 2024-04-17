@@ -12,13 +12,13 @@ const cx = classNames.bind(styles);
 type TextFieldProps = {
   name: string;
   label?: string;
-  color?: 'yellow' | 'purple';
   minLength?: number;
   maxLength?: number;
   placeholder?: string;
+  color?: 'yellow' | 'purple';
 };
 
-export const TextField = ({ name, label, color = 'purple', minLength, maxLength, ...props }: TextFieldProps) => {
+export const TextField = ({ name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
