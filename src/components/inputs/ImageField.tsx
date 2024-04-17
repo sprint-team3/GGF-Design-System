@@ -31,7 +31,7 @@ type ImageFiledProps = {
   maxMB?: number;
   maxFiles?: number;
   recommendMessage?: string;
-  dropzoneMsg?: string;
+  dropzoneMessage?: string;
   onFileDelete?: (deletedFile: File) => void;
 };
 
@@ -45,7 +45,7 @@ export const ImageField = ({
   maxMB = 50,
   maxFiles = 5,
   recommendMessage,
-  dropzoneMsg = 'Drag files to upload',
+  dropzoneMessage = 'Drag files to upload',
   onFileDelete,
 }: ImageFiledProps) => {
   const [files, setFiles] = useState<{ file: File; isCloseActive: boolean }[]>([]);
@@ -126,7 +126,7 @@ export const ImageField = ({
             />
           </div>
           <p className={cx('image-field-container-group-title', { active: multiState.isUploadActive })}>
-            {dropzoneMsg}
+            {dropzoneMessage}
           </p>
         </button>
 
