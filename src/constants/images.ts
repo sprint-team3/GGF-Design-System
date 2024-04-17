@@ -150,7 +150,7 @@ export const SVGS = {
 
   search: {
     url: 'src/assets/ic-search.svg',
-    alt: '돋보기 icon',
+    alt: 'magnifier icon',
   },
 
   chatbot: {
@@ -201,7 +201,7 @@ export const SVGS = {
   },
 
   close: {
-    active: { url: 'src/assets/ic-close-active.svg', alt: '닫기 icon' },
+    active: { url: 'src/assets/ic-close-active.svg', alt: 'close icon' },
     default: {
       url: 'src/assets/ic-close-default.svg',
       alt: 'close icon',
