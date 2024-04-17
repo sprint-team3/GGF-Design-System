@@ -12,7 +12,7 @@ type EmptyAlarmCardProps = {
   emptyAlarmText: string;
 };
 
-const EmptyAlarmCard = ({ emptyAlarmText }: EmptyAlarmCardProps) => {
+export const EmptyAlarmCard = ({ emptyAlarmText }: EmptyAlarmCardProps) => {
   return (
     <div className={cx('empty-alarm')}>
       <img src={url} alt={alt} width={24} height={24} />
@@ -20,5 +20,3 @@ const EmptyAlarmCard = ({ emptyAlarmText }: EmptyAlarmCardProps) => {
     </div>
   );
 };
-
-export default EmptyAlarmCard;

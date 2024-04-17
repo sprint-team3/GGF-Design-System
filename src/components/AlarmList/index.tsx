@@ -2,8 +2,8 @@ import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import AlarmCard from '@/components/header/AlarmCard';
-import EmptyAlarm from '@/components/header/EmptyAlarmCard';
+import AlarmCard from '@/components/cards/AlarmCard';
+import EmptyAlarm from '@/components/cards/EmptyAlarmCard';
 
 import styles from './AlarmList.module.scss';
 
