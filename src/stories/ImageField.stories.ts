@@ -12,7 +12,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    label: '테스트',
+    label: 'ImageField',
+    modalTitle: 'FILE EXCEEDED',
+    modalState: 'ALERT',
+    modalDescription: 'YOU CAN UPLOAD UP TO 5 IMAGES',
+    modalButtonMessage: 'OK',
     onFilesUpdate: () => {},
   },
 };
