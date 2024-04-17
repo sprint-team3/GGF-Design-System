@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { useCallback, useEffect, useState } from 'react';
 
 import classNames from 'classnames/bind';
@@ -8,7 +6,7 @@ import { FileRejection, useDropzone } from 'react-dropzone';
 import { SVGS } from '@/constants';
 import { bytesToKilobytes } from '@/utils';
 
-import { ConfirmModal, ModalButton } from '@/components/commons/modals';
+import { ConfirmModal, ModalButton } from '@/components/modals';
 import useMultiState from '@/hooks/useMultiState';
 
 import styles from './ImageField.module.scss';
@@ -21,16 +19,27 @@ const { url: fileUrl, alt: fileAlt } = SVGS.upload.file;
 const { url: closeDefaultUrl, alt: closeDefaultAlt } = SVGS.close.default;
 const { url: closeActiveUrl, alt: closeActiveAlt } = SVGS.close.active;
 
-const FIFTY_MB = 1024 * 1024 * 50;
+const ONE_MB = 1024 * 1024;
 
 type ImageFiledProps = {
   label: string;
   onFilesUpdate: (updatedFiles: File[]) => void;
+  maxMB?: number;
   maxFiles?: number;
+  recommendMsg?: string;
+  dropzoneMsg?: string;
   onFileDelete?: (deletedFile: File) => void;
 };
 
-export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }: ImageFiledProps) => {
+export const ImageField = ({
+  label,
+  onFilesUpdate,
+  maxMB = 50,
+  maxFiles = 5,
+  recommendMsg,
+  dropzoneMsg = 'Drag files to upload',
+  onFileDelete,
+}: ImageFiledProps) => {
   const [files, setFiles] = useState<{ file: File; isCloseActive: boolean }[]>([]);
   const [finalFiles, setFinalFiles] = useState<File[]>([]);
 
@@ -57,7 +66,7 @@ export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }:
       'image/*': ['.jpeg', '.jpg', '.png'],
     },
     maxFiles: maxFiles,
-    maxSize: FIFTY_MB,
+    maxSize: maxMB * ONE_MB,
   });
 
   useEffect(() => {
@@ -90,7 +99,7 @@ export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }:
     <div className={cx('image-field')}>
       <div className={cx('image-field-label-container')}>
         <span className={cx('image-field-label')}>{label}</span>
-        <span className={cx('image-field-label-description')}>(권장 규격은 930 X 720 픽셀입니다)</span>
+        <span className={cx('image-field-label-description')}>({recommendMsg})</span>
       </div>
       <div className={cx('image-field-container')}>
         <button
@@ -100,17 +109,16 @@ export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }:
           onMouseLeave={handleMouseEvent}
           {...getRootProps()}
         >
-          <input className={cx('image-field-container-group-input')} {...getInputProps()} />
+          <input className={cx('image-field-container-group')} {...getInputProps()} />
           <div className={cx('image-field-container-group-icon')}>
-            <Image
+            <img
+              className={cx('img')}
               src={multiState.isUploadActive ? activeUrl : deafultUrl}
               alt={multiState.isUploadActive ? activeAlt : defaultAlt}
-              width={32}
-              height={32}
             />
           </div>
           <p className={cx('image-field-container-group-title', { active: multiState.isUploadActive })}>
-            Drag files to upload
+            {dropzoneMsg}
           </p>
         </button>
 
@@ -120,24 +128,24 @@ export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }:
               <div className={cx('item-group')}>
                 <div className={cx('image-group')}>
                   <div className={cx('file-upload-image')}>
-                    <Image src={fileUrl} alt={fileAlt} width={16} height={16} />
+                    <img className={cx('img')} src={fileUrl} alt={fileAlt} />
                   </div>
                   <span>{item?.file?.name}</span>
                 </div>
                 <span className={cx('file-size')}>{bytesToKilobytes(item?.file?.size)}KB</span>
               </div>
               <button
+                className={cx('button-group')}
                 value={index}
                 type='button'
                 onClick={(event) => handleDelete(event.currentTarget.value)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
               >
-                <Image
+                <img
+                  className={cx('img')}
                   src={item.isCloseActive ? closeActiveUrl : closeDefaultUrl}
                   alt={item.isCloseActive ? closeActiveAlt : closeDefaultAlt}
-                  width={16}
-                  height={16}
                 />
               </button>
             </li>
@@ -150,7 +158,7 @@ export const ImageField = ({ label, onFilesUpdate, maxFiles = 5, onFileDelete }:
         onClose={handleClickModal}
         title='파일 초과'
         state='ALERT'
-        desc='이미지는 5개까지 업로드할 수 있습니다'
+        desc={`이미지는 ${maxFiles}개까지 업로드할 수 있습니다`}
         warning
         renderButton={
           <ModalButton variant='warning' onClick={handleClickModal}>

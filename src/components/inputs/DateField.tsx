@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
@@ -8,7 +6,7 @@ import { DayPicker, DateFormatter } from 'react-day-picker';
 import { useFormContext } from 'react-hook-form';
 
 import { SVGS } from '@/constants';
-import { getAfter31Days, getDayPickerFormatDate, getYesterday } from '@/utils';
+import { getAfterDays, getDayPickerFormatDate, getYesterday } from '@/utils';
 
 import useTogglePopup from '@/hooks/useTogglePopup';
 
@@ -22,9 +20,11 @@ const { url, alt } = SVGS.calendar.active;
 type DateFieldProps = {
   label: string;
   name: string;
+  days: number;
+  color?: string;
 };
 
-export const DateField = ({ label, name }: DateFieldProps) => {
+export const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -37,11 +37,11 @@ export const DateField = ({ label, name }: DateFieldProps) => {
   const formattedDate = selected ? getDayPickerFormatDate(selected) : '';
 
   const yesterday = getYesterday();
-  const after31Days = getAfter31Days();
+  const afterDays = getAfterDays(days);
 
   const disabledDays = [
     { from: new Date(1990, 1, 20), to: yesterday },
-    { from: after31Days, to: new Date(2100, 1, 20) },
+    { from: afterDays, to: new Date(2100, 1, 20) },
   ];
 
   const formatWeekdayName: DateFormatter = (date, options) => format(date, 'EEE', { locale: options?.locale });
@@ -63,7 +63,7 @@ export const DateField = ({ label, name }: DateFieldProps) => {
       <span className={cx('datefield-label')}>{label}</span>
       <button type='button' className={cx('datefield-group')} ref={buttonRef} onClick={togglePopup}>
         <input
-          className={cx('datefield-group-input', { error: isError })}
+          className={cx('datefield-group-input', color, { error: isError })}
           placeholder='YYYY-MM-DD'
           {...(register(name),
           {
@@ -72,7 +72,7 @@ export const DateField = ({ label, name }: DateFieldProps) => {
           })}
         />
         <div className={cx('datefield-group-calendar-icon')}>
-          <Image src={url} alt={alt} width={24} height={24} />
+          <img className={cx('img')} src={url} alt={alt} />
         </div>
       </button>
 

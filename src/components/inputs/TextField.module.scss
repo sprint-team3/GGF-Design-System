@@ -26,11 +26,13 @@
     transition: $base-transition;
 
     &.focused {
-      border-color: $purple;
-    }
+      &.yellow {
+        border-color: $primary;
+      }
 
-    &.focused.non-label {
-      border-color: $primary;
+      &.purple {
+        border-color: $purple;
+      }
     }
 
     &.error {

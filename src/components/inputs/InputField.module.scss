@@ -59,7 +59,13 @@
       }
 
       &:focus {
-        border-color: $purple;
+        &.yellow {
+          border-color: $primary;
+        }
+
+        &.purple {
+          border-color: $purple;
+        }
       }
 
       &:disabled {

@@ -1,37 +1,37 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-import { MouseEventHandler, RefObject } from 'react';
+import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
-import { PAGE_PATHS, SVGS } from '@/constants';
+import { SVGS } from '@/constants';
 
-import Avatar from '@/components/commons/Avatar';
-import useSignout from '@/hooks/useSignout';
+import Avatar from '@/components/Avatar';
 
 import styles from './UserMenu.module.scss';
 
 const cx = classNames.bind(styles);
 const { url, alt } = SVGS.button.setting;
-const { account, mypage } = PAGE_PATHS;
 
 type UserMenuProps = {
   profileImageUrl: string;
   nickname: string;
   email: string;
-  userMenuRef: RefObject<HTMLDivElement>;
-  onClick: MouseEventHandler<HTMLElement>;
+  accountPath: string;
+  mypagePath: string;
+  handleCloseUserMenu: () => void;
+  handleClickSignout: () => void;
+  userMenuRef?: RefObject<HTMLDivElement>;
 };
 
-const UserMenu = ({ profileImageUrl, nickname, email, userMenuRef, onClick }: UserMenuProps) => {
-  const signout = useSignout();
-
-  const handleClickSignout = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    onClick(event);
-    signout();
-  };
-
+const UserMenu = ({
+  profileImageUrl,
+  nickname,
+  email,
+  accountPath,
+  mypagePath,
+  handleCloseUserMenu,
+  handleClickSignout,
+  userMenuRef,
+}: UserMenuProps) => {
   return (
     <div className={cx('container')} ref={userMenuRef}>
       <div className={cx('container-user')}>
@@ -39,17 +39,17 @@ const UserMenu = ({ profileImageUrl, nickname, email, userMenuRef, onClick }: Us
         <div className={cx('container-user-info')}>
           <div className={cx('container-nickname')}>
             <p className={cx('nickname')}>{nickname}</p>
-            <Link onClick={onClick} href={account}>
-              <Image src={url} alt={alt} width={18} height={18} />
-            </Link>
+            <a onClick={handleCloseUserMenu} href={accountPath}>
+              <img src={url} alt={alt} width={18} height={18} />
+            </a>
           </div>
           <div className={cx('email')}>{email}</div>
         </div>
       </div>
       <div className={cx('container-button')}>
-        <Link className={cx('container-button-mypage')} onClick={onClick} href={mypage}>
+        <a className={cx('container-button-mypage')} onClick={handleCloseUserMenu} href={mypagePath}>
           My Page
-        </Link>
+        </a>
         <button className={cx('container-button-logout')} onClick={handleClickSignout}>
           Logout
         </button>

@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
@@ -37,11 +35,6 @@ export const FormDropdown = ({
   const { isOpen, popupRef, buttonRef, togglePopup } = useTogglePopup();
   const [currentOptionTitle, setCurrentOptionTitle] = useState(options[0]?.title);
 
-  useEffect(() => {
-    setCurrentOptionTitle(options[0]?.title);
-    setValue(name, options[0]?.value, { shouldValidate: true });
-  }, [name, options]);
-
   const handleOptionChange = (title: string, value: number | string) => {
     setValue(name, value);
     setCurrentOptionTitle(title);
@@ -70,7 +63,7 @@ export const FormDropdown = ({
         <div className={cx('select-group-input-group')}>
           <input
             id={`dropdown-${name}`}
-            className={cx('input', { sm: isSmall }, { opened: isOpen }, { yellow: color === 'yellow' })}
+            className={cx('input', color, { sm: isSmall }, { opened: isOpen })}
             type='text'
             value={currentOptionTitle}
             disabled={isDisabled}
@@ -84,11 +77,7 @@ export const FormDropdown = ({
             disabled={isDisabled}
             onClick={togglePopup}
           >
-            {isOpen ? (
-              <Image src={activeUrl} alt={activeAlt} width={24} height={24} />
-            ) : (
-              <Image src={defaultUrl} alt={defaultAlt} width={24} height={24} />
-            )}
+            <img className={cx('img')} src={isOpen ? activeUrl : defaultUrl} alt={isOpen ? activeAlt : defaultAlt} />
           </button>
         </div>
 
@@ -101,7 +90,7 @@ export const FormDropdown = ({
                     className={cx('btn', { sm: isSmall })}
                     onClick={() => handleOptionChange(option.title, option.value)}
                   >
-                    <label>{option.title}</label>
+                    <label className={cx('btn-label')}>{option.title}</label>
                   </button>
                 </li>
               ))}

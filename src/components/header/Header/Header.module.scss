@@ -73,34 +73,5 @@
         @include flexbox($gap: 0.8rem);
       }
     }
-
-    &-alarm-list,
-    &-user-menu {
-      @include responsive(T) {
-        right: 1.5rem;
-      }
-
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 0.8rem;
-    }
-  }
-}
-
-.drawer-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(-100%);
-
-  &.open {
-    transform: translateX(0);
-    animation: slide-in-left ease-in-out 0.3s;
-  }
-
-  &.close {
-    transform: translateX(-100%);
-    animation: slide-out-left ease-in-out 0.3s;
   }
 }

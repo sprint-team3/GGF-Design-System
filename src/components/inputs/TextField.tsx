@@ -1,25 +1,24 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import { useFormContext } from 'react-hook-form';
 
-import { REGEX } from '@/constants';
+import { REGEX } from '@/constants/index';
 
 import styles from './TextField.module.scss';
 
 const cx = classNames.bind(styles);
 
-const MIN_LENGTH_TEXTAREA = 5;
-
 type TextFieldProps = {
   name: string;
   label?: string;
+  minLength?: number;
   maxLength?: number;
   placeholder?: string;
+  color?: 'yellow' | 'purple';
 };
 
-export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldProps) => {
+export const TextField = ({ name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
@@ -28,8 +27,8 @@ export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldP
 
   const contentValue = watch(name);
   const textLength = contentValue ? contentValue.replace(REGEX.textarea, '').length : 0;
-  const isBelowMinLength = textLength < MIN_LENGTH_TEXTAREA;
-  const isValidLength = textLength >= MIN_LENGTH_TEXTAREA;
+  const isBelowMinLength = minLength && textLength < minLength;
+  const isValidLength = minLength && textLength >= minLength;
   const isError = !!errors[name]?.message;
 
   const [isFocused, setIsFocused] = useState(false);
@@ -47,8 +46,8 @@ export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldP
       <label id={`text-field-${name}`} className={cx('text-field-label', { 'non-label': !label })}>
         {label}
       </label>
-      <div
-        className={cx('text-field-text-group', { error: isError }, { focused: isFocused }, { 'non-label': !label })}
+      <button
+        className={cx('text-field-text-group', color, { error: isError }, { focused: isFocused })}
         aria-label={name}
         aria-labelledby={name}
         role='textbox'
@@ -62,19 +61,21 @@ export const TextField = ({ name, label, maxLength = 700, ...props }: TextFieldP
           maxLength={maxLength}
           {...props}
         />
-        <div className={cx('text-field-text-group-footer')}>
-          <span
-            className={cx(
-              'text-field-text-group-footer-current-num',
-              { active: isValidLength },
-              { error: isBelowMinLength },
-            )}
-          >
-            {textLength}
-          </span>
-          <span className={cx('text-field-text-group-footer-total-num')}>/{maxLength}</span>
-        </div>
-      </div>
+        {minLength && maxLength && (
+          <div className={cx('text-field-text-group-footer')}>
+            <span
+              className={cx(
+                'text-field-text-group-footer-current-num',
+                { active: isValidLength },
+                { error: isBelowMinLength },
+              )}
+            >
+              {textLength}
+            </span>
+            <span className={cx('text-field-text-group-footer-total-num')}>/{maxLength}</span>
+          </div>
+        )}
+      </button>
     </div>
   );
 };

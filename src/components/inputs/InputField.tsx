@@ -13,6 +13,7 @@ type InputFieldProps = {
   name: string;
   label?: string;
   type?: 'text' | 'email' | 'password';
+  color?: 'yellow' | 'purple';
   isErrorVisible?: boolean;
   isLimited?: boolean;
   isDisabled?: boolean;
@@ -20,18 +21,21 @@ type InputFieldProps = {
   minLength?: number;
   placeholder?: string;
   readOnly?: boolean;
+  autoComplete?: 'on' | 'off';
 };
 
 export const InputField = ({
   name,
   label,
   type = 'text',
+  color = 'purple',
   isErrorVisible = false,
   isLimited = false,
   isDisabled = false,
   maxLength = 10,
   minLength = 1,
   readOnly = false,
+  autoComplete = 'on',
   ...props
 }: InputFieldProps) => {
   const {
@@ -56,7 +60,12 @@ export const InputField = ({
       </label>
       <div className={cx('input-field-input-group')}>
         {isDisabled ? (
-          <input id={`input-field-${name}`} className={cx('input-field-input-group-input')} disabled {...props} />
+          <input
+            id={`input-field-${name}`}
+            className={cx('input-field-input-group-input', color)}
+            disabled
+            {...props}
+          />
         ) : (
           <input
             id={`input-field-${name}`}
@@ -67,7 +76,7 @@ export const InputField = ({
               { 'is-limited': isLimited && !isPassword },
             )}
             type={type === 'password' ? inputType : type}
-            autoComplete='on'
+            autoComplete={autoComplete}
             readOnly={readOnly}
             {...register(name)}
             maxLength={maxLength}

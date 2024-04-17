@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import { MouseEventHandler, RefObject } from 'react';
+import { RefObject } from 'react';
 
 import classNames from 'classnames/bind';
 
@@ -14,11 +12,13 @@ const { full, empty } = SVGS.alarm;
 type AlarmProps = {
   isAlarmExisted: boolean;
   isActivated: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-  alarmRef: RefObject<HTMLButtonElement>;
+  onClick: () => void;
+  alarmRef?: RefObject<HTMLButtonElement>;
 };
 
 const Alarm = ({ isAlarmExisted, isActivated, onClick, alarmRef }: AlarmProps) => {
+  const { url, alt } = isAlarmExisted ? full : empty;
+
   return (
     <button className={cx('frame-outer')} onClick={onClick} ref={alarmRef}>
       <div className={cx('dot', 'dot-top', { 'dot-activated': isActivated })}></div>
@@ -26,11 +26,7 @@ const Alarm = ({ isAlarmExisted, isActivated, onClick, alarmRef }: AlarmProps) =
       <div className={cx('dot', 'dot-bottom', { 'dot-activated': isActivated })}></div>
       <div className={cx('dot', 'dot-left', { 'dot-activated': isActivated })}></div>
       <div className={cx('frame-inner', { 'frame-inner-activated': isActivated })}>
-        {isAlarmExisted ? (
-          <Image src={full.url} alt={full.alt} width={20} height={20} />
-        ) : (
-          <Image src={empty.url} alt={empty.alt} width={20} height={20} />
-        )}
+        <img src={url} alt={alt} width={20} height={20} />
       </div>
     </button>
   );

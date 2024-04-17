@@ -1,0 +1,79 @@
+.card {
+  position: relative;
+  width: 100%;
+  background-color: $card-background;
+  border-radius: 0.8rem;
+
+  &-inner {
+    @include column-flexbox(start, start, 0.4rem);
+
+    @include responsive(M) {
+      gap: 0.8rem;
+      padding: 1.2rem;
+    }
+
+    width: 100%;
+    padding: 1.2rem;
+    transition: $base-transition;
+
+    &:hover {
+      @include responsive(PC) {
+        background-color: $black60;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+
+  &-content {
+    @include column-flexbox(start, start, 0.4rem);
+
+    @include responsive(M) {
+      gap: 0.8rem;
+    }
+
+    width: 100%;
+
+    &-header {
+      @include column-flexbox(start, start, 0.4rem);
+
+      position: relative;
+      width: 100%;
+    }
+
+    &-title,
+    &-register-title {
+      @include text-style(16, $white, bold);
+
+      @include responsive(M) {
+        @include text-style(18, $white);
+      }
+    }
+  }
+
+  &-footer {
+    @include flexbox(between, center, 0.2rem);
+
+    position: relative;
+    width: 100%;
+
+    &-review {
+      @include flexbox($gap: 0.4rem);
+
+      &-rating {
+        @include text-style(12, $gray20);
+
+        width: 100%;
+      }
+    }
+
+    &-calendar {
+      @include flexbox($gap: 0.4rem);
+
+      flex-shrink: 0;
+
+      &-date {
+        @include text-style(12, $gray20);
+      }
+    }
+  }
+}

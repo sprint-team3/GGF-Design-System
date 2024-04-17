@@ -1,7 +1,9 @@
 name: Review Assign
+
 on:
   pull_request:
     types: [opened, ready_for_review]
+
 jobs:
   assign:
     runs-on: ubuntu-latest
@@ -10,4 +12,4 @@ jobs:
         with:
           assignees: ${{ github.actor }} 
           reviewers: ${{ vars.REVIEWERS }} 
-          github-token: ${{ secrets.WORK_FLOW }} 
+          github-token: ${{ secrets.WORK_FLOW }}

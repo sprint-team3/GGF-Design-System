@@ -1,8 +1,6 @@
-import Image from 'next/image';
-
 import classNames from 'classnames/bind';
 
-import { DEFAULT_PAGE_SIZE, SVGS } from '@/constants';
+import { SVGS } from '@/constants';
 
 import usePagination from '@/hooks/usePagination';
 
@@ -15,10 +13,12 @@ type PaginationProps = {
   totalCount: number;
   pageState: number;
   postPerPage: number;
+  defaultPageSize: number;
+  pageLimit: number;
   onClick: (pageNumber: number) => void;
 };
 
-const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationProps) => {
+const Pagination = ({ totalCount, pageState, postPerPage, defaultPageSize, pageLimit, onClick }: PaginationProps) => {
   const {
     activePage,
     currentPageGroupIndex,
@@ -29,10 +29,10 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
     handleNextButtonClick,
     handleFirstPageClick,
     handleLastPageClick,
-  } = usePagination(totalCount, pageState, postPerPage, onClick);
+  } = usePagination(totalCount, pageState, postPerPage, pageLimit, onClick);
 
   const isArrowActivated = currentPageGroupIndex !== pagesArray.length - 1;
-  const showPagination = !!totalCount && postPerPage !== DEFAULT_PAGE_SIZE;
+  const showPagination = !!totalCount && postPerPage !== defaultPageSize;
 
   return (
     showPagination && (
@@ -40,7 +40,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
         <ul className={cx('pagination')}>
           <li>
             <button onClick={handleFirstPageClick}>
-              <Image
+              <img
                 className={cx({ 'pagination-arrow-activated': currentPageGroupIndex })}
                 src={left.double.url}
                 alt={left.double.alt}
@@ -51,7 +51,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           </li>
           <li>
             <button onClick={handlePrevButtonClick}>
-              <Image
+              <img
                 className={cx({ 'pagination-arrow-activated': currentPageGroupIndex })}
                 src={left.single.url}
                 alt={left.single.alt}
@@ -72,7 +72,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           ))}
           <li>
             <button onClick={handleNextButtonClick}>
-              <Image
+              <img
                 className={cx({
                   'pagination-arrow-activated': isArrowActivated,
                 })}
@@ -85,7 +85,7 @@ const Pagination = ({ totalCount, pageState, postPerPage, onClick }: PaginationP
           </li>
           <li>
             <button onClick={handleLastPageClick}>
-              <Image
+              <img
                 className={cx({
                   'pagination-arrow-activated': isArrowActivated,
                 })}

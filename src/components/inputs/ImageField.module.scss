@@ -40,6 +40,15 @@
         border-color: $purple;
       }
 
+      &-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        .img {
+          @include image-fit;
+        }
+      }
+
       &-title {
         @include text-style(14, $gray40);
 
@@ -69,12 +78,30 @@
           .image-group {
             @include flexbox($gap: 0.2rem);
             @include text-style(12, $gray10);
+
+            .file-upload-image {
+              width: 1.6rem;
+              height: 1.6rem;
+
+              .img {
+                @include image-fit;
+              }
+            }
           }
 
           .file-size {
             @include text-style(10, $gray30, light);
 
             margin-top: 0.3rem;
+          }
+        }
+
+        .button-group {
+          width: 1.6rem;
+          height: 1.6rem;
+
+          .img {
+            @include image-fit;
           }
         }
       }

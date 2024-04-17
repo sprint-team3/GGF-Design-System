@@ -1,3 +1,2 @@
-export * from './CommonCard';
-export * from './RegisteredCard';
-export * from './ReservedCard';
+export * from './Card';
+export * from './CardSkeleton';
