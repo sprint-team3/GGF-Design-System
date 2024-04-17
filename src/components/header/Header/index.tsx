@@ -12,9 +12,12 @@ const { url, alt } = SVGS.drawerMenu;
 type HeaderProps = {
   path: string;
   logoName: string;
-  menuList: string[];
-  activatedGame: number;
-  handleActivatedGame: () => void;
+  menuList: {
+    menu: string;
+    path: string;
+  }[];
+  activatedMenu: number;
+  handleActivatedMenu: () => void;
   handleOpenDrawerMenu: () => void;
   children?: React.ReactNode;
 };
@@ -23,8 +26,8 @@ const Header = ({
   path,
   logoName,
   menuList,
-  activatedGame,
-  handleActivatedGame,
+  activatedMenu,
+  handleActivatedMenu,
   handleOpenDrawerMenu,
   children,
 }: HeaderProps) => {
@@ -39,7 +42,7 @@ const Header = ({
         </a>
         <div className={cx('header-container-outer')}>
           <div className={cx('sm-hidden')}>
-            <Menu menuList={menuList} activatedGame={activatedGame} handleActivatedGame={handleActivatedGame} />
+            <Menu menuList={menuList} activatedMenu={activatedMenu} handleActivatedMenu={handleActivatedMenu} />
           </div>
           <div className={cx('header-container-inner')}>{children}</div>
         </div>
