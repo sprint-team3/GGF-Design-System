@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    label: '참여 인원',
+    label: 'label',
     isDisabled: false,
   },
 };

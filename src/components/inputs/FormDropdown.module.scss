@@ -9,14 +9,14 @@
     position: relative;
     width: 100%;
 
-    &-select {
+    &-selection {
       display: none;
     }
 
     &-input-group {
       position: relative;
 
-      .input {
+      &-input {
         @include text-style(16, $gray10);
 
         cursor: pointer;
@@ -60,7 +60,7 @@
         }
       }
 
-      .arrow-btn {
+      &-arrow-btn {
         @include pos-center-y;
 
         right: 1.2rem;
@@ -68,7 +68,7 @@
         height: 2.4rem;
         transition: $transition-6s;
 
-        .img {
+        &-img {
           @include image-fit;
         }
 
@@ -120,10 +120,10 @@
         max-height: 23rem;
         padding-right: 0.4rem;
 
-        .item {
+        &-item {
           width: 100%;
 
-          .btn {
+          &-btn {
             @include text-style(16, $gray50);
 
             @include responsive(T) {

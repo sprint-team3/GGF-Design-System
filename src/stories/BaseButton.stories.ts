@@ -14,6 +14,6 @@ export const Example: Story = {
   args: {
     variant: 'outline',
     size: 'small',
-    children: '테스트',
+    children: 'text',
   },
 };
