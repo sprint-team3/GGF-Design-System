@@ -72,7 +72,7 @@ export const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProp
           })}
         />
         <div className={cx('datefield-group-calendar-icon')}>
-          <img className={cx('img')} src={url} alt={alt} />
+          <img className={cx('datefield-group-calendar-icon-img')} src={url} alt={alt} />
         </div>
       </button>
 
