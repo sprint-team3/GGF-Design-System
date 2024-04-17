@@ -5,14 +5,15 @@ import styles from './HeaderSignButton.module.scss';
 const cx = classNames.bind(styles);
 
 type HeaderSigninButtonProps = {
+  text: string;
   path: string;
 };
 
-export const HeaderSigninButton = ({ path }: HeaderSigninButtonProps) => {
+export const HeaderSigninButton = ({ text, path }: HeaderSigninButtonProps) => {
   return (
     <a href={path}>
       <button className={cx('signin-btn')}>
-        <span className={cx('text')}>SIGNIN</span>
+        <span className={cx('text')}>{text}</span>
       </button>
     </a>
   );
