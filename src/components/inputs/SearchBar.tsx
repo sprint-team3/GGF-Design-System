@@ -2,8 +2,9 @@ import { ChangeEvent } from 'react';
 
 import classNames from 'classnames/bind';
 
-import searchIcon from '@/assets/ic-search.svg';
 import { SVGS } from '@/constants';
+
+import searchIcon from '../../assets/ic-search.svg';
 
 import styles from './SearchBar.module.scss';
 
