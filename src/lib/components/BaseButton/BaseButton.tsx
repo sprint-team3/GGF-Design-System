@@ -15,7 +15,7 @@ type BaseButtonProps = {
   isQuantico?: boolean;
 };
 
-export const BaseButton = ({
+const BaseButton = ({
   children,
   isDisabled,
   onClick,
@@ -38,3 +38,5 @@ export const BaseButton = ({
     </button>
   );
 };
+
+export default BaseButton;

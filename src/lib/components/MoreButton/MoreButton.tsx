@@ -11,7 +11,7 @@ type MoreButtonProps = {
   isActive?: boolean;
 };
 
-export const MoreButton = ({ onClick, isActive = false }: MoreButtonProps) => {
+const MoreButton = ({ onClick, isActive = false }: MoreButtonProps) => {
   const { url, alt } = SVGS.button.more;
 
   return (
@@ -20,3 +20,5 @@ export const MoreButton = ({ onClick, isActive = false }: MoreButtonProps) => {
     </button>
   );
 };
+
+export default MoreButton;
