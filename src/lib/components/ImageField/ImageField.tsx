@@ -177,3 +177,5 @@ export const ImageField = ({
     </div>
   );
 };
+
+export default ImageField;
