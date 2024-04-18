@@ -10,8 +10,7 @@
     "prepare": "husky",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_29af39ee43ab7ea"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^18.2.0",
