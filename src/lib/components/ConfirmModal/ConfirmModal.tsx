@@ -17,7 +17,7 @@ type ConfirmModalProps = {
   onClose: () => void;
 };
 
-export const ConfirmModal = ({
+const ConfirmModal = ({
   openModal,
   onClose,
   state,
@@ -60,3 +60,5 @@ export const ConfirmModal = ({
     </>
   );
 };
+
+export default ConfirmModal;

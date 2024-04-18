@@ -1,4 +1,4 @@
-import { ModalButton } from '@/components/modals';
+import ModalButton from '@/components/ModalButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
