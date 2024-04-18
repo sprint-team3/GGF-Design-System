@@ -1,4 +1,4 @@
-import { EmptyAlarmCard } from '@/components/cards';
+import EmptyAlarmCard from '@/components/EmptyAlarmCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
