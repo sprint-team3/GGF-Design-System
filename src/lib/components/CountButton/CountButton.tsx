@@ -20,7 +20,7 @@ type CountButtonProps = {
   isDisabled?: boolean;
 };
 
-export const CountButton = ({ label, info, onClick, maxCount, minCount = 0, isDisabled = false }: CountButtonProps) => {
+const CountButton = ({ label, info, onClick, maxCount, minCount = 0, isDisabled = false }: CountButtonProps) => {
   const [count, setCount] = useState(0);
 
   const { isVisible: isHoverAddButton, handleToggleClick: handleAddButtonState } = useToggleButton();
@@ -76,3 +76,5 @@ export const CountButton = ({ label, info, onClick, maxCount, minCount = 0, isDi
     </div>
   );
 };
+
+export default CountButton;

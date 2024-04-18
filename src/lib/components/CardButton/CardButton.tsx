@@ -10,10 +10,12 @@ type CardButton = {
   color?: 'yellow' | 'red' | 'gray';
 };
 
-export const CardButton = ({ children, onClick, color = 'yellow' }: CardButton) => {
+const CardButton = ({ children, onClick, color = 'yellow' }: CardButton) => {
   return (
     <button type='button' className={cx('btn-card', `btn-color-${color}`)} onClick={onClick}>
       <span>{children}</span>
     </button>
   );
 };
+
+export default CardButton;

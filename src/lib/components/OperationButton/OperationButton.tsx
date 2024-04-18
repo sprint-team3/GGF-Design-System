@@ -14,7 +14,7 @@ type OperationButtonProps = {
   type?: 'add' | 'remove';
 };
 
-export const OperationButton = ({ isDisabled, onClick, type = 'add' }: OperationButtonProps) => {
+const OperationButton = ({ isDisabled, onClick, type = 'add' }: OperationButtonProps) => {
   const { isVisible: isHovering, handleToggleClick: toggleHovering } = useToggleButton();
 
   const isButtonActive = (type === 'add' && !isDisabled) || isHovering;
@@ -41,3 +41,5 @@ export const OperationButton = ({ isDisabled, onClick, type = 'add' }: Operation
     </button>
   );
 };
+
+export default OperationButton;

@@ -1,4 +1,4 @@
-import { CardButton } from '@/components/buttons';
+import CardButton from '@/components/CardButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
