@@ -52,3 +52,5 @@ export const InputRadio = ({
     </div>
   );
 };
+
+export default InputRadio;
