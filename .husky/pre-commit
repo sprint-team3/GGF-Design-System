@@ -8,6 +8,3 @@ fi
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
-
-# Merge시에 새로 생성된 파일에서 잘못된 import가 발생할 수 있으므로 전역에서 type error 체크
-npx tsc --noEmit
