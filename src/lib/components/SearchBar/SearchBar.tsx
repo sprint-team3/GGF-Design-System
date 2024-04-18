@@ -37,3 +37,5 @@ export const SearchBar = ({ placeholder, onChange, color = 'purple', maxLength =
     </div>
   );
 };
+
+export default SearchBar;
