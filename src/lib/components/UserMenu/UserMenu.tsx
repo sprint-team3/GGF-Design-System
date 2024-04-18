@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import { SVGS } from '@/constants';
 
-import Avatar from '@/components/Avatar/Avatar';
+import Avatar from '@/components/Avatar';
 
 import styles from './UserMenu.module.scss';
 
