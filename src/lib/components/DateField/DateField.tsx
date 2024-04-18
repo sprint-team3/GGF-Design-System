@@ -91,3 +91,5 @@ export const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProp
     </div>
   );
 };
+
+export default DateField;
