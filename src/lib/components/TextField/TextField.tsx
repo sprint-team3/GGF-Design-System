@@ -79,3 +79,5 @@ export const TextField = ({ name, label, minLength, maxLength, color = 'purple',
     </div>
   );
 };
+
+export default TextField;
