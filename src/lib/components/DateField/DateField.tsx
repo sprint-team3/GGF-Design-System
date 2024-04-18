@@ -24,7 +24,7 @@ type DateFieldProps = {
   color?: string;
 };
 
-export const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProps) => {
+const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProps) => {
   const {
     register,
     formState: { errors },

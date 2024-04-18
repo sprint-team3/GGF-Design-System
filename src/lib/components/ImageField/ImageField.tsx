@@ -35,7 +35,7 @@ type ImageFiledProps = {
   onFileDelete?: (deletedFile: File) => void;
 };
 
-export const ImageField = ({
+const ImageField = ({
   label,
   modalTitle,
   modalState,
