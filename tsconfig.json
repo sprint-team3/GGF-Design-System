@@ -9,9 +9,12 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
+    "outDir": "dist",
     "jsx": "react-jsx",
 
     /* Linting */
@@ -20,10 +23,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
 
-    "baseUrl": "./src",
+    "baseUrl": "./src/lib",
     "paths": {
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
@@ -34,6 +37,6 @@
       "@/constants/*": ["constants/*"]
     }
   },
-  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "include": ["src/lib/**/*.ts", "src/lib/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
