@@ -105,3 +105,5 @@ export const FormDropdown = ({
     </div>
   );
 };
+
+export default FormDropdown;
