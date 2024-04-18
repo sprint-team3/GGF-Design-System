@@ -14,7 +14,7 @@ type CommonModalProps = {
   onClose: () => void;
 };
 
-export const CommonModal = ({ openModal, onClose, title, renderContent }: CommonModalProps) => {
+const CommonModal = ({ openModal, onClose, title, renderContent }: CommonModalProps) => {
   return (
     <ReactModal
       isOpen={openModal}
@@ -36,3 +36,5 @@ export const CommonModal = ({ openModal, onClose, title, renderContent }: Common
     </ReactModal>
   );
 };
+
+export default CommonModal;

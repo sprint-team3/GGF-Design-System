@@ -10,10 +10,12 @@ type ModalButtonProps = {
   onClick: () => void;
 };
 
-export const ModalButton = ({ variant, children, onClick }: ModalButtonProps) => {
+const ModalButton = ({ variant, children, onClick }: ModalButtonProps) => {
   return (
     <button className={cx('btn', { [`btn-state-${variant}`]: variant })} onClick={onClick}>
       {children}
     </button>
   );
 };
+
+export default ModalButton;

@@ -1,4 +1,4 @@
-import { CommonModal } from '@/components/modals';
+import CommonModal from '@/components/CommonModal';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
