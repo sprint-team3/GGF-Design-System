@@ -17,7 +17,7 @@ type SearchBarType = {
   maxLength?: number;
 };
 
-export const SearchBar = ({ placeholder, onChange, color = 'purple', maxLength = 20 }: SearchBarType) => {
+const SearchBar = ({ placeholder, onChange, color = 'purple', maxLength = 20 }: SearchBarType) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };

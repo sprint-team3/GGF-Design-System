@@ -14,14 +14,7 @@ type InputRadioProps = {
   onClick?: (value: number) => void;
 };
 
-export const InputRadio = ({
-  label,
-  name,
-  radioList,
-  defaultCheckIndex = 0,
-  color = 'purple',
-  onClick,
-}: InputRadioProps) => {
+const InputRadio = ({ label, name, radioList, defaultCheckIndex = 0, color = 'purple', onClick }: InputRadioProps) => {
   const { register } = useFormContext();
 
   return (

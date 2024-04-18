@@ -18,7 +18,7 @@ type TextFieldProps = {
   color?: 'yellow' | 'purple';
 };
 
-export const TextField = ({ name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
+const TextField = ({ name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },

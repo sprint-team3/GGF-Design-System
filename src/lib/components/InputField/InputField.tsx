@@ -24,7 +24,7 @@ type InputFieldProps = {
   autoComplete?: 'on' | 'off';
 };
 
-export const InputField = ({
+const InputField = ({
   name,
   label,
   type = 'text',

@@ -23,7 +23,7 @@ type FormDropdownProps = {
   color?: 'purple' | 'yellow';
 };
 
-export const FormDropdown = ({
+const FormDropdown = ({
   name,
   label = '',
   options,
