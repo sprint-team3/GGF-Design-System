@@ -4,7 +4,7 @@ import styles from './CardSkeleton.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CardSkeleton = () => {
+const CardSkeleton = () => {
   return (
     <article className={cx('card')}>
       <div className={cx('card-header')}></div>
@@ -13,3 +13,5 @@ export const CardSkeleton = () => {
     </article>
   );
 };
+
+export default CardSkeleton;

@@ -4,7 +4,7 @@ import { SVGS } from '@/constants';
 import { toFixedOneDecimal } from '@/utils';
 
 import StarRating from '@/components/StarRating';
-import Tag from '@/components/Tag';
+import Tag from '@/components/Tag/Tag';
 
 import styles from './Card.module.scss';
 
@@ -21,15 +21,7 @@ export type CardProps = {
   tagVariant?: 'default' | 'primary' | 'secondary' | 'tertiary';
 };
 
-export const Card = ({
-  path,
-  title,
-  rating,
-  reviewCount,
-  createdAt,
-  tagContent,
-  tagVariant = 'default',
-}: CardProps) => {
+const Card = ({ path, title, rating, reviewCount, createdAt, tagContent, tagVariant = 'default' }: CardProps) => {
   return (
     <article className={cx('card')}>
       <a href={path} className={cx('card-inner')}>
@@ -55,3 +47,5 @@ export const Card = ({
     </article>
   );
 };
+
+export default Card;
