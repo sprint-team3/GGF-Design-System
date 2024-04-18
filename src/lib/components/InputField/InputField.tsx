@@ -113,3 +113,5 @@ export const InputField = ({
     </div>
   );
 };
+
+export default InputField;
