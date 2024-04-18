@@ -15,14 +15,7 @@ type IconButtonProps = {
   size?: 'small' | 'medium' | 'large';
 };
 
-export const IconButton = ({
-  imageUrl,
-  imageAlt,
-  isActivated,
-  onClick,
-  buttonRef,
-  size = 'medium',
-}: IconButtonProps) => {
+const IconButton = ({ imageUrl, imageAlt, isActivated, onClick, buttonRef, size = 'medium' }: IconButtonProps) => {
   return (
     <button className={cx('icon-button', `frame-outer-${size}`)} onClick={onClick} ref={buttonRef}>
       <div className={cx('dot', 'dot-top', { 'dot-activated': isActivated })}></div>
@@ -35,3 +28,5 @@ export const IconButton = ({
     </button>
   );
 };
+
+export default IconButton;
