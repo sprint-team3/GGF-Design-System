@@ -77,7 +77,3 @@ export { default as Tag } from './components/Tag';
 export { default as TextField } from './components/TextField';
 
 export { default as UserMenu } from './components/UserMenu';
-
-export { default as CommonStyles } from './styles/base/common.scss';
-
-export { default as MainStyles } from './styles/main.scss';
