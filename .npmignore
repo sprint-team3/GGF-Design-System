@@ -16,3 +16,4 @@ README.md
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
+build-storybook.log
