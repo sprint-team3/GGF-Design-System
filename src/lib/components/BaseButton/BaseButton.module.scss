@@ -1,5 +1,6 @@
 %btn-base {
   @include text-style($size: 14, $weight: bold);
+  @include inline-flexbox;
 
   padding: 0 0.8rem;
   transition: $base-transition;
