@@ -1,0 +1,110 @@
+.image-field {
+  @include column-flexbox(center, start, 0.8rem);
+
+  &-label {
+    @include text-style(14, $white);
+
+    &-container {
+      @include flexbox($gap: 0.8rem);
+    }
+
+    &-description {
+      @include text-style(12, $gray40);
+    }
+  }
+
+  &-container {
+    @include column-flexbox;
+
+    width: 100%;
+
+    &-group {
+      @include column-flexbox;
+
+      @include responsive(T) {
+        background: $input-background;
+        border-color: $input-stroke;
+      }
+
+      width: 100%;
+      height: 12rem;
+
+      background: $input-background;
+      border: 0.1rem dashed $input-stroke;
+      border-radius: 0.8rem;
+
+      transition: $base-transition;
+
+      &:hover {
+        background: $black80;
+        border-color: $purple;
+      }
+
+      &-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        &-img {
+          @include image-fit;
+        }
+      }
+
+      &-title {
+        @include text-style(14, $gray40);
+
+        &.active {
+          color: $purple;
+        }
+      }
+    }
+
+    &-name-list {
+      @include column-flexbox(center, start, 0.8rem);
+
+      width: 100%;
+      margin-right: auto;
+      padding-top: 1.2rem;
+
+      &-item {
+        @include flexbox(between);
+
+        width: 100%;
+        padding-bottom: 0.8rem;
+        border-bottom: 0.1rem solid $black60;
+
+        .item-group {
+          @include flexbox($gap: 0.8rem);
+
+          .image-group {
+            @include flexbox($gap: 0.2rem);
+            @include text-style(12, $gray10);
+
+            .file-upload-image {
+              width: 1.6rem;
+              height: 1.6rem;
+
+              &-img {
+                @include image-fit;
+              }
+            }
+          }
+
+          .file-size {
+            @include text-style(10, $gray30, light);
+
+            margin-top: 0.3rem;
+          }
+        }
+
+        .button-group {
+          width: 1.6rem;
+          height: 1.6rem;
+
+          &-img {
+            @include image-fit;
+          }
+        }
+      }
+    }
+  }
+}
