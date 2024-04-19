@@ -6,7 +6,8 @@ import { FileRejection, useDropzone } from 'react-dropzone';
 import { SVGS } from '@/constants';
 import { bytesToKilobytes } from '@/utils';
 
-import { ConfirmModal, ModalButton } from '@/components/modals';
+import ConfirmModal from '@/components/ConfirmModal';
+import ModalButton from '@/components/ModalButton';
 import useMultiState from '@/hooks/useMultiState';
 
 import styles from './ImageField.module.scss';
