@@ -9,7 +9,7 @@
   }
 
   &-item {
-    @include text-style(14, $gray20);
+    @include text-style(14, $gray20, bold);
 
     @include responsive(PC) {
       &:hover {
