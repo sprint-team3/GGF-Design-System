@@ -1,4 +1,4 @@
-import EmptyCard from '../lib/components/EmptyCard';
+import EmptyCard from '@/components/EmptyCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

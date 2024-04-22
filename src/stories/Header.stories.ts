@@ -1,4 +1,4 @@
-import Header from '../lib/components/Header';
+import Header from '@/components/Header';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

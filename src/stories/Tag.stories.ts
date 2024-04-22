@@ -1,4 +1,4 @@
-import Tag from '../lib/components/Tag';
+import Tag from '@/components/Tag';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

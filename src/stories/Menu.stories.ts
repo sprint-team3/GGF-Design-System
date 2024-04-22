@@ -1,4 +1,4 @@
-import Menu from '../lib/components/Menu';
+import Menu from '@/components/Menu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

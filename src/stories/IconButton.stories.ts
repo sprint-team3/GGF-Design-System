@@ -1,4 +1,4 @@
-import IconButton from '../lib/components/IconButton';
+import IconButton from '@/components/IconButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

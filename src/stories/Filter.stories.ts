@@ -1,4 +1,4 @@
-import Filter from '../lib/components/Filter';
+import Filter from '@/components/Filter';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

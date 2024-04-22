@@ -1,4 +1,4 @@
-import ImageField from '../lib/components/ImageField';
+import ImageField from '@/components/ImageField';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
