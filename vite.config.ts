@@ -1,12 +1,11 @@
 import { resolve } from 'path';
-import * as path from 'path';
 
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [dts()],
+  plugins: [dts({ include: ['src/lib'] }), libInjectCss()],
   resolve: {
     alias: {
       '@': resolve(__dirname, `./src/lib`),
@@ -21,12 +20,13 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/lib/index.ts'),
+      entry: resolve(__dirname, './src/lib/index.ts'),
       name: 'index',
       fileName: 'index',
+      formats: ['es'],
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
