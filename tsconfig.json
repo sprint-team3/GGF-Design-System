@@ -37,6 +37,6 @@
       "@/constants/*": ["constants/*"]
     }
   },
-  "include": ["src/lib"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
