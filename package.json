@@ -4,10 +4,16 @@
   "private": false,
   "type": "module",
   "main": "dist/index.js",
-  "module": "./index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "author": "GGF",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
@@ -17,10 +23,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "compile": "rm -rf dist && mkdir dist && tsc"
+    "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "ggf-ui": "file:ggf-ui-0.1.5.tgz",
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
