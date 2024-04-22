@@ -1,6 +1,6 @@
 {
   "name": "ggf-ui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
-    "test": "npm uninstall ggf-ui && npm cache verify && rm -rf ./ggf-ui-0.1.5.tgz && npm run build && npm pack && npm install ./ggf-ui-0.1.5.tgz",
+    "test": "npm uninstall ggf-ui && npm cache verify && rm -rf ./ggf-ui-0.1.6.tgz && npm run build && npm pack && npm install ./ggf-ui-0.1.6.tgz",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky",
     "preview": "vite preview",
