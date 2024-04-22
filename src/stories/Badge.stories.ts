@@ -1,4 +1,4 @@
-import Badge from '../lib/components/Badge';
+import Badge from '@/components/Badge';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

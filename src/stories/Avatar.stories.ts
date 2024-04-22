@@ -1,4 +1,4 @@
-import Avatar from '../lib/components/Avatar';
+import Avatar from '@/components/Avatar';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

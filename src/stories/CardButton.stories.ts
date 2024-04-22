@@ -1,4 +1,4 @@
-import CardButton from '../lib/components/CardButton';
+import CardButton from '@/components/CardButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

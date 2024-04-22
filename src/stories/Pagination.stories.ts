@@ -1,4 +1,4 @@
-import Pagination from '../lib/components/Pagination';
+import Pagination from '@/components/Pagination';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
