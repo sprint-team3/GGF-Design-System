@@ -3,9 +3,10 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [dts({ include: ['src/lib'] }), libInjectCss()],
+  plugins: [dts({ include: ['src/lib'] }), libInjectCss(), tsconfigPaths()],
   resolve: {
     alias: {
       '@': resolve(__dirname, `./src/lib`),
