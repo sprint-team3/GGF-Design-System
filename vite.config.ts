@@ -13,15 +13,18 @@ export default defineConfig({
     },
   },
   css: {
+    modules: {},
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/main.scss" as *;`,
+        additionalData: `
+        @use "@/styles/main.scss" as *;
+        `,
       },
     },
   },
   build: {
     lib: {
-      entry: resolve(__dirname, './src/lib/index.ts'),
+      entry: [resolve(__dirname, './src/lib/index.ts'), resolve(__dirname, './src/lib/styles/base/common.scss')],
       name: 'index',
       fileName: 'index',
       formats: ['es'],
@@ -37,5 +40,6 @@ export default defineConfig({
     commonjsOptions: {
       esmExternals: ['react'],
     },
+    cssCodeSplit: true,
   },
 });
