@@ -13,7 +13,8 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
-    }
+    },
+    "./common.css": "./dist/common.css"
   },
   "files": [
     "dist"
@@ -70,6 +71,7 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-testing-library": "^6.2.2",
+    "fs-extra": "^11.2.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
@@ -77,7 +79,7 @@
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.51.3",
     "react-modal": "^3.16.1",
-    "sass": "^1.71.0",
+    "sass": "^1.75.0",
     "sass-loader": "^14.2.0",
     "storybook": "^8.0.8",
     "stylelint": "^16.2.1",
