@@ -8,22 +8,8 @@
 }
 
 html {
-  scrollbar-gutter: stable;
   font-family: $font-main;
   font-size: $browser-font-size;
-}
-
-body {
-  @include body-scrollbar;
-
-  @include responsive(T) {
-    @include no-scrollbar;
-  }
-
-  overflow-y: scroll;
-  min-height: 100vh;
-  color: $white;
-  background-color: $black90;
 }
 
 h1 {
@@ -37,7 +23,7 @@ a {
 
 button {
   padding: 0;
-  color: $white;
+  color: #eee;
 }
 
 a,
