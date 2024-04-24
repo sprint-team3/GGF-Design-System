@@ -1,6 +1,6 @@
 {
   "name": "ggf-ui",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "GGF design system library",
   "private": false,
   "type": "module",
@@ -25,8 +25,8 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
-    "clean": "npm uninstall ggf-ui && npm cache verify && rm -rf ./ggf-ui-0.2.5.tgz ",
-    "test": "npm run clean && npm run build && npm pack && npm install ./ggf-ui-0.2.5.tgz",
+    "clean": "npm uninstall ggf-ui && npm cache verify && rm -rf ./ggf-ui-0.2.6.tgz ",
+    "test": "npm run clean && npm run build && npm pack && npm install ./ggf-ui-0.2.6.tgz",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky",
     "preview": "vite preview",
