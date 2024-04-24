@@ -1,4 +1,4 @@
-import DrawerMenu from '../lib/components/DrawerMenu';
+import DrawerMenu from '@/components/DrawerMenu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

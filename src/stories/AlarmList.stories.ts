@@ -1,4 +1,4 @@
-import AlarmList from '../lib/components/AlarmList';
+import AlarmList from '@/components/AlarmList';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

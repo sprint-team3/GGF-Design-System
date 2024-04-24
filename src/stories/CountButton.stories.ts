@@ -1,4 +1,4 @@
-import CountButton from '../lib/components/CountButton';
+import CountButton from '@/components/CountButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

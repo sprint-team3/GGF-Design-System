@@ -1,4 +1,4 @@
-import HeaderSignupButton from '../lib/components/HeaderSignupButton';
+import HeaderSignupButton from '@/components/HeaderSignupButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

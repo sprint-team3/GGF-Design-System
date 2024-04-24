@@ -54,6 +54,7 @@
       @include text-style-quantico(32);
 
       line-height: 4rem;
+      color: $white;
 
       &-mobile-size {
         @include pos-center-x;

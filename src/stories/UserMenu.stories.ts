@@ -1,4 +1,4 @@
-import UserMenu from '../lib/components/UserMenu';
+import UserMenu from '@/components/UserMenu';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

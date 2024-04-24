@@ -1,4 +1,4 @@
-import BaseButton from '../lib/components/BaseButton';
+import BaseButton from '@/components/BaseButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

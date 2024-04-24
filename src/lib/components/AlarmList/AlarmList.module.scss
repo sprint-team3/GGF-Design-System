@@ -51,6 +51,8 @@
 
 .alarm {
   @include text-style(16, $weight: bold);
+
+  color: $white;
 }
 
 .total-count {

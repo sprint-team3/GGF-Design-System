@@ -1,4 +1,4 @@
-import ReviewCard from '../lib/components/ReviewCard';
+import ReviewCard from '@/components/ReviewCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

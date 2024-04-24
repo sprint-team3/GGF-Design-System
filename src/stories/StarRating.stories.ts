@@ -1,4 +1,4 @@
-import StarRating from '../lib/components/StarRating';
+import StarRating from '@/components/StarRating';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

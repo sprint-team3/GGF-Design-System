@@ -1,4 +1,4 @@
-import AlarmCard from '../lib/components/AlarmCard';
+import AlarmCard from '@/components/AlarmCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

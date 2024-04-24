@@ -1,32 +1,36 @@
 import { resolve } from 'path';
-import * as path from 'path';
 
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [dts()],
+  plugins: [dts({ include: ['src/lib'] }), libInjectCss(), tsconfigPaths()],
   resolve: {
     alias: {
       '@': resolve(__dirname, `./src/lib`),
     },
   },
   css: {
+    modules: {},
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/main.scss" as *;`,
+        additionalData: `
+        @use "@/styles/main.scss" as *;
+        `,
       },
     },
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/lib/index.ts'),
+      entry: [resolve(__dirname, './src/lib/index.ts'), resolve(__dirname, './src/lib/styles/base/common.scss')],
       name: 'index',
       fileName: 'index',
+      formats: ['es'],
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
@@ -36,5 +40,6 @@ export default defineConfig({
     commonjsOptions: {
       esmExternals: ['react'],
     },
+    cssCodeSplit: true,
   },
 });

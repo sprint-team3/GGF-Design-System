@@ -1,4 +1,4 @@
-import HeaderProfile from '../lib/components/HeaderProfile';
+import HeaderProfile from '@/components/HeaderProfile';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
