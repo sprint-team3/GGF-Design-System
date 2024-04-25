@@ -1,0 +1,32 @@
+## Title
+
+- CardButton
+
+## Description
+
+- The CardButton component represents a button typically used within a card, allowing users to perform specific actions associated with the card content.
+
+## Anatomy
+
+- **`children`** : Content to be displayed within the button.
+- **`onClick`** : Optional function prop to handle click events on the button.
+- **`color`** : Optional string prop specifying the color variant of the button. It can be one of the following values: 'yellow', 'red', or 'gray'. If not provided, the default value is 'yellow'.
+  ```tsx
+  color: 'yellow' | 'red' | 'gray';
+  ```
+
+## Usage
+
+```tsx
+import CardButton from 'ggf-ui';
+```
+
+```tsx
+<CardButton color='gray' onClick={() => console.log('Button clicked')}>
+  Button
+</CardButton>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-cardbutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-cardbutton--example&globals=backgrounds.value:!hex(333333)>)
