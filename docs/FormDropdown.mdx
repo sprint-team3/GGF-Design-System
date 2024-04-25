@@ -6,13 +6,7 @@ FormDropdown
 
 A customizable dropdown menu for forms, allowing users to select from a list of options.
 
-## **Installation**
-
-**essential**
-
-```bash
-npm i ggf-ui@latest react-hook-form
-```
+## Installation
 
 **optional**
 
@@ -22,7 +16,7 @@ npm i zod @hookform/resolvers
 
 ## Library
 
-- react-hook-form
+- react-hook-form `<=^7.51.3`
 - zod, @hookform/resolvers (optional)
 
 ## Anatomy
@@ -40,8 +34,8 @@ npm i zod @hookform/resolvers
 ## Usage
 
 ```tsx
-import { FormProvider, useForm } from 'react-hook-form';
 import { FormDropdown } from 'ggf-ui';
+import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod'; // optional
 import { z } from 'zod'; // optional
 ```
@@ -69,6 +63,7 @@ return (
   <FormProvider {...methods}>
     <form onSubmit={methods.handleSubmit(onSubmit)}>
       <FormDropdown name='FormDropdown' options={options} />
+      <button>Submit</button>
     </form>
   </FormProvider>
 );
