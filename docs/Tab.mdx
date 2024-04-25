@@ -8,15 +8,19 @@ This component is used to render tabs. It displays the selected tab and activate
 
 ### Anatomy
 
-- **items**: An array of TabItem objects. Each TabItem has the following structure:
-  - **id**: The unique identifier of the tab.
-  - **text**: The text to be displayed on the tab.
-  - **count** (optional): The number of items to be displayed next to the tab.
-- **onClick** (optional): A function to execute when the selected tab changes. It receives the id of the selected tab as a parameter.
-- **selectedTabId** (optional): The id of the initially selected tab. Defaults to the id of the first tab.
-- **size** (optional): Sets the size of the tabs. Can be 'small' or 'medium'. Defaults to 'medium'.
+- **`items`**: An array of TabItem objects. Each TabItem has the following structure:
+  - **`id`**: The unique identifier of the tab.
+  - **`text`**: The text to be displayed on the tab.
+  - **`count`** (optional): The number of items to be displayed next to the tab.
+- **`onClick`** (optional): A function to execute when the selected tab changes. It receives the id of the selected tab as a parameter.
+- **`selectedTabId`** (optional): The id of the initially selected tab. Defaults to the id of the first tab.
+- **`size`** (optional): Sets the size of the tabs. Can be 'small' or 'medium'. Defaults to 'medium'.
 
 ### Usage
+
+```tsx
+import { Tab } from 'ggf-ui';
+```
 
 ```tsx
 <Tab

@@ -8,13 +8,17 @@ This component is designed to render a filter interface, allowing users to selec
 
 ### Anatomy
 
-- **items**: An array of FilterItem objects. Each FilterItem has the following structure:
-  - **id**: The unique identifier of the filter option.
-  - **text**: The text or number to be displayed for the filter option.
-- **onChange** (optional): A function to execute when the selected filter changes. It receives the id of the selected filter as a parameter.
-- **selectedFilterId** (optional): The id of the initially selected filter. Defaults to the id of the first filter option.
+- **`items`**: An array of FilterItem objects. Each FilterItem has the following structure:
+  - **`id`**: The unique identifier of the filter option.
+  - **`text`**: The text or number to be displayed for the filter option.
+- **`onChange`** (optional): A function to execute when the selected filter changes. It receives the id of the selected filter as a parameter.
+- **`selectedFilterId`** (optional): The id of the initially selected filter. Defaults to the id of the first filter option.
 
 ### Usage
+
+```tsx
+import { Filter } from 'ggf-ui';
+```
 
 ```tsx
 <Filter

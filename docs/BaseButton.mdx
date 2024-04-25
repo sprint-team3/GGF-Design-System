@@ -8,16 +8,20 @@ The Base Button component serves as a foundational button element that can be cu
 
 ### Anatomy
 
-- **children**: The text content to be displayed within the button.
-- **isDisabled** (optional): A boolean indicating whether the button should be disabled.
-- **onClick** (optional): A function to be executed when the button is clicked.
-- **variant** (optional): Specifies the visual style of the button. It can be 'fill', 'ghost', or 'outline'. Defaults to 'fill'.
-- **size** (optional): Sets the size of the button. Can be 'small', 'medium', or 'large'. Defaults to 'medium'.
-- **color** (optional): Specifies the color theme of the button. Options include 'yellow', 'purple', or 'red'. Defaults to 'yellow'.
-- **type** (optional): Specifies the type of button. Can be 'button' or 'submit'. Defaults to 'button'.
-- **isQuantico** (optional): A boolean indicating whether the button should have a Quantico-specific style.
+- **`children`**: The text content to be displayed within the button.
+- **`isDisabled`** (optional): A boolean indicating whether the button should be disabled.
+- **`onClick`** (optional): A function to be executed when the button is clicked.
+- **`variant`** (optional): Specifies the visual style of the button. It can be 'fill', 'ghost', or 'outline'. Defaults to 'fill'.
+- **`size`** (optional): Sets the size of the button. Can be 'small', 'medium', or 'large'. Defaults to 'medium'.
+- **`color`** (optional): Specifies the color theme of the button. Options include 'yellow', 'purple', or 'red'. Defaults to 'yellow'.
+- **`type`** (optional): Specifies the type of button. Can be 'button' or 'submit'. Defaults to 'button'.
+- **`isQuantico`** (optional): A boolean indicating whether the button should have a Quantico-specific style.
 
 ### Usage
+
+```tsx
+import { BaseButton } from 'ggf-ui';
+```
 
 ```tsx
 <BaseButton onClick={onClick} variant='fill' size='medium' color='yellow'>

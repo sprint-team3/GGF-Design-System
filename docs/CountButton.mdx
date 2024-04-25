@@ -8,14 +8,18 @@ The Count Button component is used to display a button with a count value, often
 
 ### Anatomy
 
-- **label** (optional): The text label to be displayed above the button.
-- **info** (optional): Additional information to be displayed alongside the label.
-- **onClick** (optional): A function to be executed when the count value changes. It receives the updated count value as a parameter.
-- **maxCount** (optional): The maximum allowed value for the count. If not provided, the count can increase indefinitely.
-- **minCount** (optional): The minimum allowed value for the count. Defaults to 0.
-- **isDisabled** (optional): A boolean indicating whether the button should be disabled.
+- **`label`** (optional): The text label to be displayed above the button.
+- **`info`** (optional): Additional information to be displayed alongside the label.
+- **`onClick`** (optional): A function to be executed when the count value changes. It receives the updated count value as a parameter.
+- **`maxCount`** (optional): The maximum allowed value for the count. If not provided, the count can increase indefinitely.
+- **`minCount`** (optional): The minimum allowed value for the count. Defaults to 0.
+- **`isDisabled`** (optional): A boolean indicating whether the button should be disabled.
 
 ### Usage
+
+```tsx
+import { CountButton } from 'ggf-ui';
+```
 
 ```tsx
 <CountButton label='Quantity' onClick={onClick} />
