@@ -10,7 +10,7 @@ The CardButton component represents a button typically used within a card, allow
 
 - **`children`** : Content to be displayed within the button.
 - **`onClick`** : Optional function prop to handle click events on the button.
-- **`color`** : Optional string prop specifying the color variant of the button. It can be one of the following values: `'yellow' | 'red'.
+- **`color`** : Optional string prop specifying the color variant of the button. It can be one of the following values: `'yellow' | 'red' | 'gray'. If not provided, the default value is 'yellow'.
 
 ## Usage
 
@@ -19,7 +19,7 @@ import { CardButton } from 'ggf-ui';
 ```
 
 ```tsx
-<CardButton color='gray' onClick={() => console.log('Button clicked')}>
+<CardButton color='gray' onClick={onClick}>
   Button
 </CardButton>
 ```
