@@ -3,7 +3,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { format } from 'date-fns';
 import { DayPicker, DateFormatter } from 'react-day-picker';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, FormState, UseFormRegister, UseFormSetValue } from 'react-hook-form';
 
 import { SVGS } from '@/constants';
 import { getAfterDays, getDayPickerFormatDate, getYesterday } from '@/utils';
@@ -17,19 +17,26 @@ const cx = classNames.bind(styles);
 
 const { url, alt } = SVGS.calendar.active;
 
+type FormMethod = {
+  register: UseFormRegister<FieldValues>;
+  formState: FormState<FieldValues>;
+  setValue: UseFormSetValue<FieldValues>;
+};
+
 type DateFieldProps = {
+  formMethod: FormMethod;
   label: string;
   name: string;
   days: number;
-  color?: string;
+  color?: 'purple' | 'yellow';
 };
 
-const DateField = ({ label, name, days, color = 'yellow' }: DateFieldProps) => {
+const DateField = ({ formMethod, label, name, days, color = 'purple' }: DateFieldProps) => {
   const {
     register,
     formState: { errors },
     setValue,
-  } = useFormContext();
+  } = formMethod;
   const { isOpen, popupRef, buttonRef, togglePopup } = useTogglePopup();
   const [selected, setSelected] = useState<Date | undefined>();
 

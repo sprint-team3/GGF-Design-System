@@ -1,11 +1,16 @@
 import classNames from 'classnames/bind';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 import styles from './InputRadio.module.scss';
 
 const cx = classNames.bind(styles);
 
+type FormMethod = {
+  register: UseFormRegister<FieldValues>;
+};
+
 type InputRadioProps = {
+  formMethod: FormMethod;
   label: string;
   name: string;
   radioList: { id: string; value: number; label: string }[];
@@ -14,8 +19,16 @@ type InputRadioProps = {
   onClick?: (value: number) => void;
 };
 
-const InputRadio = ({ label, name, radioList, defaultCheckIndex = 0, color = 'purple', onClick }: InputRadioProps) => {
-  const { register } = useFormContext();
+const InputRadio = ({
+  formMethod,
+  label,
+  name,
+  radioList,
+  defaultCheckIndex = 0,
+  color = 'purple',
+  onClick,
+}: InputRadioProps) => {
+  const { register } = formMethod;
 
   return (
     <div className={cx('input-radio')}>

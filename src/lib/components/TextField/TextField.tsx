@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, FormState, UseFormRegister, UseFormWatch } from 'react-hook-form';
 
 import { REGEX } from '@/constants/index';
 
@@ -9,7 +9,14 @@ import styles from './TextField.module.scss';
 
 const cx = classNames.bind(styles);
 
+type FormMethod = {
+  register: UseFormRegister<FieldValues>;
+  formState: FormState<FieldValues>;
+  watch: UseFormWatch<FieldValues>;
+};
+
 type TextFieldProps = {
+  formMethod: FormMethod;
   name: string;
   label?: string;
   minLength?: number;
@@ -18,12 +25,12 @@ type TextFieldProps = {
   color?: 'yellow' | 'purple';
 };
 
-const TextField = ({ name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
+const TextField = ({ formMethod, name, label, minLength, maxLength, color = 'purple', ...props }: TextFieldProps) => {
   const {
     register,
     formState: { errors },
     watch,
-  } = useFormContext();
+  } = formMethod;
 
   const contentValue = watch(name);
   const textLength = contentValue ? contentValue.replace(REGEX.textarea, '').length : 0;
