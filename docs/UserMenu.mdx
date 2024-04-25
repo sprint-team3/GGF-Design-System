@@ -1,0 +1,44 @@
+## Title
+
+- UserMenu
+
+## Description
+
+- A component representing a user menu, typically used for displaying user profile information and options like navigating to the user's account page or logging out.
+
+## Anatomy
+
+- **`profileImageUrl`**: URL of the user's profile image.
+- **`nickname`**: User's nickname or display name.
+- **`email`**: User's email address.
+- **`mypageText`**: Text for the link/button to navigate to the user's personal page.
+- **`logoutText`**: Text for the button to log out.
+- **`accountPath`**: URL path for navigating to the user's account page.
+- **`mypagePath`**: URL path for navigating to the user's personal page.
+- **`handleCloseUserMenu`**: Function triggered when the user menu is closed.
+- **`handleClickSignout`**: Function triggered when the user clicks the logout button.
+- **`userMenuRef`**: Optional React ref object attached to the user menu container.
+
+## Usage
+
+```jsx
+import UserMenu from 'ggf-ui';
+```
+
+```jsx
+<UserMenu
+  profileImageUrl='url/to/profile/image.png'
+  nickname='UserName'
+  email='UserName@example.com'
+  mypageText='My Page'
+  logoutText='Logout'
+  accountPath='/account'
+  mypagePath='/mypage'
+  handleCloseUserMenu={handleCloseUserMenu}
+  handleClickSignout={handleClickSignout}
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/usermenu-usermenu--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/usermenu-usermenu--example&globals=backgrounds.value:!hex(333333)>)

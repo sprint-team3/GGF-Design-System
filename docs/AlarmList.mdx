@@ -1,0 +1,46 @@
+## Title
+
+- AlarmList
+
+## Description
+
+- A component for displaying a list of alarm notifications, including options to delete individual alarms or all alarms.
+
+## Anatomy
+
+- **`alarmText`**: Text indicating the purpose or category of the alarms.
+- **`deleteAllText`**: Text displayed on the button to delete all alarms.
+- **`notifications`**: Array of objects representing individual alarm notifications, each containing:
+  - **`id`**: Unique identifier for the alarm.
+  - **`content`**: Description or details of the alarm.
+  - **`createdAt`**: Time stamp of when the alarm was created.
+- **`totalCount`**: Total count of alarms in the list.
+- **`handleDelete`**: Function triggered when an alarm is deleted, taking the alarm's ID as an argument.
+- **`handleDeleteAll`**: Function triggered when the button to delete all alarms is clicked.
+- **`emptyAlarmText`**: Text displayed when there are no alarms to show.
+- **`alarmListRef`**: Optional React ref object attached to the **`<div>`** element wrapping the alarm list.
+
+## Usage
+
+```jsx
+import AlarmList from 'ggf-ui';
+```
+
+```jsx
+<AlarmList
+  alarmText='Current Alarms:'
+  deleteAllText='Delete All'
+  notifications={[
+    { id: 1, content: 'Alarm 1', createdAt: '2024-04-25 10:00 AM' },
+    { id: 2, content: 'Alarm 2', createdAt: '2024-04-24 11:00 AM' },
+  ]}
+  totalCount={2}
+  handleDelete={handleDelete}
+  handleDeleteAll={handleDeleteAll}
+  emptyAlarmText='No alarms to display'
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/alarmlist-alarmlist--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/alarmlist-alarmlist--example&globals=backgrounds.value:!hex(333333)>)
