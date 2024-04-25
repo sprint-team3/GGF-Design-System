@@ -1,0 +1,22 @@
+### Title
+
+- MoreButton
+
+### Description
+
+The More Button component is used to render a button, typically utilized for revealing additional options or menus. It provides functionality for triggering actions when clicked and can visually indicate its active state.
+
+### Anatomy
+
+- **onClick** (optional): A function to be executed when the button is clicked.
+- **isActive** (optional): A boolean indicating whether the button is in an active state.
+
+### Usage
+
+```tsx
+<MoreButton onClick={onClick} isActive={true} />
+```
+
+### Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-morebutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-morebutton--example&globals=backgrounds.value:!hex(333333)>)

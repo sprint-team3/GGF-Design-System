@@ -1,0 +1,23 @@
+### Title
+
+- OperationButton
+
+### Description
+
+The Operation Button component is designed to represent an operation button, typically used for adding or removing items or performing specific actions. It supports visual changes based on user interaction and state, such as hovering or being disabled.
+
+### Anatomy
+
+- **isDisabled** (optional): A boolean flag indicating whether the button is disabled.
+- **onClick** (optional): A function to be executed when the button is clicked.
+- **type** (optional): Specifies the type of operation button. It can be 'add' or 'remove'. Defaults to 'add'.
+
+### Usage
+
+```tsx
+<OperationButton onClick={onClick} type='add' />
+```
+
+### Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-operationbutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-operationbutton--example&globals=backgrounds.value:!hex(333333)>)
