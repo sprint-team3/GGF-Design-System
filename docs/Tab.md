@@ -1,0 +1,36 @@
+### Title
+
+- Tab
+
+### Description
+
+This component is used to render tabs. It displays the selected tab and activates the respective tab whenever the user clicks on a different one. The component provides functionality to change the selected tab and handle click events.
+
+### Anatomy
+
+- **items**: An array of TabItem objects. Each TabItem has the following structure:
+  - **id**: The unique identifier of the tab.
+  - **text**: The text to be displayed on the tab.
+  - **count** (optional): The number of items to be displayed next to the tab.
+- **onClick** (optional): A function to execute when the selected tab changes. It receives the id of the selected tab as a parameter.
+- **selectedTabId** (optional): The id of the initially selected tab. Defaults to the id of the first tab.
+- **size** (optional): Sets the size of the tabs. Can be 'small' or 'medium'. Defaults to 'medium'.
+
+### Usage
+
+```tsx
+<Tab
+  items={[
+    { id: 1, text: 'Tab 1' },
+    { id: 2, text: 'Tab 2', count: 5 },
+    { id: 3, text: 'Tab 3' },
+  ]}
+  onClick={onClick}
+  selectedTabId={2}
+  size='small'
+/>
+```
+
+### Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/tab-filter-tab--medium-example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/tab-filter-tab--medium-example&globals=backgrounds.value:!hex(333333)>)

@@ -1,0 +1,31 @@
+### Title
+
+- ModalButton
+
+### Description
+
+The Modal Button component is used to render a button within a modal interface. It provides functionality for triggering actions when clicked and can be styled to indicate different states such as success or warning.
+
+### Anatomy
+
+- **children**: The text content to be displayed within the button.
+- **variant** (optional): Specifies the visual style of the button. It can be 'success' or 'warning'. Defaults to null.
+- **onClick**: A function to be executed when the button is clicked.
+
+### Usage
+
+```tsx
+<ModalButton variant='success' onClick={onClick}>
+  Confirm
+</ModalButton>
+```
+
+```tsx
+<ModalButton variant='warning' onClick={onClick}>
+  Delete
+</ModalButton>
+```
+
+### Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-modalbutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-modalbutton--example&globals=backgrounds.value:!hex(333333)>)

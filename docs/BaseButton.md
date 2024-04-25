@@ -1,0 +1,36 @@
+### Title
+
+- BaseButton
+
+### Description
+
+The Base Button component serves as a foundational button element that can be customized with various styles and functionalities. It allows users to create buttons with different visual appearances, sizes, colors, and behaviors.
+
+### Anatomy
+
+- **children**: The text content to be displayed within the button.
+- **isDisabled** (optional): A boolean indicating whether the button should be disabled.
+- **onClick** (optional): A function to be executed when the button is clicked.
+- **variant** (optional): Specifies the visual style of the button. It can be 'fill', 'ghost', or 'outline'. Defaults to 'fill'.
+- **size** (optional): Sets the size of the button. Can be 'small', 'medium', or 'large'. Defaults to 'medium'.
+- **color** (optional): Specifies the color theme of the button. Options include 'yellow', 'purple', or 'red'. Defaults to 'yellow'.
+- **type** (optional): Specifies the type of button. Can be 'button' or 'submit'. Defaults to 'button'.
+- **isQuantico** (optional): A boolean indicating whether the button should have a Quantico-specific style.
+
+### Usage
+
+```tsx
+<BaseButton onClick={onClick} variant='fill' size='medium' color='yellow'>
+  Click Me
+</BaseButton>
+```
+
+```tsx
+<BaseButton onClick={onClick} variant='outline' size='large' color='purple' isDisabled={true}>
+  Disabled Button
+</BaseButton>
+```
+
+### Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-basebutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-basebutton--example&globals=backgrounds.value:!hex(333333)>)
