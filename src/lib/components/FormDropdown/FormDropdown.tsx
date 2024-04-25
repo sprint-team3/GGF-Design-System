@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import classNames from 'classnames/bind';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, UseFormRegister, UseFormSetValue } from 'react-hook-form';
 
 import { SVGS } from '@/constants';
 
@@ -14,7 +14,13 @@ const cx = classNames.bind(styles);
 const { url: defaultUrl, alt: defaultAlt } = SVGS.arrow.down.default;
 const { url: activeUrl, alt: activeAlt } = SVGS.arrow.down.active;
 
+type FormMethod = {
+  register: UseFormRegister<FieldValues>;
+  setValue: UseFormSetValue<FieldValues>;
+};
+
 type FormDropdownProps = {
+  formMethod: FormMethod;
   name: string;
   options: { title: string; value: number | string }[];
   label?: string;
@@ -24,6 +30,7 @@ type FormDropdownProps = {
 };
 
 const FormDropdown = ({
+  formMethod,
   name,
   label = '',
   options,
@@ -31,7 +38,7 @@ const FormDropdown = ({
   isDisabled = false,
   color = 'purple',
 }: FormDropdownProps) => {
-  const { register, setValue } = useFormContext();
+  const { register, setValue } = formMethod;
   const { isOpen, popupRef, buttonRef, togglePopup } = useTogglePopup();
   const [currentOptionTitle, setCurrentOptionTitle] = useState(options[0]?.title);
 
