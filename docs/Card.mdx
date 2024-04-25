@@ -1,0 +1,39 @@
+## Title
+
+Card
+
+## Description
+
+Displays structured content including a title, rating, review count, creation date, and a tag, suitable for presenting various types of information or items
+
+## Anatomy
+
+- **`path`** : String representing the URL path to navigate to when the card is clicked.
+- **`title`** : String representing the title of the card.
+- **`rating`** : Number representing the rating of the card, usually ranging from 0 to 5.
+- **`reviewCount`** : Number representing the count of reviews for the card.
+- **`createdAt`** : String or number representing the creation date of the card.
+- **`tagContent`** : String or number representing the content of the tag displayed on the card.
+- **`tagVariant`** : Optional string prop specifying the variant of the tag displayed on the card. It can be one of the following values: `'default' | 'primary' | 'secondary' | 'tertiary'`. If not provided, the default value is 'default'.
+
+## Usage
+
+```tsx
+import { Card } from 'ggf-ui';
+```
+
+```tsx
+<Card
+  path='/'
+  title='title'
+  rating={4}
+  reviewCount={reviewCount}
+  createdAt={createdAt}
+  tagContent='tag'
+  tagVariant='primary'
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/cards-card--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/cards-card--example&globals=backgrounds.value:!hex(333333)>)
