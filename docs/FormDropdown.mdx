@@ -1,0 +1,79 @@
+## Title
+
+FormDropdown
+
+## Description
+
+A customizable dropdown menu for forms, allowing users to select from a list of options.
+
+## **Installation**
+
+**essential**
+
+```bash
+npm i ggf-ui@latest react-hook-form
+```
+
+**optional**
+
+```bash
+npm i zod @hookform/resolvers
+```
+
+## Library
+
+- react-hook-form
+- zod, @hookform/resolvers (optional)
+
+## Anatomy
+
+- **`formMethod`** : Object containing form management methods and state from React Hook Form.
+- **`name`**: The unique identifier for the dropdown input.
+- **`label`** (optional): The text label displayed above the dropdown.
+- **`options`**: An array of objects representing the dropdown options.
+  - title: string;
+  - value: number | string;
+- **`isSmall`** (optional): A boolean indicating whether the dropdown should be rendered in a smaller size.
+- **`isDisabled`** (optional): A boolean indicating whether the dropdown should be disabled.
+- **`color`** (optional): The color theme for the dropdown. It can be `'purple' | 'yellow'`. Defaults to `'purple'`
+
+## Usage
+
+```tsx
+import { FormProvider, useForm } from 'react-hook-form';
+import { FormDropdown } from 'ggf-ui';
+import { zodResolver } from '@hookform/resolvers/zod'; // optional
+import { z } from 'zod'; // optional
+```
+
+```tsx
+const Schema = z.object({
+  formdropdown: z.number().min(1),
+}); // optional
+
+const methods = useForm({
+  mode: 'all',
+  resolver: zodResolver(Schema), // optional
+});
+
+const options = [
+  { title: 'number 1', value: 1 },
+  { title: 'number 2', value: 2 },
+];
+
+const onSubmit = (data: object) => {
+  console.log(data);
+};
+
+return (
+  <FormProvider {...methods}>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <FormDropdown name='FormDropdown' options={options} />
+    </form>
+  </FormProvider>
+);
+```
+
+## UI
+
+<img src='https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/globalnomad/activity_registration_image/2-3_116_1714033368085.png' />
