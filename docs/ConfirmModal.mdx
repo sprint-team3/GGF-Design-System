@@ -1,0 +1,42 @@
+## Title
+
+- ConfirmModal
+
+## Description
+
+- The ConfirmModal component represents a modal dialog used for confirming actions with a state indicator, title, description, and customizable button area.
+
+## Anatomy
+
+- **`openModal`** : Boolean prop indicating whether the modal is open or closed.
+- **`state`** : String prop representing the state or status of the confirmation.
+- **`title`** : String prop representing the title of the confirmation modal.
+- **`description`** : Optional string prop providing additional information or description for the confirmation.
+- **`renderButton`** : ReactNode prop representing the content to be rendered within the button area of the modal.
+- **`warning`** : Optional boolean prop indicating whether the confirmation is a warning or not. If true, applies a warning style to the modal.
+- **`onClose`** : Function prop to handle the closing action of the modal.
+
+## Usage
+
+```tsx
+import { ConfirmModal } from 'ggf-ui';
+```
+
+```tsx
+<ConfirmModal
+  openModal={true}
+  onClose={onClose}
+  state='Modal State'
+  title='Title'
+  desc='Description'
+  renderButton={
+    <ModalButton variant='success' onClick={onClick}>
+      Button
+    </ModalButton>
+  }
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-confirmmodal--warning-modal&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-confirmmodal--warning-modal&globals=backgrounds.value:!hex(333333)>)
