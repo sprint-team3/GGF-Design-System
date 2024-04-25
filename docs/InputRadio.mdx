@@ -1,0 +1,66 @@
+## Title
+
+InputRadio
+
+## Description
+
+The InputRadio component provides a set of radio buttons for selecting a single option from a list. It allows users to choose from a predefined set of options and captures the selected value for form submission or data processing.
+
+## Library
+
+- react-hook-form `<=^7.51.3`
+
+## Anatomy
+
+- **`formMethod`**: An object containing the form methods provided by React Hook Form, including the register function.
+- **`label`**: The label displayed above the radio button group.
+- **`name`**: The unique identifier for the radio button group.
+- **`radioList`**: An array of objects representing each radio button option. Each object contains:
+  - **`id`**: The unique identifier for the radio button.
+  - **`value`**: The value associated with the radio button.
+  - **`label`**: The text label displayed next to the radio button.
+- **`defaultCheckIndex`** (optional): The index of the option in the radioList array that should be checked by default. Defaults to `0`.
+- **`color`** (optional): Specifies the color theme of the radio buttons. It can be `'yellow' | 'purple'`. Defaults to `'purple'`.
+- **`onClick`** (optional): A function called when a radio button is clicked. It receives the value of the selected option as a parameter.
+
+## Usage
+
+```jsx
+import { InputRadio } from 'ggf-ui';
+import { FormProvider, useForm } from 'react-hook-form';
+```
+
+```tsx
+const methods = useForm({
+  mode: 'all',
+});
+
+const onSubmit = (data: object) => {
+  console.log(data);
+};
+
+return (
+  <FormProvider {...methods}>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <InputRadio
+        formMethod={methods}
+        label='Gender'
+        name='InputRadio'
+        radioList={[
+          { id: '0', value: 0, label: '0' },
+          { id: '1', value: 1, label: '1' },
+          { id: '2', value: 2, label: '2' },
+        ]}
+        defaultCheckIndex={0}
+        color='purple'
+        onClick={(value) => onClick(value)}
+      />
+      <button>Submit</button>
+    </form>
+  </FormProvider>
+);
+```
+
+## UI
+
+<img src='https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/globalnomad/activity_registration_image/2-3_116_1714051105390.png' />
