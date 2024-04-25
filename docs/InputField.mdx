@@ -1,0 +1,71 @@
+## Title
+
+InputField
+
+## Description
+
+The InputField component provides a versatile input field with customizable options such as label, type, color, error visibility, length limits, and password visibility toggle. It is designed to seamlessly integrate with forms and handle various input types including text, email, and password.
+
+## Installation
+
+**optional**
+
+```bash
+npm i zod @hookform/resolvers
+```
+
+## Library
+
+- react-hook-form `<=^7.51.3`
+- zod, @hookform/resolvers (optional)
+
+## Anatomy
+
+- **`name`**: The unique identifier for the input field.
+- **`label`** (optional): The label displayed above the input field.
+- **`type`** (optional): Specifies the type of input field. It can be `'text' | 'email' | 'password'`. Defaults to `'text'`.
+- **`color`** (optional): Specifies the color theme of the input field. It can be `'yellow' | 'purple'`. Defaults to `'purple'`.
+- **`isErrorVisible`** (optional): A boolean indicating whether the error message should be visible. Defaults to `false`.
+- **`isLimited`** (optional): A boolean indicating whether the input length is limited. Defaults to `false`.
+- **`isDisabled`** (optional): A boolean indicating whether the input field should be disabled. Defaults to `false`.
+- **`maxLength`** (optional): The maximum length allowed for input. Defaults to `10`.
+- **`minLength`** (optional): The minimum length required for input. Defaults to `1`.
+- **`readOnly`** (optional): A boolean indicating whether the input field should be read-only. Defaults to `false`.
+- **`autoComplete`** (optional): Specifies whether the browser should automatically complete the input value. Can be `'on' | 'off'`. Defaults to `'on'`.
+
+## Usage
+
+```jsx
+import { InputField } from 'ggf-ui';
+import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod'; // optional
+import { z } from 'zod'; // optional
+```
+
+```tsx
+const Schema = z.object({
+  InputField: z.string().min(1),
+}); // optional
+
+const methods = useForm({
+  mode: 'all',
+  resolver: zodResolver(Schema), // optional
+});
+
+const onSubmit = (data: object) => {
+  console.log(data);
+};
+
+return (
+  <FormProvider {...methods}>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <InputField formMethod={methods} name='InputField' label='InputField' />
+      <button>Submit</button>
+    </form>
+  </FormProvider>
+);
+```
+
+## UI
+
+<img src='https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/globalnomad/activity_registration_image/2-3_116_1714046588623.png' />
