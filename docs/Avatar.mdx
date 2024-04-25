@@ -1,0 +1,30 @@
+## Title
+
+- Avatar
+
+## Description
+
+- A component for displaying user avatars with optional activation.
+
+## Anatomy
+
+- **`profileImageUrl`**: URL of the user's profile image.
+- **`size`**: Size of the avatar, which can be one of the following options:
+  - **`'small'`**: Small-sized avatar.
+  - **`'medium'`**: Medium-sized avatar (default).
+  - **`'large'`**: Large-sized avatar.
+- **`isActivated`**: Boolean indicating whether the avatar is activated.
+
+## Usage
+
+```jsx
+import Avatar from 'ggf-ui';
+```
+
+```jsx
+<Avatar profileImageUrl='url/to/profile/image.jpg' size='medium' isActivated={true} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/avatar-avatar--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/avatar-avatar--example&globals=backgrounds.value:!hex(333333)>)
