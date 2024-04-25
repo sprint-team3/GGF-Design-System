@@ -37,6 +37,22 @@ import { ConfirmModal } from 'ggf-ui';
 />
 ```
 
+```tsx
+<ConfirmModal
+  warning
+  openModal={true}
+  onClose={onClose}
+  state='Modal State'
+  title='Title'
+  desc='Description'
+  renderButton={
+    <ModalButton variant='warning' onClick={onClick}>
+      Button
+    </ModalButton>
+  }
+/>
+```
+
 ## Storybook
 
 [https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-confirmmodal--warning-modal&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-confirmmodal--warning-modal&globals=backgrounds.value:!hex(333333)>)
