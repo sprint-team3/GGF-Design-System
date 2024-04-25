@@ -68,17 +68,13 @@ const InputField = ({
       </label>
       <div className={cx('input-field-input-group')}>
         {isDisabled ? (
-          <input
-            id={`input-field-${name}`}
-            className={cx('input-field-input-group-input', color)}
-            disabled
-            {...props}
-          />
+          <input id={`input-field-${name}`} className={cx('input-field-input-group-input')} disabled {...props} />
         ) : (
           <input
             id={`input-field-${name}`}
             className={cx(
               'input-field-input-group-input',
+              color,
               { error: isError },
               { 'is-password': isPassword },
               { 'is-limited': isLimited && !isPassword },
