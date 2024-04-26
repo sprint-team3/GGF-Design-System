@@ -1,0 +1,37 @@
+## Title
+
+Menu
+
+## Description
+
+A component for displaying a menu with clickable items.
+
+## Anatomy
+
+- **`menuList`**: An array of objects representing menu items, each containing:
+  - **`menu`**: Text representing the menu item.
+  - **`path`**: URL path associated with the menu item.
+- **`activatedMenu`**: Index of the currently activated menu item.
+- **`handleActivatedMenu`**: Function triggered when a menu item is activated, taking the index of the activated menu item as an argument.
+
+## Usage
+
+```tsx
+import { Menu } from 'ggf-ui';
+```
+
+```tsx
+<Menu
+  menuList={[
+    { menu: 'Home', path: '/' },
+    { menu: 'About', path: '/about' },
+    // Add more menu items as needed
+  ]}
+  activatedMenu={0}
+  handleActivatedMenu={handleActivatedMenu}
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/menu-menu--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/menu-menu--example&globals=backgrounds.value:!hex(333333)>)

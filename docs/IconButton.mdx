@@ -1,0 +1,36 @@
+## Title
+
+IconButton
+
+## Description
+
+A component representing an icon button with optional activation indicators.
+
+## Anatomy
+
+- **`imageUrl`**: URL of the icon image.
+- **`imageAlt`**: Alternate text for the icon image.
+- **`isActivated`**: Boolean indicating whether the button is activated.
+- **`onClick`**: Function triggered when the button is clicked.
+- **`buttonRef`** (optional): React ref object attached to the **`<button>`** element.
+- **`size`** (optional): Sets the size of the button. Can be `'small' | 'medium' | 'large'` Defaults to 'medium'.
+
+## Usage
+
+```tsx
+import { IconButton } from 'ggf-ui';
+```
+
+```tsx
+<IconButton
+  imageUrl='url/to/icon/image.png'
+  imageAlt='Icon Alt Text'
+  isActivated={true}
+  onClick={onClick}
+  size='small'
+/>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/buttons-iconbutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/buttons-iconbutton--example&globals=backgrounds.value:!hex(333333)>)

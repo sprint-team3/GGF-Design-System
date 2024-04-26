@@ -1,0 +1,30 @@
+## Title
+
+Pagination
+
+## Description
+
+A component for pagination, allowing navigation between pages of content.
+
+## Anatomy
+
+- **`totalCount`**: Total count of items to be paginated.
+- **`pageState`**: Current page number.
+- **`postPerPage`**: Number of items displayed per page.
+- **`defaultPageSize`**: Default number of items per page.
+- **`pageLimit`**: Limit of page numbers displayed in the pagination component.
+- **`onClick`**: Function triggered when a page is clicked, taking the page number as an argument.
+
+## Usage
+
+```tsx
+import { Pagination } from 'ggf-ui';
+```
+
+```tsx
+<Pagination totalCount={100} pageState={1} postPerPage={10} defaultPageSize={100} pageLimit={5} onClick={onClick} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/pagination-pagination--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/pagination-pagination--example&globals=backgrounds.value:!hex(333333)>)

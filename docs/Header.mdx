@@ -1,0 +1,46 @@
+## Title
+
+Header
+
+## Description
+
+A header component containing a logo, menu button, and optional children elements.
+
+## Anatomy
+
+- **`path`**: URL path associated with the logo link.
+- **`logoName`**: Text or image representing the logo.
+- **`menuList`**: An array of objects representing menu items, each containing:
+  - **`menu`**: Text representing the menu item.
+  - **`path`**: URL path associated with the menu item.
+- **`activatedMenu`**: Index of the currently activated menu item.
+- **`handleActivatedMenu`**: Function triggered when a menu item is activated.
+- **`handleOpenDrawerMenu`**: Function triggered when the drawer menu button is clicked.
+- **`children`** (optional): React elements to be displayed in the header.
+
+## Usage
+
+```tsx
+import { Header } from 'ggf-ui';
+```
+
+```tsx
+<Header
+  path='/'
+  logoName='Your Logo'
+  menuList={[
+    { menu: 'Home', path: '/' },
+    { menu: 'About', path: '/about' },
+    // Add more menu items as needed
+  ]}
+  activatedMenu={0}
+  handleActivatedMenu={handleActivatedMenu}
+  handleOpenDrawerMenu={handleOpenDrawerMenu}
+>
+  {/* Optional children elements */}
+</Header>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/header-header--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/header-header--example&globals=backgrounds.value:!hex(333333)>)

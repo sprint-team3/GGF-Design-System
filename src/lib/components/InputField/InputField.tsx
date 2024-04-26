@@ -1,6 +1,6 @@
 import { ErrorMessage } from '@hookform/error-message';
 import classNames from 'classnames/bind';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, UseFormRegister, FormState, UseFormWatch } from 'react-hook-form';
 
 import { PASSWORD_SHOW_MODE } from '@/constants/passwordMode';
 import useToggleButton from '@/hooks/useToggleButton';
@@ -9,7 +9,14 @@ import styles from './InputField.module.scss';
 
 const cx = classNames.bind(styles);
 
+type FormMethod = {
+  register: UseFormRegister<FieldValues>;
+  formState: FormState<FieldValues>;
+  watch: UseFormWatch<FieldValues>;
+};
+
 type InputFieldProps = {
+  formMethod: FormMethod;
   name: string;
   label?: string;
   type?: 'text' | 'email' | 'password';
@@ -25,6 +32,7 @@ type InputFieldProps = {
 };
 
 const InputField = ({
+  formMethod,
   name,
   label,
   type = 'text',
@@ -42,7 +50,7 @@ const InputField = ({
     register,
     formState: { errors },
     watch,
-  } = useFormContext();
+  } = formMethod;
 
   const isError = !!errors[name]?.message;
   const { isVisible, handleToggleClick } = useToggleButton();
@@ -60,17 +68,13 @@ const InputField = ({
       </label>
       <div className={cx('input-field-input-group')}>
         {isDisabled ? (
-          <input
-            id={`input-field-${name}`}
-            className={cx('input-field-input-group-input', color)}
-            disabled
-            {...props}
-          />
+          <input id={`input-field-${name}`} className={cx('input-field-input-group-input')} disabled {...props} />
         ) : (
           <input
             id={`input-field-${name}`}
             className={cx(
               'input-field-input-group-input',
+              color,
               { error: isError },
               { 'is-password': isPassword },
               { 'is-limited': isLimited && !isPassword },

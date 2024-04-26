@@ -1,0 +1,28 @@
+## Title
+
+AlarmCard
+
+## Description
+
+A component that displays an alarm's details and provides an interactive delete button with hover effects.
+
+## Anatomy
+
+- **`id`** : A unique identifier for the alarm card, used to handle specific actions.
+- **`content`** : Text content displayed on the card, representing the alarm's description or details.
+- **`createdAt`** : String indicating the alarm's creation time, displayed at the card's bottom.
+- **`onClick`** : Function triggered when the delete button is clicked, taking the alarm's **`id`** as an argument to identify which alarm to delete.
+
+## Usage
+
+```tsx
+import { AlarmCard } from 'ggf-ui';
+```
+
+```tsx
+<AlarmCard id={1} content='Alarm content here' createdAt='2024-04-24 10:00 AM' onClick={onClick} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/cards-alarmcard--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/cards-alarmcard--example&globals=backgrounds.value:!hex(333333)>)

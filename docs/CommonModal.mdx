@@ -1,0 +1,28 @@
+## Title
+
+CommonModal
+
+## Description
+
+The CommonModal component represents a modal dialog used for displaying content with a title and customizable content area.
+
+## Anatomy
+
+- **`openModal`** : Boolean prop indicating whether the modal is open or closed.
+- **`title`** : String prop representing the title of the modal.
+- **`renderContent`** : ReactNode prop representing the content to be rendered within the modal.
+- **`onClose`** : Function prop to handle the closing action of the modal.
+
+## Usage
+
+```tsx
+import { CommonModal } from 'ggf-ui';
+```
+
+```tsx
+<CommonModal openModal={ture} title='title' renderContent={<renderContent />} onClose={onClose} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-commonmodal--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/modals-commonmodal--example&globals=backgrounds.value:!hex(333333)>)

@@ -1,0 +1,28 @@
+## Title
+
+SearchBar
+
+## Description
+
+The SearchBar component provides a search input field with an accompanying search icon for users to enter search queries. It allows users to input text and trigger a search action by pressing the Enter key or clicking the search icon.
+
+## Anatomy
+
+- **`placeholder`**: The placeholder text displayed in the search input field.
+- **`onChange`**: A function called whenever the value in the search input field changes. It receives the new value as a parameter.
+- **`color`** (optional): Specifies the color theme of the search input field. It can be `'yellow' | 'purple'`. Defaults to `'purple'`.
+- **`maxLength`** (optional): The maximum number of characters allowed in the search input field. Defaults to `20`.
+
+## Usage
+
+```tsx
+import { SearchBar } from 'ggf-ui';
+```
+
+```tsx
+<SearchBar placeholder='Search...' onChange={(value) => onChange(value)} color='purple' maxLength={20} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/inputs-searchbar--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/inputs-searchbar--example&globals=backgrounds.value:!hex(333333)>)

@@ -1,0 +1,29 @@
+## Title
+
+CardButton
+
+## Description
+
+The Card Button component is designed to represent a button within a card-like element. It enables users to perform actions associated with the card, such as viewing details or navigating to another page. The button can be customized with different colors.
+
+## Anatomy
+
+- **`children`**: The text content to be displayed within the button.
+- **`onClick`** (optional): A function to be executed when the button is clicked.
+- **`color`** (optional): Specifies the color theme of the button. Options include `'yellow' | 'red' | 'gray'` Defaults to 'yellow'.
+
+## Usage
+
+```tsx
+import { CardButton } from 'ggf-ui';
+```
+
+```tsx
+<CardButton onClick={onClick} color='red'>
+  View Details
+</CardButton>
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-cardbutton--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/buttons-cardbutton--example&globals=backgrounds.value:!hex(333333)>)

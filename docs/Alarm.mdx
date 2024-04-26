@@ -1,0 +1,28 @@
+## Title
+
+Alarm
+
+## Description
+
+An interactive indicator that visually represents alarm status and allows users to toggle alarm activation through user interaction.
+
+## Anatomy
+
+- **`isAlarmExisted`** : Boolean flag to indicate whether an alarm is currently set.
+- **`isActivated`** : Boolean flag to indicate whether the alarm is active and alerting.
+- **`onClick`** : Function to handle click events on the alarm, typically used to toggle the alarm state.
+- **`alarmRef`** (optional): React ref object attached to the button element for direct DOM manipulation or access.
+
+## Usage
+
+```tsx
+import { Alarm } from 'ggf-ui';
+```
+
+```tsx
+<Alarm isAlarmExisted={true} isActivated={true} onClick={onClick} alarmRef={alarmRef} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/alarm-alarm--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/alarm-alarm--example&globals=backgrounds.value:!hex(333333)>)

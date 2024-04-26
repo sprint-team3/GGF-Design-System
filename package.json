@@ -1,7 +1,13 @@
 {
   "name": "ggf-ui",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "GGF design system library",
+  "keywords": [
+    "react",
+    "react-component",
+    "ggf",
+    "ggf-ui"
+  ],
   "private": false,
   "type": "module",
   "main": "dist/index.umd.cjs",

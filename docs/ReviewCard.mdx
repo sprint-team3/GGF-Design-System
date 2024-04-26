@@ -1,0 +1,29 @@
+## Title
+
+ReviewCard
+
+## Description
+
+The ReviewCard component represents a card used for displaying reviews, including information such as reviewer nickname, rating, creation date, and review content.
+
+## Anatomy
+
+- **`nickname`** : String prop representing the nickname of the reviewer.
+- **`rating`** : Number prop representing the rating given by the reviewer.
+- **`content`** : String prop representing the content of the review.
+- **`createdAt`** : String or number prop representing the creation date of the review.
+- **`profileImageUrl`** : Optional string prop representing the URL of the reviewer's profile image.
+
+## Usage
+
+```tsx
+import { ReviewCard } from 'ggf-ui';
+```
+
+```tsx
+<ReviewCard nickname='nickname' rating={4} createdAt='YYYY-MM-DD' content='content' profileImageUrl='profileImageUrl' />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/cards-reviewcard--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-nqfkxankpk.chromatic.com/?path=/story/cards-reviewcard--example&globals=backgrounds.value:!hex(333333)>)

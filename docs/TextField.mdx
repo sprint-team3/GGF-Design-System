@@ -1,0 +1,63 @@
+## Title
+
+TextField
+
+## Description
+
+The TextField component provides a customizable input field for users to enter text. It supports various features such as labeling, character length limits, and error handling.
+
+## Anatomy
+
+- **`formMethod`**: An object containing methods and state from React Hook Form library.
+  - **`register`**: A function to register the input field with React Hook Form.
+  - **`formState`**: An object representing the state of the form.
+  - **`watch`**: A function to watch for changes in the input field.
+- **`name`**: The name of the input field.
+- **`label`** (optional): The label text associated with the input field.
+- **`minLength`** (optional): The minimum number of characters allowed in the input field.
+- **`maxLength`** (optional): The maximum number of characters allowed in the input field.
+- **`placeholder`** (optional): The placeholder text displayed in the input field when it's empty.
+- **`color`** (optional): Specifies the color theme of the input field. Options include `'yellow' | 'purple'`. Defaults to `'purple'`.
+
+## Usage
+
+```tsx
+import { TextField } from 'ggf-ui';
+import { FormProvider, useForm } from 'react-hook-form';
+```
+
+```tsx
+const Schema = z.object({
+  TextField: z.string().min(1),
+}); // optional
+
+const methods = useForm({
+  mode: 'all',
+  resolver: zodResolver(Schema), // optional
+});
+
+const onSubmit = (data: object) => {
+  console.log(data);
+};
+
+return (
+  <FormProvider {...methods}>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <TextField
+        formMethod={formMethod}
+        name='example'
+        label='TextField'
+        minLength={5}
+        maxLength={50}
+        placeholder='Enter text here'
+        color='yellow'
+      />
+      <button>Submit</button>
+    </form>
+  </FormProvider>
+);
+```
+
+## UI
+
+![TextField](https://github.com/sprint-team3/GGF-Design-System/assets/92169354/45da9536-bcfe-4434-b04c-b29bd2c47ad3)

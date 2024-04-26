@@ -1,0 +1,29 @@
+## Title
+
+HeaderProfile
+
+## Description
+
+A component representing the user profile section in the header, including the user's nickname and profile image.
+
+## Anatomy
+
+- **`nickname`**: The user's nickname to be displayed.
+- **`profileImageUrl`**: URL of the user's profile image.
+- **`isActivated`**: Boolean indicating whether the profile section is activated.
+- **`onClick`**: Function triggered when the profile section is clicked.
+- **`headerProfileRef`** (optional): React ref object attached to the **`<button>`** element wrapping the profile section.
+
+## Usage
+
+```tsx
+import { HeaderProfile } from 'ggf-ui';
+```
+
+```tsx
+<HeaderProfile nickname='UserName' profileImageUrl='url/to/profile/image.jpg' isActivated={true} onClick={onClick} />
+```
+
+## Storybook
+
+[https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/headerprofile-headerprofile--example&globals=backgrounds.value:!hex(333333)](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/headerprofile-headerprofile--example&globals=backgrounds.value:!hex(333333)>)

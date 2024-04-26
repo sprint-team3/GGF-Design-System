@@ -6,11 +6,11 @@ const cx = classNames.bind(styles);
 
 type ModalButtonProps = {
   children?: string;
-  variant?: 'success' | 'warning';
   onClick: () => void;
+  variant?: 'success' | 'warning';
 };
 
-const ModalButton = ({ variant, children, onClick }: ModalButtonProps) => {
+const ModalButton = ({ children, onClick, variant = 'success' }: ModalButtonProps) => {
   return (
     <button className={cx('btn', { [`btn-state-${variant}`]: variant })} onClick={onClick}>
       {children}
