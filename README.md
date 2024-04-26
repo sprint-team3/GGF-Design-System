@@ -6,7 +6,7 @@ GGF UI is an open-source React component library. It is designed for easy access
 
 # Installation
 
-```
+```bash
 npm install ggf-ui@latest
 ```
 
