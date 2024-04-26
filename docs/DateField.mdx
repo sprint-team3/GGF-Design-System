@@ -21,18 +21,15 @@ npm i zod @hookform/resolvers
 
 ## Anatomy
 
-- `formMethod` : Object containing form management methods and state from React Hook Form.
-- `label`: The label text displayed above the input field.
-- `name`: The unique identifier for the input field.
-- `days`: The number of days to calculate disabled date ranges.
-- `color`(optional): The color theme for the input field, defaulting to 'yellow'.
-  ```bash
-  color: 'yellow' | 'purple'
-  ```
+- **`formMethod`** : Object containing form management methods and state from React Hook Form.
+- **`label`**: The label text displayed above the input field.
+- **`name`**: The unique identifier for the input field.
+- **`days`**: The number of days to calculate disabled date ranges.
+- **`color`**(optional): The color theme for the input field. It can be `'yellow' | 'purple'`, defaulting to `'yellow'`.
 
 ## Usage
 
-```jsx
+```tsx
 import { DateField } from 'ggf-ui';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod'; // optional
