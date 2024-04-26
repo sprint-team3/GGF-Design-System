@@ -19,7 +19,3 @@ You can find usage instructions for the provided components at the GitHub link b
 # License
 
 This project is licensed under the terms of the MIT license
-
-# Keywords
-
-react react-component ggf ggf-ui
