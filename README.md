@@ -20,7 +20,7 @@ You can find usage instructions for the provided components at the GitHub link b
 
 You can navigate through the provided components and inspect both their usage and visual appearance at the link below.
 
-[storybook](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/iframe.html?globals=backgrounds.value:!hex(333333)&id=alarm-alarm--example>)
+[storybook](<https://661f5982ddc662c8c9a12d6b-fqsleqszgq.chromatic.com/?path=/story/alarm-alarm--example&globals=backgrounds.value:!hex(333333)>)
 
 # License
 
