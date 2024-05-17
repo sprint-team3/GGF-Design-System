@@ -16,7 +16,7 @@ You can find usage instructions for the provided components at the GitHub link b
 
 [https://github.com/sprint-team3/GGF-Design-System/tree/dev/docs](https://github.com/sprint-team3/GGF-Design-System/tree/dev/docs)
 
-# Storybook
+# StoryBook
 
 You can navigate through the provided components and inspect both their usage and visual appearance at the link below.
 
