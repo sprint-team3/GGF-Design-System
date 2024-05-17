@@ -16,6 +16,12 @@ You can find usage instructions for the provided components at the GitHub link b
 
 [https://github.com/sprint-team3/GGF-Design-System/tree/dev/docs](https://github.com/sprint-team3/GGF-Design-System/tree/dev/docs)
 
+# StoryBook
+
+You can navigate through the provided components and inspect both their usage and visual appearance at the link below.
+
+[storybook](https://661f5982ddc662c8c9a12d6b-cihpzzrdsv.chromatic.com/?path=/story/alarm-alarm--example)
+
 # License
 
 This project is licensed under the terms of the MIT license
